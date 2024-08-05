@@ -1,0 +1,36 @@
+
+/* Header */
+.gam-logo-sm{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.gam-logo{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.guinee-fance-photo{
+  width: 50px;
+  height: 50px
+}
+
+.nav-item a:hover {
+ box-shadow: none;
+}
+
+button:focus{
+border: 0;
+}
+
+li a.box-shadow-lg{
+     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
+    -5px -5px 10px rgba(255, 255, 255, 0.3);
+  border: none;
+}
+/* Header */
