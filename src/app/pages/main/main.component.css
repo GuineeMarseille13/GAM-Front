@@ -16,3 +16,66 @@
 }
 
 /* Photo accueille */
+
+/* Session découverte */
+iframe{
+  width: 320px;
+}
+
+#drapeau-guinee{
+  display: block;
+  position: absolute;
+  left: 2px;
+  height: 100%;
+  width: 1px;
+  background-color: yellow;
+}
+
+#drapeau-guinee::before{
+  content: "";
+  position: absolute;
+  display: block;
+  left: -2px;
+  height: 100%;
+  width: 1px;
+  background-color: red;
+}
+
+#drapeau-guinee::after{
+  content: "";
+  position: absolute;
+  display: block;
+  left: 2px;
+  height: 100%;
+  width: 1px;
+  background-color: green;
+}
+
+#drapeau-france{
+  display: block;
+  position: absolute;
+  left: 2px;
+  height: 100%;
+  width: 1px;
+  background-color: white;
+}
+
+#drapeau-france::before{
+  content: "";
+  position: absolute;
+  display: block;
+  left: -2px;
+  height: 100%;
+  width: 1px;
+  background-color: blue;
+}
+
+#drapeau-france::after{
+  content: "";
+  position: absolute;
+  display: block;
+  left: 2px;
+  height: 100%;
+  width: 1px;
+  background-color: red;
+}

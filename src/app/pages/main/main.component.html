@@ -1,6 +1,53 @@
 <div class="container overflow-auto">
-    <section id="gam-photo-famille" class="row">
+    <section id="gam-photo-famille" class="row py-2">
         <div id="large" class="d-none d-lg-block d-md-block"></div>
         <div id="small" class="d-lg-none d-md-none"></div>
+    </section>
+
+    <section id="presentation-guinee-france" class="row mt-4">
+        <div class="col-lg-6 col-md-6 col-sm-12 p-0">
+            <h4>Découvrer la Guinée</h4>
+            <div class="d-flex flex-wrap position-relative">
+                <span id="drapeau-guinee"></span>
+                <div class="d-flex flex-column justify-content-center me-1 ms-2">
+                    <span class="mb-2 me-lg-5">
+                        Présentation de la Guinée
+                        <fa-icon *ngIf="!isDisplayPresentationGuinee" [icon]="faCirclePlay" [fixedWidth]="true" (click)="displayVideo(true, 'Guinee')" class="text-success text-start" />
+                        <fa-icon *ngIf="isDisplayPresentationGuinee" [icon]="faCircleXmark" [fixedWidth]="true" (click)="hideVideo(true, 'Guinee')" class="text-success text-start" />
+                    </span>            
+                    <iframe *ngIf="isDisplayPresentationGuinee" src="https://www.youtube.com/embed/8QGydH9lUjg" title="Découvrez LA GUINÉE-CONAKRY" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="d-flex flex-column ms-2">
+                    <span class="mb-2">
+                        L'hymne nationale de la Guinée
+                        <fa-icon *ngIf="!isDisplayHymneGuinee" [icon]="faCirclePlay" [fixedWidth]="true" (click)="displayVideo(false, 'Guinee')" class="text-success text-start" />
+                        <fa-icon *ngIf="isDisplayHymneGuinee" [icon]="faCircleXmark" [fixedWidth]="true" (click)="hideVideo(false, 'Guinee')" class="text-success text-start" />
+                    </span>  
+                    <iframe *ngIf="isDisplayHymneGuinee" src="https://www.youtube.com/embed/8QGydH9lUjg" title="Découvrez LA GUINÉE-CONAKRY" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 p-0">
+            <h4>Découvrer la France</h4>
+            <div class="d-flex flex-wrap position-relative">
+                <span id="drapeau-france"></span>
+               <div class="d-flex flex-column me-1 ms-2">
+                    <span class="mb-2 me-lg-5">
+                        Présentation de la France
+                        <fa-icon *ngIf="!isDisplayPresentationFrance" [icon]="faCirclePlay" [fixedWidth]="true" (click)="displayVideo(true, 'France')" class="text-success text-start" />
+                        <fa-icon *ngIf="isDisplayPresentationFrance" [icon]="faCircleXmark" [fixedWidth]="true" (click)="hideVideo(true, 'France')" class="text-success text-start" />
+                    </span>                <!-- <video controls autoplay="true" src="https://www.youtube.com/watch?v=fKDgIZOvASw" type="video/webm" ></video> -->
+                    <iframe *ngIf="isDisplayPresentationFrance" src="https://www.youtube.com/embed/8QGydH9lUjg" title="Découvrez LA GUINÉE-CONAKRY" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="d-flex flex-column ms-2">
+                    <span class="mb-2">
+                        L'hymne nationale de la France
+                        <fa-icon *ngIf="!isDisplayHymneFrance" [icon]="faCirclePlay" [fixedWidth]="true" (click)="displayVideo(false, 'France')" class="text-success text-start" />
+                        <fa-icon *ngIf="isDisplayHymneFrance" [icon]="faCircleXmark" [fixedWidth]="true" (click)="hideVideo(false, 'France')" class="text-success text-start" />
+                    </span>  
+                    <iframe *ngIf="isDisplayHymneFrance" src="https://www.youtube.com/embed/8QGydH9lUjg" title="Découvrez LA GUINÉE-CONAKRY" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
     </section>
 </div>
