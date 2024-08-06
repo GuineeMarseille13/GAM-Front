@@ -1,0 +1,18 @@
+
+/* Photo accueille */
+#large {
+  height: 700px;
+}
+
+#small {
+  height: 200px;
+}
+
+#gam-photo-famille #large, #small{
+  background-image: url("../../../assets/main/game-acceil.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Photo accueille */

@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <header id="header" class="position-sticky top-0 bg-white">
+  <header id="header" class="py-2 position-sticky top-0 bg-white">
     <img src="../assets/layout/gam.png" class="gam-logo d-none d-md-inline d-lg-inline" alt="" srcset="">
     <div class="d-flex justify-content-center align-content-center mt-2 ">
       <img src="../assets/layout/gam.png" class="gam-logo-sm d-lg-none d-md-none" alt="" srcset="">
@@ -10,15 +10,15 @@
     <nav class="navbar navbar-expand-lg my-2">
       <span class="position-absolute h-100 w-100 bg-light d-lg-none d-md-none z-n1"></span>
       <div class="container-fluid">
-        <button class="navbar-toggler" type="button">
+        <a class="btn btn-outline-secondary navbar-toggler" type="button">
           <span class="fs-6 me-1">Faire un don</span>
           <fa-icon [icon]="faHandHoldingDollar" [fixedWidth]="true"></fa-icon>
-        </button>
-        <button class="navbar-toggler mx-1" type="button">
+        </a>
+        <a class="btn btn-outline-secondary navbar-toggler mx-1" type="button">
           <span class="fs-6 me-1">Adhésion</span>
           <fa-icon [icon]="faUsers" [fixedWidth]="true"></fa-icon>
-        </button>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        </a>
+        <button class="navbar-toggler btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <fa-icon [icon]="faBarsStaggered" [fixedWidth]="true"></fa-icon>
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
@@ -76,5 +76,5 @@
       </div>
     </nav>
   </header>
-  
+  <router-outlet/>
 </div>
