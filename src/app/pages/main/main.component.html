@@ -1,29 +1,104 @@
-<div class="container overflow-auto">
+<div class="container overflow-hidden p-0">
     <section id="gam-photo-famille" class="row mt-0">
         <div id="large" class="d-none d-lg-block d-md-block"></div>
         <div id="small" class="d-lg-none d-md-none"></div>
     </section>
 
-    <section id="poles">
-        <div class="row justify-content-around">
+    <section id="poles" class="my-4">
+        <div class="row justify-content-around mb-3">
             <button type="button" class="col-lg-3 col-md-3 col-sm-11 mb-3 btn bg-light rounded-5 fs d-flex align-items-center justify-content-center" (click)="showPoleItem(poleItems.Hebergement)"> <fa-icon [icon]="faCircleCheck" [fixedWidth]="true" class="pe-2"></fa-icon> Hebergement</button>
             <button type="button" class="col-lg-3 col-md-3 col-sm-11 mb-3 btn bg-light rounded-5 fs d-flex align-items-center justify-content-center" (click)="showPoleItem(poleItems.AccompagnementAdmin)"> <fa-icon [icon]="faCircleCheck" [fixedWidth]="true" class="pe-2"></fa-icon> Accompagnement administratif</button>
             <button type="button" class="col-lg-3 col-md-3 col-sm-11 mb-3 btn bg-light rounded-5 fs d-flex align-items-center justify-content-center" (click)="showPoleItem(poleItems.Evenementiel)"> <fa-icon [icon]="faCircleCheck" [fixedWidth]="true" class="pe-2"></fa-icon> Evenementiel</button>
         </div>
         <div>
             <div *ngIf="canShowHerbergement">
-                <h2>Herbergement</h2>
+                <div class="card p-2">
+                        <div class="d-flex">
+                            <div class="h-50">
+                            <p-galleria 
+                                [value]="images" 
+                                [responsiveOptions]="responsivePhotosOptions" 
+                                [containerStyle]="{ 'max-width': '450px'}" 
+                                [numVisible]="3" 
+                                >
+                                    <ng-template pTemplate="item" let-item>
+                                        <img [src]="item.itemImageSrc" style="width: 100%;" />
+                                    </ng-template>
+                                    <ng-template pTemplate="thumbnail" let-item>
+                                        <div class="grid grid-nogutter justify-content-center">
+                                            <img [src]="item.thumbnailImageSrc" />
+                                        </div>
+                                    </ng-template>
+                            </p-galleria>
+                            </div>
+                            <ul class="d-flex flex-column justify-content-center ms-3">
+                            <li>Mise en relation d'Africains arrivants à Marseille avec des membres de l'association afin de trouver un hébergement solidaire.</li>
+                            <li class="my-5">Orientation de Guinéens vers les structures adaptées.</li>
+                            <li>Accompagnement à la recherche de stage et contrat d'apprentissage pour des jeunes en foyer.</li>
+                            </ul>
+                        </div>
+                </div>
             </div>
             <div *ngIf="canShowAccAdmin">
-                <h2>Accompagnement administratif</h2>
+                <div class="card p-2">
+                    <div class="d-flex">
+                        <div class="h-50">
+                        <p-galleria 
+                            [value]="images" 
+                            [responsiveOptions]="responsivePhotosOptions" 
+                            [containerStyle]="{ 'max-width': '450px'}" 
+                            [numVisible]="3"
+                            >
+                                <ng-template pTemplate="item" let-item>
+                                    <img [src]="item.itemImageSrc" style="width: 100%;" />
+                                </ng-template>
+                                <ng-template pTemplate="thumbnail" let-item>
+                                    <div class="grid grid-nogutter justify-content-center">
+                                        <img [src]="item.thumbnailImageSrc" />
+                                    </div>
+                                </ng-template>
+                        </p-galleria>
+                        </div>
+                        <ul class="d-flex flex-column justify-content-center ms-3">
+                        <li>Accompagnement pour demande de carte consulaire guinéenne.</li>
+                        <li class="my-5">Obtention d'extrait d'acte de naissance en Guinée et envoi international.</li>
+                        <li>Aide pour remplir des documents administratifs (traduction en langue soussou, peulh et malinké, écriture, explications).</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <div *ngIf="canShowEven">
-                <h2>Evenementiel</h2>
+                <div class="card p-2">
+                    <div class="d-flex">
+                        <div class="h-50">
+                        <p-galleria 
+                            [value]="images" 
+                            [responsiveOptions]="responsivePhotosOptions" 
+                            [containerStyle]="{ 'max-width': '450px'}" 
+                            [numVisible]="3" 
+                            >
+                                <ng-template pTemplate="item" let-item>
+                                    <img [src]="item.itemImageSrc" style="width: 100%;" />
+                                </ng-template>
+                                <ng-template pTemplate="thumbnail" let-item>
+                                    <div class="grid grid-nogutter justify-content-center">
+                                        <img [src]="item.thumbnailImageSrc" />
+                                    </div>
+                                </ng-template>
+                        </p-galleria>
+                        </div>
+                        <ul class="d-flex flex-column justify-content-center ms-3">
+                            <li>
+                                Organisation d'activités sportives et culturelles tout au long de l'année : Projection de film, tournoi de football, repas partagés, fête de la Guinée.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
    
-    <section id="actions">
-
+    <section id="actions" class="mb-5">              
+        
     </section>
 </div>

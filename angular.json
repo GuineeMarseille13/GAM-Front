@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "gam-front:build:production"
+              "buildTarget": "gam-front:build:production"
             },
             "development": {
-              "browserTarget": "gam-front:build:development"
+              "buildTarget": "gam-front:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "gam-front:build"
+            "buildTarget": "gam-front:build"
           }
         },
         "test": {
