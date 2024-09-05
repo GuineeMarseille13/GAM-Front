@@ -1,7 +1,11 @@
+/* Global */
+section {
+  margin-top: 20px;
+}
 
 /* Photo accueille */
 #large {
-  height: 700px;
+  height: 400px;
 }
 
 #small {
@@ -15,67 +19,8 @@
   background-attachment: fixed;
 }
 
-/* Photo accueille */
-
-/* Session découverte */
-iframe{
-  width: 320px;
-}
-
-#drapeau-guinee{
-  display: block;
-  position: absolute;
-  left: 2px;
-  height: 100%;
-  width: 1px;
-  background-color: yellow;
-}
-
-#drapeau-guinee::before{
-  content: "";
-  position: absolute;
-  display: block;
-  left: -2px;
-  height: 100%;
-  width: 1px;
-  background-color: red;
-}
-
-#drapeau-guinee::after{
-  content: "";
-  position: absolute;
-  display: block;
-  left: 2px;
-  height: 100%;
-  width: 1px;
-  background-color: green;
-}
-
-#drapeau-france{
-  display: block;
-  position: absolute;
-  left: 2px;
-  height: 100%;
-  width: 1px;
-  background-color: white;
-}
-
-#drapeau-france::before{
-  content: "";
-  position: absolute;
-  display: block;
-  left: -2px;
-  height: 100%;
-  width: 1px;
-  background-color: blue;
-}
-
-#drapeau-france::after{
-  content: "";
-  position: absolute;
-  display: block;
-  left: 2px;
-  height: 100%;
-  width: 1px;
-  background-color: red;
+/* Poles */
+#poles > .row > button {
+  /* border: 2px solid black; */
+  box-shadow: 2px 2px 3px #006400;
 }

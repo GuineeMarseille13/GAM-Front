@@ -21,7 +21,7 @@
   height: 50px
 }
 
-.nav-item a:hover {
+.nav-item a:focus, .navbar-toggler:focus {
  box-shadow: none;
 }
 

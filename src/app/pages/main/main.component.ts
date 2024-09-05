@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCirclePlay, faCircleXmark } from '@fortawesome/free-regular-svg-icons';
+import { faCircleCheck, faCirclePlay, faCircleXmark } from '@fortawesome/free-regular-svg-icons';
+import { PoleItems } from 'src/app/types/poleItems.enum';
 @Component({
   selector: 'app-main',
   standalone: true,
@@ -11,47 +12,33 @@ import { faCirclePlay, faCircleXmark } from '@fortawesome/free-regular-svg-icons
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainComponent {
-  protected isDisplayPresentationGuinee: boolean = false;
-  protected isDisplayPresentationFrance: boolean = false;
-  protected isDisplayHymneGuinee: boolean = false;
-  protected isDisplayHymneFrance: boolean = false;
 
-  faCircleXmark = faCircleXmark;
-  faCirclePlay = faCirclePlay;
+  protected poleItems = PoleItems;
 
-  private isGuinee(pays: 'Guinee' | 'France'): boolean {
-    return pays === 'Guinee';
+  protected canShowHerbergement: boolean = false;
+  protected canShowAccAdmin: boolean = false;
+  protected canShowEven: boolean = false;
+
+  protected faCircleCheck = faCircleCheck;
+
+  private hidePoleItems() {
+    this.canShowHerbergement = false;
+    this.canShowAccAdmin = false;
+    this.canShowEven = false;
   }
 
-  protected displayVideo(presentation: boolean, pays: 'Guinee' | 'France'): void {
-    if (presentation) {
-      if (this.isGuinee(pays)) {
-        this.isDisplayPresentationGuinee = true;
-      } else {
-        this.isDisplayPresentationFrance = true;
-      }
-    } else {
-      if (this.isGuinee(pays)) {
-        this.isDisplayHymneGuinee = true;
-      } else {
-        this.isDisplayHymneFrance = true;
-      }
+  protected showPoleItem(poleItem: PoleItems): void {
+    this.hidePoleItems();
+    if(poleItem === this.poleItems.Hebergement) {
+      this.canShowHerbergement = true;
     }
-  }
 
-  protected hideVideo(presentation: boolean, pays: 'Guinee' | 'France'): void {
-    if (presentation) {
-      if (this.isGuinee(pays)) {
-        this.isDisplayPresentationGuinee = false;
-      } else {
-        this.isDisplayPresentationFrance = false;
-      }
-    } else {
-      if (this.isGuinee(pays)) {
-        this.isDisplayHymneGuinee = false;
-      } else {
-        this.isDisplayHymneFrance = false;
-      }
+    if (poleItem === this.poleItems.AccompagnementAdmin) {
+      this.canShowAccAdmin = true;
+    }
+
+    if (poleItem === this.poleItems.Evenementiel) {
+      this.canShowEven = true;
     }
   }
 }
