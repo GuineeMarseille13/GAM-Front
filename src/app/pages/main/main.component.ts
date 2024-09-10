@@ -1,15 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
+import { faCircleCheck, faFile } from '@fortawesome/free-regular-svg-icons';
 import { PoleItems } from 'src/app/types/poleItems.enum';
 import { GalleriaModule } from 'primeng/galleria';
 import { PhotoService } from 'src/app/shared/photo.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule, GalleriaModule],
+  imports: [CommonModule, FontAwesomeModule, GalleriaModule, RouterLink],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -17,10 +18,6 @@ import { PhotoService } from 'src/app/shared/photo.service';
 export class MainComponent {
   images: any[] | undefined;
   responsivePhotosOptions: any[] = [
-    {
-      breakpoint: '1024px',
-      numVisible: 5,
-    },
     {
       breakpoint: '768px',
       numVisible: 3,
@@ -38,13 +35,13 @@ export class MainComponent {
   protected canShowEven: boolean = false;
 
   protected faCircleCheck = faCircleCheck;
+  protected faFile = faFile;
 
-  constructor(private photoService: PhotoService) {  }
+  constructor(private photoService: PhotoService) {}
 
-    ngOnInit() {
-      this.photoService.getImages().then((images) => (this.images = images));
-    }
-
+  ngOnInit() {
+    this.photoService.getImages().then((images) => (this.images = images));
+  }
 
   private hidePoleItems() {
     this.canShowHerbergement = false;

@@ -6,20 +6,48 @@
 
     <section id="poles" class="my-4">
         <div class="row justify-content-around mb-3">
-            <button type="button" class="col-lg-3 col-md-3 col-sm-11 mb-3 btn bg-light rounded-5 fs d-flex align-items-center justify-content-center" (click)="showPoleItem(poleItems.Hebergement)"> <fa-icon [icon]="faCircleCheck" [fixedWidth]="true" class="pe-2"></fa-icon> Hebergement</button>
-            <button type="button" class="col-lg-3 col-md-3 col-sm-11 mb-3 btn bg-light rounded-5 fs d-flex align-items-center justify-content-center" (click)="showPoleItem(poleItems.AccompagnementAdmin)"> <fa-icon [icon]="faCircleCheck" [fixedWidth]="true" class="pe-2"></fa-icon> Accompagnement administratif</button>
-            <button type="button" class="col-lg-3 col-md-3 col-sm-11 mb-3 btn bg-light rounded-5 fs d-flex align-items-center justify-content-center" (click)="showPoleItem(poleItems.Evenementiel)"> <fa-icon [icon]="faCircleCheck" [fixedWidth]="true" class="pe-2"></fa-icon> Evenementiel</button>
+            <button type="button" class="col-lg-3 col-md-3 col-sm-8 mb-3 btn bg-light rounded-5 fs d-flex align-items-center justify-content-center" (click)="showPoleItem(poleItems.Hebergement)"> <fa-icon [icon]="faCircleCheck" [fixedWidth]="true" class="pe-2"></fa-icon> Hebergement</button>
+            <button type="button" class="col-lg-3 col-md-3 col-sm-8 mb-3 btn bg-light rounded-5 fs d-flex align-items-center justify-content-center" (click)="showPoleItem(poleItems.AccompagnementAdmin)"> <fa-icon [icon]="faCircleCheck" [fixedWidth]="true" class="pe-2"></fa-icon> Accompagnement administratif</button>
+            <button type="button" class="col-lg-3 col-md-3 col-sm-8 mb-3 btn bg-light rounded-5 fs d-flex align-items-center justify-content-center" (click)="showPoleItem(poleItems.Evenementiel)"> <fa-icon [icon]="faCircleCheck" [fixedWidth]="true" class="pe-2"></fa-icon> Evenementiel</button>
         </div>
         <div>
             <div *ngIf="canShowHerbergement">
                 <div class="card p-2">
-                        <div class="d-flex">
-                            <div class="h-50">
+                        <div class="row">
+                            <div class="h-50 col-lg-4 col-md-12 col-sm-12 d-flex justify-content-lg-start justify-content-center">
+                                <p-galleria 
+                                    [value]="images" 
+                                    [responsiveOptions]="responsivePhotosOptions" 
+                                    [containerStyle]="{ 'max-width': '340px'}" 
+                                    [numVisible]="3" 
+                                    >
+                                        <ng-template pTemplate="item" let-item>
+                                            <img [src]="item.itemImageSrc" style="width: 100%;" />
+                                        </ng-template>
+                                        <ng-template pTemplate="thumbnail" let-item>
+                                            <div class="grid grid-nogutter justify-content-center">
+                                                <img [src]="item.thumbnailImageSrc" />
+                                            </div>
+                                        </ng-template>
+                                </p-galleria>
+                            </div>
+                            <ul class="col d-flex flex-column justify-content-center align-items-sm-start m-4">
+                                <li class="col-lg-9">Mise en relation d'Africains arrivants à Marseille avec des membres de l'association afin de trouver un hébergement solidaire.</li>
+                                <li class="my-2 col-lg-10">Orientation de Guinéens vers les structures adaptées.</li>
+                                <li class="col-lg-10">Accompagnement à la recherche de stage et contrat d'apprentissage pour des jeunes en foyer.</li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+            <div *ngIf="canShowAccAdmin">
+                <div class="card p-2">
+                    <div class="row">
+                        <div class="h-50 col-lg-4 col-md-12 col-sm-12 d-flex justify-content-lg-start justify-content-center">
                             <p-galleria 
                                 [value]="images" 
                                 [responsiveOptions]="responsivePhotosOptions" 
-                                [containerStyle]="{ 'max-width': '450px'}" 
-                                [numVisible]="3" 
+                                [containerStyle]="{ 'max-width': '350px'}" 
+                                [numVisible]="3"
                                 >
                                     <ng-template pTemplate="item" let-item>
                                         <img [src]="item.itemImageSrc" style="width: 100%;" />
@@ -30,38 +58,10 @@
                                         </div>
                                     </ng-template>
                             </p-galleria>
-                            </div>
-                            <ul class="d-flex flex-column justify-content-center ms-3">
-                            <li>Mise en relation d'Africains arrivants à Marseille avec des membres de l'association afin de trouver un hébergement solidaire.</li>
-                            <li class="my-5">Orientation de Guinéens vers les structures adaptées.</li>
-                            <li>Accompagnement à la recherche de stage et contrat d'apprentissage pour des jeunes en foyer.</li>
-                            </ul>
                         </div>
-                </div>
-            </div>
-            <div *ngIf="canShowAccAdmin">
-                <div class="card p-2">
-                    <div class="d-flex">
-                        <div class="h-50">
-                        <p-galleria 
-                            [value]="images" 
-                            [responsiveOptions]="responsivePhotosOptions" 
-                            [containerStyle]="{ 'max-width': '450px'}" 
-                            [numVisible]="3"
-                            >
-                                <ng-template pTemplate="item" let-item>
-                                    <img [src]="item.itemImageSrc" style="width: 100%;" />
-                                </ng-template>
-                                <ng-template pTemplate="thumbnail" let-item>
-                                    <div class="grid grid-nogutter justify-content-center">
-                                        <img [src]="item.thumbnailImageSrc" />
-                                    </div>
-                                </ng-template>
-                        </p-galleria>
-                        </div>
-                        <ul class="d-flex flex-column justify-content-center ms-3">
+                        <ul class="col d-flex flex-column justify-content-center align-items-sm-start m-4">
                         <li>Accompagnement pour demande de carte consulaire guinéenne.</li>
-                        <li class="my-5">Obtention d'extrait d'acte de naissance en Guinée et envoi international.</li>
+                        <li class="my-2">Obtention d'extrait d'acte de naissance en Guinée et envoi international.</li>
                         <li>Aide pour remplir des documents administratifs (traduction en langue soussou, peulh et malinké, écriture, explications).</li>
                         </ul>
                     </div>
@@ -69,12 +69,12 @@
             </div>
             <div *ngIf="canShowEven">
                 <div class="card p-2">
-                    <div class="d-flex">
-                        <div class="h-50">
+                    <div class="row">
+                        <div class="h-50 col-lg-4 col-md-12 col-sm-12 d-flex justify-content-lg-start justify-content-center">
                         <p-galleria 
                             [value]="images" 
                             [responsiveOptions]="responsivePhotosOptions" 
-                            [containerStyle]="{ 'max-width': '450px'}" 
+                            [containerStyle]="{ 'max-width': '350px'}" 
                             [numVisible]="3" 
                             >
                                 <ng-template pTemplate="item" let-item>
@@ -87,7 +87,7 @@
                                 </ng-template>
                         </p-galleria>
                         </div>
-                        <ul class="d-flex flex-column justify-content-center ms-3">
+                        <ul class="col d-flex flex-column justify-content-center align-items-sm-start m-4">
                             <li>
                                 Organisation d'activités sportives et culturelles tout au long de l'année : Projection de film, tournoi de football, repas partagés, fête de la Guinée.
                             </li>
@@ -98,7 +98,46 @@
         </div>
     </section>
    
-    <section id="actions" class="mb-5">              
-        
+    <section id="evenements" class="mb-5">              
+        <div>
+            <h2 class="d-none d-lg-block text-center mb-3">Nos événements</h2>
+            <h3 class="d-none d-md-block d-lg-none text-center mb-3">Nos événements</h3>
+            <h4 class="d-sm-block d-md-none text-center mb-3">Nos événements</h4>
+            <div class="card p-2">
+                <div class="row mb-2">
+                    <div class="col-lg-3 col-md-12 d-flex justify-content-center justify-content-lg-start">
+                        <img src="../../../assets/main/gam-event.webp" alt="" class="rounded-1">
+                    </div>
+                    <div class="col d-flex align-items-center p-4 fst-italic">
+                        Le projet de l'association est d'organiser des activités solidaires, sportives et culturelles,
+                        de créer un réseau entre Guinéen.ne.s et Marseillais.e.s et  d'aider des personnes dans le besoin afin de lutter activement contre le racisme et la discrimination.
+                    </div>
+                </div>
+                <div class="bg-light border-1 border-secondary-subtle rounded-2 hover-style">
+                    <a [routerLink]="['event-passe']" class="btn d-flex justify-content-between align-items-center text-start">
+                        <h3 class="d-none d-sm-block m-0">Nos evenements passés</h3>
+                        <h6 class="d-sm-block d-md-none m-0">Nos evenements passés</h6>
+                        <h5 class="d-none d-sm-block m-0 fst-italic">cliquez-ici</h5>
+                        <fa-icon [icon]="faFile" size="2x" class="me-3 text-primary"></fa-icon>
+                    </a>
+                </div>
+                <div class="d-flex justify-content-between align-items-center bg-light mt-2 p-2 border-1 border-secondary-subtle rounded-2">
+                    <h3 class="d-none d-sm-block ms-2">Pour nos evenements à venir</h3>
+                    <h6 class="d-sm-block d-md-block d-md-none m-0">Pour nos evenements à venir</h6>
+                    <h6 class="d-none d-md-block fst-italic">suivez-nous sur nos reseaux</h6>
+                    <div class="me-3">
+                        <a href="https://www.facebook.com/GUINEEAMARSEILLE">
+                            <i class="pi pi-facebook" style="font-size: 1.2rem"></i>
+                        </a>
+                        <a href="https://www.instagram.com/guineeamarseille/" class="mx-2">
+                        <i class="pi pi-instagram" style="font-size: 1.2rem"></i>
+                        </a>
+                        <a href="http://twitter.com/GuineeMarseill1">
+                        <i class="pi pi-twitter" style="font-size: 1.2rem"></i>
+                        </a>
+                    </div>    
+                </div>
+            </div>
+        </div>
     </section>
 </div>
