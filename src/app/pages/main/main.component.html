@@ -98,7 +98,7 @@
         </div>
     </section>
    
-    <section id="evenements" class="mb-5">              
+    <section id="evenements" class="mb-4">              
         <div>
             <h2 class="d-none d-lg-block text-center mb-3">Nos événements</h2>
             <h3 class="d-none d-md-block d-lg-none text-center mb-3">Nos événements</h3>
@@ -139,5 +139,32 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <section id="partenaires" class="mb-4">
+        <h2 class="d-none d-lg-block text-center mb-3">Nos partenaires</h2>
+        <h3 class="d-none d-md-block d-lg-none text-center mb-3">Nos partenaires</h3>
+        <h4 class="d-sm-block d-md-none text-center mb-3">Nos partenaires</h4>
+        <p-panel styleClass="">
+            <p-carousel 
+            [value]="products" 
+            [numVisible]="3" 
+            [numScroll]="3"
+            [circular]="true"
+            [showIndicators]="false"
+            autoplayInterval="2000"
+            [responsiveOptions]="responsiveOptions">
+                <ng-template let-product pTemplate="item">
+                <div class="p-3">
+                    <div class="relative">
+                    <img 
+                    src="https://primefaces.org/cdn/primeng/images/demo/product/{{ product.image }}" 
+                    [alt]="product.name" 
+                    class="w-full border-round" />
+                    </div>
+                </div>
+                </ng-template>
+            </p-carousel>
+        </p-panel>
     </section>
 </div>

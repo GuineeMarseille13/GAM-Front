@@ -37,3 +37,18 @@ section {
   height: auto;
 }
 
+
+/* Nos partenaires */
+::ng-deep .p-panel-header{
+  display: none;
+}
+
+::ng-deep .p-panel-content {
+  border-top: 1px solid #e5e7eb;
+  /* border: none; */
+  padding: 0;
+}
+
+::ng-deep .p-carousel-container button{
+  display: none;
+}

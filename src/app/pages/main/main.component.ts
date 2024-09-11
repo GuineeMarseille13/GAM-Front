@@ -7,10 +7,26 @@ import { GalleriaModule } from 'primeng/galleria';
 import { PhotoService } from 'src/app/shared/photo.service';
 import { RouterLink } from '@angular/router';
 
+import { CarouselModule } from 'primeng/carousel';
+import { ButtonModule } from 'primeng/button';
+import { TagModule } from 'primeng/tag';
+import { ProductService } from 'src/app/shared/product.service';
+import { PanelModule } from 'primeng/panel';
+
+
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule, GalleriaModule, RouterLink],
+  imports: [
+    CommonModule,
+    FontAwesomeModule,
+    GalleriaModule,
+    RouterLink,
+    CarouselModule,
+    ButtonModule,
+    TagModule,
+    PanelModule,
+  ],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -37,10 +53,50 @@ export class MainComponent {
   protected faCircleCheck = faCircleCheck;
   protected faFile = faFile;
 
-  constructor(private photoService: PhotoService) {}
+  responsiveOptions: any[] | undefined;
+  products: Product[] = [];
+
+  constructor(
+    private photoService: PhotoService,
+    private productService: ProductService
+  ) {}
 
   ngOnInit() {
     this.photoService.getImages().then((images) => (this.images = images));
+
+    this.productService.getProductsSmall().then((products) => {
+      this.products = products;
+    });
+
+    this.responsiveOptions = [
+      {
+        breakpoint: '1199px',
+        numVisible: 1,
+        numScroll: 1,
+      },
+      {
+        breakpoint: '991px',
+        numVisible: 2,
+        numScroll: 1,
+      },
+      {
+        breakpoint: '767px',
+        numVisible: 1,
+        numScroll: 1,
+      },
+    ];
+  }
+
+  getSeverity(status: string) {
+    switch (status) {
+      case 'INSTOCK':
+        return 'success';
+      case 'LOWSTOCK':
+        return 'warning';
+      case 'OUTOFSTOCK':
+        return 'danger';
+    }
+    return 'danger';
   }
 
   private hidePoleItems() {
@@ -68,4 +124,17 @@ export class MainComponent {
 interface City {
   name: string;
   code: string;
+}
+
+export interface Product {
+  id?: string;
+  code?: string;
+  name?: string;
+  description?: string;
+  price?: number;
+  quantity?: number;
+  inventoryStatus?: string;
+  category?: string;
+  image?: string;
+  rating?: number;
 }
