@@ -12,6 +12,7 @@ import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
 import { ProductService } from 'src/app/shared/product.service';
 import { PanelModule } from 'primeng/panel';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -26,6 +27,7 @@ import { PanelModule } from 'primeng/panel';
     ButtonModule,
     TagModule,
     PanelModule,
+    FormsModule
   ],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
@@ -118,6 +120,10 @@ export class MainComponent {
     if (poleItem === this.poleItems.Evenementiel) {
       this.canShowEven = true;
     }
+  }
+
+  protected onSubmit(formValue: any) {
+    console.log(formValue);
   }
 }
 
