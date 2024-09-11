@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCircleCheck, faFile } from '@fortawesome/free-regular-svg-icons';
-import { PoleItems } from 'src/app/types/poleItems.enum';
+import { PoleItems } from 'src/app/types/enums/poleItems.enum';
 import { GalleriaModule } from 'primeng/galleria';
 import { PhotoService } from 'src/app/shared/photo.service';
 import { RouterLink } from '@angular/router';
@@ -13,6 +13,7 @@ import { TagModule } from 'primeng/tag';
 import { ProductService } from 'src/app/shared/product.service';
 import { PanelModule } from 'primeng/panel';
 import { FormsModule } from '@angular/forms';
+import { adresseMailGAM } from 'src/app/types/constants/constants';
 
 
 @Component({
@@ -27,7 +28,7 @@ import { FormsModule } from '@angular/forms';
     ButtonModule,
     TagModule,
     PanelModule,
-    FormsModule
+    FormsModule,
   ],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
@@ -47,6 +48,7 @@ export class MainComponent {
   ];
 
   protected poleItems = PoleItems;
+  protected adresseMail = adresseMailGAM;
 
   protected canShowHerbergement: boolean = false;
   protected canShowAccAdmin: boolean = false;

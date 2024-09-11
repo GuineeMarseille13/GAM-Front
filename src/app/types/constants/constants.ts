@@ -1,0 +1,1 @@
+export const adresseMailGAM: string = "guineeamarseille13@gmail.com"
