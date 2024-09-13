@@ -2,17 +2,19 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { faBarsStaggered, faHandHoldingDollar, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, FontAwesomeModule],
+  imports: [CommonModule, RouterOutlet, FontAwesomeModule, RouterLink],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  faBarsStaggered = faBarsStaggered;
-  faUsers = faUsers;
-  faHandHoldingDollar = faHandHoldingDollar;
+  protected faBarsStaggered = faBarsStaggered;
+  protected faUsers = faUsers;
+  protected faHandHoldingDollar = faHandHoldingDollar;
+  protected faUser = faUser;
 }

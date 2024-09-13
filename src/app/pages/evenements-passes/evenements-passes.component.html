@@ -1,0 +1,79 @@
+<div id="event-passe" class="container p-0 mt-4">
+    <h2 class="d-none d-lg-block text-center mb-3">Les évenements passés</h2>
+    <h3 class="d-none d-md-block d-lg-none text-center mb-3">Les évenements passés</h3>
+    <h4 class="d-sm-block d-md-none text-center mb-3">Les évenements passés</h4>
+
+    <p-panel header="Année 2023" [toggleable]="true" class="text-center">
+        <div class="shadow-sm row py-3 m-3 mb-0">
+            <div class="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-lg-start justify-content-center">
+                <p-galleria 
+                    [value]="images" 
+                    [responsiveOptions]="responsivePhotosOptions" 
+                    [containerStyle]="{ 'max-width': '340px'}" 
+                    [numVisible]="3" 
+                    >
+                        <ng-template pTemplate="item" let-item>
+                            <img [src]="item.itemImageSrc" style="width: 100%;" />
+                        </ng-template>
+                        <ng-template pTemplate="thumbnail" let-item>
+                            <div class="grid grid-nogutter justify-content-center">
+                                <img [src]="item.thumbnailImageSrc" />
+                            </div>
+                        </ng-template>
+                </p-galleria>
+            </div>
+            <div class="col d-flex flex-column justify-content-center align-items-sm-start ms-3 m-2">
+                <h4>OCTOBRE 2023 FETE DE L'INDEPENDANCE DE LA GUINEE - 65 ans</h4>
+                <p>
+                    Dans le cadre de la fête nationale de la Guinée qui est le 02 Octobre, l’association Guinée à Marseille a organisé une journée de fête.<br>
+                    Cette rencontre à servi de cadre pour faire découvrir la culture Guinéenne de différentes manières
+                </p>
+            </div>
+        </div>
+        <a [routerLink]="['galerie-photos']" class="btn fst-italic my-4 btn-outline-secondary card-shadow">
+            Voir plus de photos
+            <fa-icon [icon]="faImages" size="1x" [fixedWidth]="true"></fa-icon>
+        </a>
+    </p-panel>
+    <p-panel header="Année 2022" [toggleable]="true" [collapsed]="true" styleClass="my-3">
+        <div class="d-flex p-3 card-shadow card-semi-arrondi">
+            <div>
+                <img src="../../../assets/event-passe-2022-1.webp" alt="" class="photo-semi-arrondi">
+            </div>
+            <div class="d-flex flex-column justify-content-center align-items-center ms-3">
+                <h4>JANVIER 2022 PROJECTION BLACK PANTHER</h4>
+                <p>La projection de Black Panther a rassemblé un trentaine de personnes de milieux et d'origines très diverses (guinéens, ivoiriens, français, marocains, italiens, maliens, gambiens).<br>
+                    Nous voulions mettre à l’honneur un film d’action dans lequel la majorité des acteurs sont noirs. Ensuite nous avons partagé un goûter.
+                </p>
+            </div>
+        </div>
+        <div class="d-flex p-3 card-shadow card-semi-arrondi my-5">
+            <div>
+                <img src="../../../assets/event-passe-2022-1.webp" alt="" class="photo-semi-arrondi">
+            </div>
+            <div class="d-flex flex-column justify-content-center align-items-center ms-3">
+                <h4>JANVIER 2022 PROJECTION BLACK PANTHER</h4>
+                <p>La projection de Black Panther a rassemblé un trentaine de personnes de milieux et d'origines très diverses (guinéens, ivoiriens, français, marocains, italiens, maliens, gambiens).<br>
+                    Nous voulions mettre à l’honneur un film d’action dans lequel la majorité des acteurs sont noirs. Ensuite nous avons partagé un goûter.
+                </p>
+            </div>
+        </div>
+        <div class="d-flex p-3 card-shadow card-semi-arrondi">
+            <div>
+                <img src="../../../assets/event-passe-2022-1.webp" alt="" class="photo-semi-arrondi">
+            </div>
+            <div class="d-flex flex-column justify-content-center align-items-center ms-3">
+                <h4>JANVIER 2022 PROJECTION BLACK PANTHER</h4>
+                <p>La projection de Black Panther a rassemblé un trentaine de personnes de milieux et d'origines très diverses (guinéens, ivoiriens, français, marocains, italiens, maliens, gambiens).<br>
+                    Nous voulions mettre à l’honneur un film d’action dans lequel la majorité des acteurs sont noirs. Ensuite nous avons partagé un goûter.
+                </p>
+            </div>
+        </div>
+    </p-panel>
+    <p-panel header="Année 2021" [toggleable]="true" [collapsed]="true" styleClass="mb-5">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+    </p-panel>
+</div>

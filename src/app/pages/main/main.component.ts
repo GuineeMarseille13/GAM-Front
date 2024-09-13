@@ -1,12 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCircleCheck, faFile, faUser } from '@fortawesome/free-regular-svg-icons';
+import { faCircleCheck, faFile } from '@fortawesome/free-regular-svg-icons';
 import { PoleItems } from 'src/app/types/enums/poleItems.enum';
 import { GalleriaModule } from 'primeng/galleria';
 import { PhotoService } from 'src/app/shared/photo.service';
 import { RouterLink } from '@angular/router';
-
 import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
@@ -56,7 +55,6 @@ export class MainComponent {
 
   protected faCircleCheck = faCircleCheck;
   protected faFile = faFile;
-  protected faUser = faUser;
 
   responsiveOptions: any[] | undefined;
   products: Product[] = [];
