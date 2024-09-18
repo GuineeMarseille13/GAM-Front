@@ -1,0 +1,41 @@
+/* Tab bouton */
+.tab-item-title {
+  font-size: 9px;
+}
+
+.tab-box {
+  position: relative;
+  border-bottom: 2px solid rgb(229, 229, 229) ;
+}
+
+.tab-button{
+  background-color: #fff;
+  color: #919191;
+  padding: 0;
+  border: none;
+}
+
+.select-item{
+  color: blue;
+  border-bottom: 2px solid blue;
+}
+
+/* tab content  */
+.tab-content-title::before{
+  content: "";
+  display: block;
+  position: absolute;
+  left: 20px;
+  width: 5px;
+  height: 35px;
+  background-color: black;
+  margin-left: -15px;
+}
+
+ .photo-semi-arrondi {
+    border-radius: 0 50px;
+  }
+
+  .card-semi-arrondi {
+    border-radius: 0 50px;
+  }

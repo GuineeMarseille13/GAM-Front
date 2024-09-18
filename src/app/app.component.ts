@@ -13,8 +13,18 @@ import { faUser } from '@fortawesome/free-regular-svg-icons';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  protected isCallapse: boolean = true;
+
   protected faBarsStaggered = faBarsStaggered;
   protected faUsers = faUsers;
   protected faHandHoldingDollar = faHandHoldingDollar;
   protected faUser = faUser;
+
+  protected showTitles(): void {
+    this.isCallapse = false;
+  }
+
+  protected selectTitle(): void {
+    this.isCallapse = true;
+  }
 }

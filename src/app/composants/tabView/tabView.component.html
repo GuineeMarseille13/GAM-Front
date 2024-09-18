@@ -1,0 +1,128 @@
+<div class="">
+    <div class="row tab-box">
+        <button class="col tab-button" [ngClass]="{'select-item': isPresidentActive}" (click)="activeTabItem(tabItems.President)">
+            <h3 class="d-none d-lg-block text-center mb-2">Le président</h3>
+            <h5 class="d-none d-md-block d-lg-none text-center mb-2">Le président</h5>
+            <h6 class="d-sm-block d-md-none text-center mb-2 tab-item-title">Le président</h6>
+        </button>
+        <button class="col tab-button" [ngClass]="{'select-item': isQuiSommesNousActive}" (click)="activeTabItem(tabItems.QuiSommesNous)">
+            <h3 class="d-none d-lg-block text-center mb-2">Qui somme-nous ?</h3>
+            <h5 class="d-none d-md-block d-lg-none text-center mb-2">Qui somme-nous ?</h5>
+            <h6 class="d-sm-block d-md-none text-center mb-2 tab-item-title">Qui somme-nous ?</h6>
+        </button>
+        <button class="col tab-button" [ngClass]="{'select-item': isRapportActiviteActive }" (click)="activeTabItem(tabItems.RapportActivite)">
+            <h3 class="d-none d-lg-block text-center mb-2">Rapport d'activité</h3>
+            <h5 class="d-none d-md-block d-lg-none text-center mb-2">Rapport d'activité</h5>
+            <h6 class="d-sm-block d-md-none text-center mb-2 tab-item-title">Rapport d'activité</h6>
+        </button>
+        <button class="col tab-button" [ngClass]="{'select-item': isNotreEquipeActive }" (click)="activeTabItem(tabItems.NotreEquipe)">
+            <h3 class="d-none d-lg-block text-center mb-2">Notre équipe</h3>
+            <h5 class="d-none d-md-block d-lg-none text-center mb-2">Notre équipe</h5>
+            <h6 class="d-sm-block d-md-none text-center mb-2 tab-item-title">Notre équipe</h6>
+        </button>
+    </div>
+    <div class="tab-content pt-2">
+        <ng-container *ngIf="isPresidentActive">
+            <div class="card card-semi-arrondi p-3 border-0 shadow-lg">
+                <h3 class="d-none d-lg-block tab-content-title">Le président Moussa CAMARA</h3>
+                <h4 class="d-none d-md-block d-lg-none">Le président Moussa CAMARA</h4>
+                <h6 class="d-sm-block d-md-none">Le président Moussa CAMARA</h6>
+                <div class="d-flex justify-content-between mt-2 row">
+                    <img src="../../../assets/notre-association/president.webp" alt="Le président" class="photo-semi-arrondi object-fit-cover col-lg-5 col-md-12 col-sm-12 d-flex justify-content-lg-start justify-content-center">
+                    <p class="col">
+                        Chers membres et partenaires de l'association Guinée À Marseille, <br>
+                        Je suis ravi de vous présenter le rapport d'activité de notre association pour l'année 2023. Tout au long de cette période, nous avons travaillé sans relâche pour atteindre nos objectifs et œuvré activement en faveur de notre association GUINEE A MARSEILLE.<br>
+                        Je tiens à exprimer ma profonde gratitude envers tous les membres de notre association, qui ont fait preuve d'un engagement sans faille. Votre dévouement et votre soutien ont été essentiels pour le succès de nos actions.<br>
+                        Au cours de cette année, nous avons concentré nos efforts sur différents domaines qui étaient demandés, notamment Le pôle d'hébergement temporaire, l’accompagnement des MNA (mineurs non accompagnés), et la culture. Notre but est de contribuer à l'amélioration des conditions d'accueil de ces jeunes, tant sur le territoire national que dans notre communauté ici, à Marseille.<br>
+                        Ce pôle d'hébergement temporaire jouera un rôle essentiel dans la stabilisation de ces mineurs, en les accompagnant dans la recherche d’un logement, pour des soins médicaux et un soutien psychologique. Nous travaillerons également activement à leur insertion sociale et professionnelle, en les aidant dans leur apprentissage du français, en les encourageant à poursuivre leurs études pour leur faciliter l’accès à l’emploi et la formation professionnelle.<br>
+                        Faire face aux procédures administratives peut s'avérer complexe et stressant pour de nombreuses personnes. C'est pourquoi notre association souhaite offrir un soutien personnalisé pour faciliter ces démarches et guider nos concitoyens à travers le système administratif Français.<br>
+                        Enfin, nous avons également mis en avant la richesse culturelle de la Guinée à travers des événements culturels, des concerts et des spectacles. Notre objectif est de promouvoir la diversité culturelle guinéenne et de renforcer les liens entre la communauté guinéenne et celle de Marseille.<br>
+                        Au terme de cette année d'activités, nous sommes fiers des résultats obtenus et des impacts positifs générés par notre association.
+                    </p>
+                </div>  
+            </div>
+        </ng-container>
+        <ng-container *ngIf="isQuiSommesNousActive">
+            <div class="card card-semi-arrondi p-3 border-0 shadow-lg">
+                <h4 class="d-none d-lg-block tab-content-title">QUI SOMMES-NOUS ?</h4>
+                <h5 class="d-none d-md-block d-lg-none">QUI SOMMES-NOUS ?</h5>
+                <h6 class="d-sm-block d-md-none">QUI SOMMES-NOUS ?</h6>
+                <div class="d-flex justify-content-between align-items-center mt-3 row">
+                    <img src="../../../assets/notre-association/qui-sommes-nous.webp" alt="Qui sommes-nous ?" class="photo-semi-arrondi col-lg-5 col-md-12 col-sm-12 d-flex justify-content-lg-start justify-content-center">
+                    <p class="col">
+                        Après quelques années en France et particulièrement, Marseille, Moussa Camara constate que beaucoup de jeunes guinéens et plus généralement africains arrivent dans la ville sans orientation,
+                        sans accompagnement, sans aides ou repères de la part de membres de leur pays d'origine ou de leur communauté linguistique ou culturelle.<br>
+                        Lorsque l'on arrive, on peut parfois se sentir déboussolé, un peu perdu, on ne sait pas forcément vers qui se tourner, à qui parler et où aller.<br>
+                        Alors, créer une association pour venir en aide à ces personnes a semblé primordial pour Moussa Camara ainsil’association Guinée à Marseille (nommée GAM) voit le jour le 17 Mai 2021.
+                    </p>
+                </div>  
+            </div>
+            <div id="a-propose-asso" class="card card-semi-arrondi p-3 border-0 shadow-lg my-5">
+                <h4 class="d-none d-lg-block tab-content-title">QUE PROPOSE L'ASSOCIATION ?</h4>
+                <h5 class="d-none d-md-block d-lg-none">QUE PROPOSE L'ASSOCIATION ?</h5>
+                <h6 class="d-sm-block d-md-none">QUE PROPOSE L'ASSOCIATION ?</h6>
+                <div class="d-flex justify-content-between align-items-center mt-3 row">
+                    <img src="../../../assets/notre-association/que-propose-association.webp" alt="Que propose l'association" class="photo-semi-arrondi col-lg-5 col-md-12 col-sm-12 d-flex justify-content-lg-start justify-content-center">
+                    <p class="col">
+                        Le projet de GAM est d'organiser des activités sportives et culturelles, de permettre de créer un réseau entre Guinéen.ne.s 
+                        et Marseillais.e.s et d'aider des personnes dans le besoin afin de lutter activement contre le racisme et la discrimination.<br>
+                        Si GAM souhaite avant tout faciliter l’insertion des Guinéen.ne.s et des étranger.e.s qui viennent s’installer dans la ville,
+                        l'association a également des liens étroits avec des collectifs et des indépendants en Guinée. Elle souhaite créer un pont entre l'Afrique et la France,
+                        entre ces cultures et ces peuples visiteurs.
+                    </p>
+                </div>  
+            </div>
+        </ng-container>
+        <ng-container *ngIf="isRapportActiviteActive">
+            <div class="mt-3">
+                <div class="border-1 border-secondary-subtle rounded-2 py-2 hover-style">
+                    <a href="https://www.guinee-a-marseille-gam.com/_files/ugd/4cb791_e3c1467a9b6c4c0080e5ff464c453c95.pdf" target="_blank" 
+                        class="btn d-flex justify-content-between align-items-center text-start w-100 border-0">
+                        <h4 class="d-none d-lg-block m-0">Rapport d'activités 2021</h4>
+                        <h5 class="d-none d-md-block d-lg-none m-0">Rapport d'activités 2021</h5>
+                        <h6 class="d-sm-block d-md-none m-0">Rapport d'activités 2021</h6>
+
+                        <h5 class="d-none d-sm-block m-0 fst-italic">cliquez-ici</h5>
+                        <fa-icon [icon]="faFile" size="xl" class="me-3 text-primary"></fa-icon>
+                    </a>
+                </div>
+                <div class="border-1 border-secondary-subtle rounded-2 py-2 my-3 hover-style" [class.disabled]="true">
+                    <a href="https://www.guinee-a-marseille-gam.com/_files/ugd/4cb791_7897cffd249d4a46aeb7f6e39bc52b0b.pdf" target="_blank" 
+                        class="btn d-flex justify-content-between align-items-center text-start w-100 border-0">
+                        <h4 class="d-none d-lg-block m-0">Rapport d'activités 2022</h4>
+                        <h5 class="d-none d-md-block d-lg-none m-0">Rapport d'activités 2022</h5>
+                        <h6 class="d-sm-block d-md-none m-0">Rapport d'activités 2022</h6>
+
+                        <h5 class="d-none d-sm-block m-0 fst-italic">cliquez-ici</h5>
+                        <fa-icon [icon]="faFile" size="xl" class="me-3 text-primary"></fa-icon>
+                    </a>
+                </div>
+                <div class="border-1 border-secondary-subtle rounded-2 py-2 hover-style" [class.disabled]="true">
+                    <a href="#"  target="_blank" class="btn d-flex justify-content-between align-items-center text-start w-100">
+                        <h4 class="d-none d-lg-block m-0">Rapport d'activités 2023</h4>
+                        <h5 class="d-none d-md-block d-lg-none m-0">Rapport d'activités 2023</h5>
+                        <h6 class="d-sm-block d-md-none m-0">Rapport d'activités 2023</h6>
+
+                        <h5 class="d-none d-sm-block m-0 fst-italic">cliquez-ici</h5>
+                        <fa-icon [icon]="faFile" size="xl" class="me-3 text-primary"></fa-icon>
+                    </a>
+                </div>
+            </div>
+        </ng-container>
+        <div *ngIf="isNotreEquipeActive">
+            <div class="d-flex justify-content-center flex-wrap my-3">
+                <profil-membre-bureau [prenom]="'Moussa'" [nom]="'CAMARA'" [poste]="'Président'"></profil-membre-bureau>
+            </div>
+            <div class="d-flex justify-content-evenly flex-wrap mb-3">
+                <profil-membre-bureau [prenom]="'Aboubacar Sidig'" [nom]="'DIALLO'" [poste]="'1er Vice-Président'"></profil-membre-bureau>
+                <profil-membre-bureau [prenom]="'Guillaume'" [nom]="'MADEC'" [poste]="'2e Vice-Président'"></profil-membre-bureau>
+            </div>
+            <div class="d-flex justify-content-evenly flex-wrap">
+                <profil-membre-bureau [prenom]="'Michelle'" [nom]="'DAO'" [poste]="'Sécretaire'"></profil-membre-bureau>
+                <profil-membre-bureau [prenom]="'Manon'" [nom]="'BELAGI'" [poste]="'Sécretaire adjointe'"></profil-membre-bureau>
+                <profil-membre-bureau [prenom]="'Julie'" [nom]="'DELABY'" [poste]="'Trésoriaire'"></profil-membre-bureau>
+                <profil-membre-bureau [prenom]="'Mody Hady'" [nom]="'BARRY'" [poste]="'Trésoriaire adjoint'"></profil-membre-bureau>
+            </div>
+        </div>
+    </div>
+</div>

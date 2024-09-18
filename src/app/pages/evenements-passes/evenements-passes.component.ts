@@ -9,7 +9,7 @@ import { faImages } from '@fortawesome/free-regular-svg-icons';
 import { PhotoService } from 'src/app/shared/photo.service';
 
 @Component({
-  selector: 'app-evenements-passes',
+  selector: 'evenements-passes',
   standalone: true,
   imports: [
     CommonModule,

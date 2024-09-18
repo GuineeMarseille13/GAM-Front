@@ -1,0 +1,24 @@
+#profil-membre{
+  height: 250px;
+  width: 200px;
+}
+
+#profil-membre img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 0 0 50% 0;
+  z-index: 2;
+  border: 3px solid white;
+  padding: 5px;
+}
+
+#profil-membre .member-info {
+  width: 190px;
+  height: 200px;
+  background-color: #ffd500;
+  position: absolute;
+  left: 5%;
+  top: 15%;
+  border-radius: 0 0 50% 0;
+}
