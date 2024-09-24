@@ -48,10 +48,12 @@ export class MainComponent {
 
   protected poleItems = PoleItems;
   protected adresseMail = adresseMailGAM;
+  protected partnerComment: string = "";
 
   protected canShowHerbergement: boolean = false;
   protected canShowAccAdmin: boolean = false;
   protected canShowEven: boolean = false;
+  protected canShowPartnerComment = false;
 
   protected faCircleCheck = faCircleCheck;
   protected faCircleRight = faCircleRight;
@@ -125,6 +127,11 @@ export class MainComponent {
 
   protected onSubmit(formValue: any) {
     console.log(formValue);
+  }
+
+  protected selectCurrentPartner(partner: any): void {
+    this.canShowPartnerComment = true;
+    this.partnerComment = `Commentaire du partenaire : ${partner.id} ${partner.code} ${partner.name} `;
   }
 }
 

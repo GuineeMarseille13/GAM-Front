@@ -48,7 +48,7 @@ li a.box-shadow-lg{
 }
 
 #plus-bouton{
-  position: relative;
+  position: fixed;
 }
 
 #plus-bouton:hover #flotting-bouton-adhesion {
