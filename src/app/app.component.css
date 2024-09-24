@@ -31,18 +31,63 @@ li a.box-shadow-lg{
   border: none;
 }
 
-/* Bouton adhesion */
-#adhesion {
+/* Button plus */
+#plus {
   position: fixed;
-  bottom: 26px;
+  bottom: 20px;
   right: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3a5a40;
+  box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-#adhesion:focus {
+#plus-bouton{
+  position: relative;
+}
+
+#plus-bouton:hover #flotting-bouton-adhesion {
+  position: fixed;
+  bottom: 60px;
+  right: 7px;
+  animation: flotting-b 0.4s forwards;
+}
+
+#plus-bouton:hover #flotting-bouton-don {
+  position: fixed;
+  bottom: 110px;
+  right: 7px;
+  animation: flotting-b 0.4s forwards .2s;
+}
+
+@keyframes flotting-b {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Bouton adhesion et don */
+#flotting-bouton-don, #flotting-bouton-adhesion {
+  opacity: 0;
+}
+
+#adhesion:focus, #faireUnDon:focus {
   border: none;
 }
 
-#adhesion fa-icon {
+#adhesion fa-icon, #faireUnDon fa-icon {
   width: 30px;
   height: 30px;
   display: flex;
@@ -54,15 +99,22 @@ li a.box-shadow-lg{
   box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.5);
 }
 
-#adhesion span {
-  width: 100px;
-  height: auto;
+#adhesion span, #faireUnDon span {
   position: relative;
   right: -10px;
+  height: auto;
   font-weight: bold;
   background-color: lightgrey;
   padding: 2px;
   border-radius: 15px 0 0 15px;
   z-index: -10;
   box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.5);
+}
+
+#adhesion span {
+  width: 100px;
+}
+
+#faireUnDon span {
+  width: 130px;
 }

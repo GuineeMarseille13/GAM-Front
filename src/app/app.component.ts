@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { faBarsStaggered, faHandHoldingDollar, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faBarsStaggered, faHandHoldingDollar, faPlus, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
@@ -19,6 +19,7 @@ export class AppComponent {
   protected faUsers = faUsers;
   protected faHandHoldingDollar = faHandHoldingDollar;
   protected faUser = faUser;
+  protected faPlus = faPlus;
 
   protected showTitles(): void {
     this.isCallapse = false;

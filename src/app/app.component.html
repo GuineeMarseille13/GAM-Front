@@ -10,11 +10,11 @@
     <nav class="navbar navbar-expand-lg pt-2 pb-4">
       <span class="position-absolute h-100 w-100 bg-light d-lg-none d-md-none z-n1"></span>
       <div class="container-fluid">
-        <a class="btn btn-outline-secondary navbar-toggler" type="button">
+        <a href="https://www.helloasso.com/associations/association-guinee-a-marseille/formulaires/2" class="btn btn-outline-secondary navbar-toggler" type="button">
           <span class="fs-6 me-1">Faire un don</span>
           <fa-icon [icon]="faHandHoldingDollar" [fixedWidth]="true"></fa-icon>
         </a>
-        <a class="btn btn-outline-secondary navbar-toggler mx-1" type="button">
+        <a href="https://www.helloasso.com/associations/association-guinee-a-marseille/adhesions/adhesion-gam-2024" class="btn btn-outline-secondary navbar-toggler mx-1" type="button">
           <span class="fs-6 me-1">Adhésion</span>
           <fa-icon [icon]="faUsers" [fixedWidth]="true"></fa-icon>
         </a>
@@ -85,11 +85,30 @@
     </nav>
   </header>
   <router-outlet/>
-  <!-- Boutton adhésion -->
-  <span class="d-none d-lg-block">
-      <a [routerLink]="['adhesion']" class="btn d-flex align-items-center justify-content-center" id="adhesion">
-          <span>Adhésion</span>
-          <fa-icon [icon]="faUser" [fixedWidth]="true" size="1x"></fa-icon>
-      </a>
-  </span>
+  
+
+  <div id="plus-bouton" class="d-none d-lg-block">
+    <!-- Boutton adhésion -->
+    <div id="flotting-bouton-adhesion">
+      <span class="">
+        <a href="https://www.helloasso.com/associations/association-guinee-a-marseille/adhesions/adhesion-gam-2024" class="btn d-flex align-items-center justify-content-center" id="adhesion">
+            <span>Adhésion</span>
+            <fa-icon [icon]="faUser" [fixedWidth]="true" size="1x"></fa-icon>
+        </a>
+      </span>
+    </div>
+    <!-- Boutton don -->
+    <div id="flotting-bouton-don">
+      <span class="d-none d-lg-block flotting-bouton">
+        <a href="https://www.helloasso.com/associations/association-guinee-a-marseille/adhesions/adhesion-gam-2024" class="btn d-flex align-items-center justify-content-center" id="faireUnDon">
+          <span class="px-3">Faire un don</span>
+          <fa-icon [icon]="faHandHoldingDollar" [fixedWidth]="true" size="1x"></fa-icon>
+        </a>
+      </span>
+    </div>
+
+    <span id="plus">
+      <fa-icon [icon]="faPlus" [fixedWidth]="true" size="1x" class="text-white"></fa-icon>
+    </span>
+  </div>
 </div>
