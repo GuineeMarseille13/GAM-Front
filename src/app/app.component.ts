@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { faBarsStaggered, faHandHoldingDollar, faPlus, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -13,19 +13,19 @@ import { faUser } from '@fortawesome/free-regular-svg-icons';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  protected isCallapse: boolean = true;
-
   protected faBarsStaggered = faBarsStaggered;
   protected faUsers = faUsers;
   protected faHandHoldingDollar = faHandHoldingDollar;
   protected faUser = faUser;
   protected faPlus = faPlus;
 
-  protected showTitles(): void {
-    this.isCallapse = false;
-  }
+  constructor(private renderer: Renderer2, private el: ElementRef) { }
 
   protected selectTitle(): void {
-    this.isCallapse = true;
+    let collapseButton = this.el.nativeElement.querySelector('button.navbar-toggler');
+    let collapseContent = this.el.nativeElement.querySelector('div.navbar-collapse');
+    
+    this.renderer.addClass(collapseButton, 'collapsed');
+    this.renderer.removeClass(collapseContent, 'show');
   }
 }
