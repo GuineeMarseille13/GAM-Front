@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class ProductService {
+export class PartenaireService {
   getProductsData() {
     return [
       {
@@ -67,7 +67,7 @@ export class ProductService {
     ];
   }
 
-  getProducts() {
+  getPartners() {
     return Promise.resolve(this.getProductsData());
   }
 }

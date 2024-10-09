@@ -9,10 +9,10 @@ import { RouterLink } from '@angular/router';
 import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
-import { ProductService } from 'src/app/shared/product.service';
 import { PanelModule } from 'primeng/panel';
 import { FormsModule } from '@angular/forms';
 import { adresseMailGAM } from 'src/app/types/constants/constants';
+import { PartenaireService } from 'src/app/shared/partenaire.service';
 
 
 @Component({
@@ -48,7 +48,7 @@ export class MainComponent {
 
   protected poleItems = PoleItems;
   protected adresseMail = adresseMailGAM;
-  protected partnerComment: string = "";
+  protected partnerComment: string = '';
 
   protected canShowHerbergement: boolean = false;
   protected canShowAccAdmin: boolean = false;
@@ -59,18 +59,18 @@ export class MainComponent {
   protected faCircleRight = faCircleRight;
 
   responsiveOptions: any[] | undefined;
-  products: Product[] = [];
+  partenaires: Partenaire[] = [];
 
   constructor(
     private photoService: PhotoService,
-    private productService: ProductService
+    private partenaireService: PartenaireService
   ) {}
 
   ngOnInit() {
     this.photoService.getImages().then((images) => (this.images = images));
 
-    this.productService.getProducts().then((products) => {
-      this.products = products;
+    this.partenaireService.getPartners().then((partenaire) => {
+      this.partenaires = partenaire;
     });
 
     this.responsiveOptions = [
@@ -140,15 +140,8 @@ interface City {
   code: string;
 }
 
-export interface Product {
-  id?: string;
-  code?: string;
-  name?: string;
-  description?: string;
-  price?: number;
-  quantity?: number;
-  inventoryStatus?: string;
-  category?: string;
-  image?: string;
-  rating?: number;
+export interface Partenaire {
+  name: string;
+  commentaire: string;
+  image: string
 }

@@ -5,3 +5,15 @@
  .hover-style:hover{
     box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.5);
   }
+
+  .card-semi-arrondi {
+    border-radius: 0 30px;
+  }
+  
+  .photo-semi-arrondi {
+    border-radius: 0 30px;
+  }
+
+  .card-shadow {
+    box-shadow: 0 0.135rem 0.45rem rgba(0, 0, 0, 0.2)
+  }

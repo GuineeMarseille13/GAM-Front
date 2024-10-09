@@ -154,33 +154,30 @@
         <h4 class="d-sm-block d-md-none text-center mb-3">Nos partenaires</h4>
         <p-panel styleClass="">
             <p-carousel 
-            [value]="products" 
+            [value]="partenaires" 
             [numVisible]="3" 
             [numScroll]="3"
             [circular]="false"
             [showIndicators]="false"
             [responsiveOptions]="responsiveOptions">
-                <ng-template let-product pTemplate="item">
+                <ng-template let-partenaire pTemplate="item">
                     <div class="p-2">
                         <div class="partners position-relative">
-                            <div class="relative partner-img" (click)="selectCurrentPartner(product)">
+                            <div class="relative partner-img" (click)="selectCurrentPartner(partenaire)">
                                 <img 
-                                src="{{ product.image }}" 
-                                [alt]="product.name" 
+                                src="{{ partenaire.image }}" 
+                                [alt]="partenaire.name" 
                                 class="w-full border-round" />
                             </div>
-                            <div class="partner-comment" *ngIf="product.commentaire">
+                            <div class="partner-comment" *ngIf="partenaire.commentaire">
                                 <div class="comment fst-italic">
-                                   {{product.commentaire}}
+                                   {{partenaire.commentaire}}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </ng-template>
             </p-carousel>
-            <!-- <small *ngIf="canShowPartnerComment" class="fst-italic d-inline-block p-3">
-                {{partnerComment}}
-            </small> -->
         </p-panel>
     </section>
 
