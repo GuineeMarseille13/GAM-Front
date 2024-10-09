@@ -69,7 +69,7 @@ export class MainComponent {
   ngOnInit() {
     this.photoService.getImages().then((images) => (this.images = images));
 
-    this.productService.getProductsSmall().then((products) => {
+    this.productService.getProducts().then((products) => {
       this.products = products;
     });
 

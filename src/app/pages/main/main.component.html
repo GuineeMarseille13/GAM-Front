@@ -129,13 +129,13 @@
                                         <h6 class="text-center fst-italic">suivez-nous sur nos reseaux</h6>
                                         <div class="text-center">
                                             <a href="https://www.facebook.com/GUINEEAMARSEILLE">
-                                                <i class="pi pi-facebook" style="font-size: 1.2rem"></i>
+                                                <i class="pi pi-facebook" style="font-size: 1.8rem"></i>
                                             </a>
                                             <a href="https://www.instagram.com/guineeamarseille/" class="mx-2">
-                                                <i class="pi pi-instagram" style="font-size: 1.2rem"></i>
+                                                <i class="pi pi-instagram" style="font-size: 1.8rem"></i>
                                             </a>
                                             <a href="http://twitter.com/GuineeMarseill1">
-                                                <i class="pi pi-twitter" style="font-size: 1.2rem"></i>
+                                                <i class="pi pi-twitter" style="font-size: 1.8rem"></i>
                                             </a>
                                         </div>    
                                     </div>
@@ -162,18 +162,25 @@
             [responsiveOptions]="responsiveOptions">
                 <ng-template let-product pTemplate="item">
                     <div class="p-2">
-                        <div class="relative partner-img" (click)="selectCurrentPartner(product)">
-                            <img 
-                            src="https://primefaces.org/cdn/primeng/images/demo/product/{{ product.image }}" 
-                            [alt]="product.name" 
-                            class="w-full border-round" />
+                        <div class="partners position-relative">
+                            <div class="relative partner-img" (click)="selectCurrentPartner(product)">
+                                <img 
+                                src="{{ product.image }}" 
+                                [alt]="product.name" 
+                                class="w-full border-round" />
+                            </div>
+                            <div class="partner-comment" *ngIf="product.commentaire">
+                                <div class="comment fst-italic">
+                                   {{product.commentaire}}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </ng-template>
             </p-carousel>
-            <small *ngIf="canShowPartnerComment" class="fst-italic d-inline-block p-3">
+            <!-- <small *ngIf="canShowPartnerComment" class="fst-italic d-inline-block p-3">
                 {{partnerComment}}
-            </small>
+            </small> -->
         </p-panel>
     </section>
 
@@ -229,16 +236,23 @@
                 </div>  
                 <div class="col-lg-4 col-md-2 col-sm-12 px-0 py-2 d-flex justify-content-center">
                     <a href="https://www.facebook.com/GUINEEAMARSEILLE">
-                        <i class="pi pi-facebook" style="font-size: 1.5rem"></i>
+                        <i class="pi pi-facebook" style="font-size: 1.8rem"></i>
                     </a>
                     <a href="https://www.instagram.com/guineeamarseille/" class="mx-3">
-                        <i class="pi pi-instagram" style="font-size: 1.5rem"></i>
+                        <i class="pi pi-instagram" style="font-size: 1.8rem"></i>
                     </a>
                     <a href="http://twitter.com/GuineeMarseill1" class="">
-                        <i class="pi pi-twitter" style="font-size: 1.5rem"></i>
+                        <i class="pi pi-twitter" style="font-size: 1.8rem"></i>
                     </a>
                 </div>      
             </div>
+        </div>
+
+        <div class="text-center p-1 mt-3">
+            <span>
+                © 2024 Guinée à marseille. Crée par Aboubacar Sidig DIALLO
+                <!-- <a href="mailto:asd1194diallo@gmail.com">asd1194diallo&#64;gmail&#46;com</a> -->
+            </span>
         </div>
     </footer>
 

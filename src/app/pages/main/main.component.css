@@ -41,7 +41,41 @@ section {
 
 /* Nos partenaires */
 .partner-img {
-  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.partner-img img {
+  height: 268px;
+  width: 402px;
+  object-fit: fill;
+}
+
+.partner-comment {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color:rgba(58, 90, 64, .8);
+  overflow: hidden;
+  border-radius: 5px;
+  transition: .5s ease;
+}
+
+.comment {
+  width: 90%;
+  padding: 10px;
+  color: white;
+  overflow-y: auto;
+  scrollbar-color: rgba(0, 0, 0, .5) rgba(58, 90, 64, .5);
+}
+
+.partners:hover .partner-comment {
+  height: 100%;
 }
 
 ::ng-deep .p-panel-header{
