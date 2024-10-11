@@ -1,20 +1,24 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faFile } from '@fortawesome/free-regular-svg-icons';
 import { TabItems } from 'src/app/types/enums/TabItems.enum';
 import { ProfilMembreBureauComponent } from "../profil-membre-bureau/profil-membre-bureau.component";
+import { RapportActiviteService } from 'src/app/services/rapport-activite.service';
+import { InfoRapportActivite } from 'src/app/types/interfaces/info-rapport-activite';
+import { RapportActiviteComponent } from "../rapport-activite/rapport-activite.component";
 
 @Component({
   selector: 'tabView',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule, ProfilMembreBureauComponent],
+  imports: [CommonModule, FontAwesomeModule, ProfilMembreBureauComponent, RapportActiviteComponent],
   templateUrl: './tabView.component.html',
   styleUrl: './tabView.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TabViewComponent {
+export class TabViewComponent implements OnInit{
   protected tabItems = TabItems;
+  protected rapportsActivites: InfoRapportActivite[] = [];
 
   protected isPresidentActive = true;
   protected isQuiSommesNousActive = false;
@@ -22,6 +26,12 @@ export class TabViewComponent {
   protected isNotreEquipeActive = false;
 
   protected faFile = faFile;
+
+  constructor(private rapportActiviteService: RapportActiviteService) {}
+
+  ngOnInit(): void {
+    this.rapportActiviteService.getRapportsActivites().subscribe(ra => this.rapportsActivites = ra);
+  }
 
   private desableAllTabItems(): void {
     this.isPresidentActive = false;

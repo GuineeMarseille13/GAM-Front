@@ -12,7 +12,7 @@ import { TagModule } from 'primeng/tag';
 import { PanelModule } from 'primeng/panel';
 import { FormsModule } from '@angular/forms';
 import { adresseMailGAM } from 'src/app/types/constants/constants';
-import { PartenaireService } from 'src/app/shared/partenaire.service';
+import { PartenaireService } from 'src/app/services/partenaire.service';
 
 
 @Component({
