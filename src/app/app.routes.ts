@@ -3,21 +3,14 @@ import { Routes } from "@angular/router";
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () =>
-      import('../app/pages/main/main.component').then((p) => p.MainComponent),
+    loadChildren: () =>
+      import('../app/pages/main/main.routes').then((r) => r.routes),
   },
   {
-    path: 'evenements-passes',
+    path: 'evenements-passes/voir-plus-photo',
     loadComponent: () =>
-      import('../app/pages/evenements-passes/evenements-passes.component').then(
-        (p) => p.EvenementsPassesComponent
-      ),
-  },
-  {
-    path: 'notre-association',
-    loadComponent: () =>
-      import('../app/pages/notre-association/notre-association.component').then(
-        (p) => p.NotreAssociationComponent
+      import('../app/pages/voir-plus-photo/voir-plus-photo.component').then(
+        (c) => c.VoirPlusPhotoComponent
       ),
   },
 ];

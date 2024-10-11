@@ -7,7 +7,7 @@
             <p>
                 {{event.description}}
             </p>
-            <a [routerLink]="['galerie-photos']" *ngIf="event.voir_plus_photos.length > 0" class="btn fst-italic my-4 btn-outline-secondary align-self-center">
+            <a *ngIf="event.voir_plus_photos.length > 0" (click)="goToGaleries(event.voir_plus_photos)" class="btn fst-italic my-4 btn-outline-secondary align-self-center">
                 Voir plus de photos
                 <fa-icon [icon]="faImages" size="1x" [fixedWidth]="true"></fa-icon>
             </a>
