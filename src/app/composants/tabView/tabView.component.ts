@@ -7,6 +7,8 @@ import { ProfilMembreBureauComponent } from "../profil-membre-bureau/profil-memb
 import { RapportActiviteService } from 'src/app/services/rapport-activite.service';
 import { InfoRapportActivite } from 'src/app/types/interfaces/info-rapport-activite';
 import { RapportActiviteComponent } from "../rapport-activite/rapport-activite.component";
+import { MembreBureauInfo } from 'src/app/types/interfaces/membre-bureau-info';
+import { MembreBureauInfoService } from 'src/app/services/membre-bureau-info.service';
 
 @Component({
   selector: 'tabView',
@@ -19,6 +21,7 @@ import { RapportActiviteComponent } from "../rapport-activite/rapport-activite.c
 export class TabViewComponent implements OnInit{
   protected tabItems = TabItems;
   protected rapportsActivites: InfoRapportActivite[] = [];
+  protected membreBureauInfos: MembreBureauInfo[] = [];
 
   protected isPresidentActive = true;
   protected isQuiSommesNousActive = false;
@@ -27,10 +30,11 @@ export class TabViewComponent implements OnInit{
 
   protected faFile = faFile;
 
-  constructor(private rapportActiviteService: RapportActiviteService) {}
+  constructor(private rapportActiviteService: RapportActiviteService, private membreBureauInfoService: MembreBureauInfoService) {}
 
   ngOnInit(): void {
     this.rapportActiviteService.getRapportsActivites().subscribe(ra => this.rapportsActivites = ra);
+    this.membreBureauInfoService.getMembreBureauInfos().subscribe(mbi => this.membreBureauInfos = mbi);
   }
 
   private desableAllTabItems(): void {

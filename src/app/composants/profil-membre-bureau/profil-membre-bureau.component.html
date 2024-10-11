@@ -1,7 +1,7 @@
 <div id="profil-membre" class="position-relative">
-    <img src="../../../assets/notre-association/exemple-profil-membre.jpg" alt="profil de membre" class="relative">
-    <div class="flex flex-column justify-content-end p-3  member-info">
-        <h6>{{prenom }} {{nom}}</h6>
-        <span class="fst-italic">{{poste}}</span>
+    <img [src]="membreBureauInfo.photo_profil" alt="profil de membre" class="relative">
+    <div class="flex flex-column justify-content-end p-3 member-info">
+        <span>{{membreBureauInfo.prenon}} {{membreBureauInfo.nom}}</span>
+        <span class="fst-italic">{{membreBureauInfo.poste}}</span>
     </div>
 </div>

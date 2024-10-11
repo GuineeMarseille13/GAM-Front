@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { MembreBureauInfo } from 'src/app/types/interfaces/membre-bureau-info';
 
 @Component({
   selector: 'profil-membre-bureau',
@@ -10,7 +11,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProfilMembreBureauComponent {
-  @Input({ required: true }) prenom: string = 'Moussa';
-  @Input({ required: true }) nom: string = 'CAMARA';
-  @Input({ required: true }) poste: string = 'Président';
+  @Input({ required: true }) membreBureauInfo!: MembreBureauInfo;
 }
