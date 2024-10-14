@@ -13,6 +13,7 @@ import { PanelModule } from 'primeng/panel';
 import { FormsModule } from '@angular/forms';
 import { adresseMailGAM } from 'src/app/types/constants/constants';
 import { PartenaireService } from 'src/app/services/partenaire.service';
+import { ResponsivePhotoOption } from 'src/app/types/interfaces/responsive-photo-option';
 
 
 @Component({
@@ -35,7 +36,7 @@ import { PartenaireService } from 'src/app/services/partenaire.service';
 })
 export class MainComponent {
   images: any[] | undefined;
-  responsivePhotosOptions: any[] = [
+  responsivePhotosOptions: ResponsivePhotoOption[] = [
     {
       breakpoint: '768px',
       numVisible: 3,

@@ -31,63 +31,36 @@ li a.box-shadow-lg{
   border: none;
 }
 
-/* Button plus */
-#plus {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #3a5a40;
-  box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  cursor: pointer;
+/* Bouton faire un don */
+#faireUnDon {
+  animation: 5s linear infinite border-animation;
 }
 
-#plus-bouton{
-  position: fixed;
-}
 
-#plus-bouton:hover #flotting-bouton-adhesion {
-  position: fixed;
-  bottom: 60px;
-  right: 7px;
-  animation: flotting-b 0.4s forwards;
-}
-
-#plus-bouton:hover #flotting-bouton-don {
-  position: fixed;
-  bottom: 110px;
-  right: 7px;
-  animation: flotting-b 0.4s forwards .2s;
-}
-
-@keyframes flotting-b {
+@keyframes border-animation {
   0% {
-    opacity: 0;
+    border: solid red 3px;
   }
   50% {
-    transform: translatey(-20px);
+    border: solid yellow 3px;
   }
   100% {
-    transform: scale(1);
-    opacity: 1;
+    border: solid green 3px;
   }
 }
 
 /* Bouton adhesion et don */
-#flotting-bouton-don, #flotting-bouton-adhesion {
-  opacity: 0;
+#flotting-bouton-adhesion {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
 }
 
-#adhesion:focus, #faireUnDon:focus {
+#adhesion:focus {
   border: none;
 }
 
-#adhesion fa-icon, #faireUnDon fa-icon {
+#adhesion fa-icon{
   width: 30px;
   height: 30px;
   display: flex;
@@ -96,25 +69,25 @@ li a.box-shadow-lg{
   padding: 20px;
   background-color: lightgrey;
   border-radius: 50%;
-  box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 3px 2px rgba(58, 90, 64, .5);
 }
 
-#adhesion span, #faireUnDon span {
+#adhesion span{
   position: relative;
-  right: -10px;
+  right: 0;
+  width: 0;
   height: auto;
   font-weight: bold;
   background-color: lightgrey;
-  padding: 2px;
   border-radius: 15px 0 0 15px;
   z-index: -10;
-  box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
 }
 
-#adhesion span {
+#adhesion:hover span {
+  right: -10px;
   width: 100px;
-}
-
-#faireUnDon span {
-  width: 130px;
+  padding: 2px;
+  box-shadow: 0px 0px 3px 2px rgba(58, 90, 64, .5);
+  transition: width 0.5s ease-in-out;
 }

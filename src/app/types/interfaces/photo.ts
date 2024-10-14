@@ -1,5 +1,6 @@
-export interface Photo { 
-    id?: string,
-    titre?: string,
-    url: string
+export interface Photo {
+  id: string;
+  titre: string;
+  photoSrc: string;
+  photoMiniSrc: string
 }

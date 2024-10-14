@@ -20,7 +20,7 @@ export class EventPasseService {
                 photo_couverture: {
                   id: '20231',
                   titre: "FETE DE L'INDEPENDANCE DE LA GUINEE - 65 ans",
-                  url: '../../assets/event-passes/2023_fete_independance_octobre.webp',
+                  photoSrc: '../../assets/event-passes/2023_fete_independance_octobre.webp',
                 },
                 voir_plus_photos: [
                   {
@@ -45,7 +45,7 @@ export class EventPasseService {
                   "Retour en images des activités du 23 juillet.Pour l'occasion, nous avons eu à faire une visite au Muséum d'histoire  naturelle de Marseille (à la découverte d'animaux et plantes), suivie d'un pique-nique au Parc Longchamp.",
                 photo_couverture: {
                   id: '20232',
-                  url: '../../assets/event-passes/2023_visite_museum_pique_nique_parclongchamp.webp',
+                  photoSrc: '../../assets/event-passes/2023_visite_museum_pique_nique_parclongchamp.webp',
                 },
                 voir_plus_photos: [],
               },
@@ -55,7 +55,7 @@ export class EventPasseService {
                   "Nous tenons à remercier très chaleureusement les plus de soixante personnes qui ont participé à notre repas partagé le vendredi 7 juillet au restaurant Grenade et Pistache. Votre présence était très appréciée. Nous espérons vous revoir nombreux lors de notre prochaine activité Une partie des recettes sera reversée à l'association GUINEE A MARSEILLE",
                 photo_couverture: {
                   id: '20233',
-                  url: '../../assets/event-passes/2023_repas_prix_libre.webp',
+                  photoSrc: '../../assets/event-passes/2023_repas_prix_libre.webp',
                 },
                 voir_plus_photos: [],
               },
@@ -65,7 +65,7 @@ export class EventPasseService {
                   'Nous remercions chaleureusement notre sponsor EcoClim, la Mairie 2&3 - Marseille pour la mise à disposition du terrain ainsi que tous les participants et les associations partenaires qui ont fait de cet événement un grand succès',
                 photo_couverture: {
                   id: '20234',
-                  url: '../../assets/event-passes/2023_tournoi_inter_associations.webp',
+                  photoSrc: '../../assets/event-passes/2023_tournoi_inter_associations.webp',
                 },
                 voir_plus_photos: [],
               },
@@ -75,7 +75,7 @@ export class EventPasseService {
                   "Une centaine de personnes sont venus partager notre repas prix libre.Merci beaucoup aux bénévoles et aux participants qui ont œuvré à la réussite de cette soirée ! Une partie des recettes sera reversée à l'association GUINEE A MARSEILLE",
                 photo_couverture: {
                   id: '20235',
-                  url: '../../assets/event-passes/2023_mai_repas_prix_libre.webp',
+                  photoSrc: '../../assets/event-passes/2023_mai_repas_prix_libre.webp',
                 },
                 voir_plus_photos: [],
               },
@@ -85,7 +85,7 @@ export class EventPasseService {
                   'Ce repas à prix libre a était organisé et préparé par les bénévoles et les "minots" non accompagnés des deux associations ! Une partie des recettes sera reversée à l\'association GUINEE A MARSEILLE et l\'autre partie à Coco Velten afin de financer les approvisionnements des prochains repas mercredi.',
                 photo_couverture: {
                   id: '20236',
-                  url: '../../assets/event-passes/2023_repas_solidaire.webp',
+                  photoSrc: '../../assets/event-passes/2023_repas_solidaire.webp',
                 },
                 voir_plus_photos: [],
               },
@@ -95,7 +95,7 @@ export class EventPasseService {
                   "L' Association Guinée A Marseille a participé à une table ronde aux côtés de La Cimade et SOS MEDITERRANEE France sur le Campus Saint Charles de Aix-Marseille Université à l'occasion d'une Journée sur la migration.Notre président Moussa a pris la parole pour échanger sur la thématique \"Migrations : la France, une terre d'accueil ?\"",
                 photo_couverture: {
                   id: '20237',
-                  url: '../../assets/event-passes/2023_table_ronde_migration.webp',
+                  photoSrc: '../../assets/event-passes/2023_table_ronde_migration.webp',
                 },
                 voir_plus_photos: [],
               },
@@ -105,7 +105,7 @@ export class EventPasseService {
                   'Guinée à Marseille revient avec une projection de film… et pas n’importe lequel !  Il s’agit de personnages bleus, d’aventures, de paysages fantastiques et de combats. Alors, vous avez deviné ?! C’est bien Avatar 1 que nous avons tous et toutes regardé ensembles !',
                 photo_couverture: {
                   id: '20238',
-                  url: '../../assets/event-passes/2023_cinema_AVATAR_1.webp',
+                  photoSrc: '../../assets/event-passes/2023_cinema_AVATAR_1.webp',
                 },
                 voir_plus_photos: [],
               },
@@ -121,7 +121,7 @@ export class EventPasseService {
                 photo_couverture: {
                   id: '20221',
                   titre: 'PROJECTION BLACK PANTHER - 2022',
-                  url: '../../assets/event-passes/2022_projection_black_panther.webp',
+                  photoSrc: '../../assets/event-passes/2022_projection_black_panther.webp',
                 },
                 voir_plus_photos: [],
               },
@@ -132,7 +132,7 @@ export class EventPasseService {
                 photo_couverture: {
                   id: '20222',
                   titre: 'TOURNOI DE FOOTBALL - 2022',
-                  url: '../../assets/event-passes/2022_tournoi_foot.webp',
+                  photoSrc: '../../assets/event-passes/2022_tournoi_foot.webp',
                 },
                 voir_plus_photos: [],
               },
@@ -143,7 +143,7 @@ export class EventPasseService {
                 photo_couverture: {
                   id: '20223',
                   titre: 'PIQUE-NIQUE - 2022',
-                  url: '../../assets/event-passes/2022_pique_nique.webp',
+                  photoSrc: '../../assets/event-passes/2022_pique_nique.webp',
                 },
                 voir_plus_photos: [],
               },
@@ -160,7 +160,7 @@ export class EventPasseService {
                 photo_couverture: {
                   id: '20224',
                   titre: "FETE DE L'INDEPENDANCE DE LA GUINEE - 2022",
-                  url: '../../assets/event-passes/2022_fete_independance_guinee.webp',
+                  photoSrc: '../../assets/event-passes/2022_fete_independance_guinee.webp',
                 },
                 voir_plus_photos: [],
               },
@@ -178,7 +178,7 @@ export class EventPasseService {
                 photo_couverture: {
                   id: '20211',
                   titre: "FETE DE L'INDEPENDANCE DE LA GUINEE - 2021",
-                  url: '../../assets/event-passes/2021_fete_independance_guinee.webp',
+                  photoSrc: '../../assets/event-passes/2021_fete_independance_guinee.webp',
                 },
                 voir_plus_photos: [],
               },
