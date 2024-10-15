@@ -4,16 +4,18 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCircleCheck, faCircleRight } from '@fortawesome/free-regular-svg-icons';
 import { PoleItems } from 'src/app/types/enums/poleItems.enum';
 import { GalleriaModule } from 'primeng/galleria';
-import { PhotoService } from 'src/app/shared/photo.service';
+import { PhotoService } from 'src/app/shared/services/photo.service';
 import { RouterLink } from '@angular/router';
 import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
 import { PanelModule } from 'primeng/panel';
 import { FormsModule } from '@angular/forms';
-import { adresseMailGAM } from 'src/app/types/constants/constants';
+import { adresseMailGAM, responsivePhotosOptions } from 'src/app/types/constants/constants';
 import { PartenaireService } from 'src/app/services/partenaire.service';
 import { ResponsivePhotoOption } from 'src/app/types/interfaces/responsive-photo-option';
+import { Partenaire } from 'src/app/types/interfaces/Partenaire';
+import { ReseauxSociauxComponent } from "../../shared/composants/reseaux-sociaux/reseaux-sociaux.component";
 
 
 @Component({
@@ -29,23 +31,15 @@ import { ResponsivePhotoOption } from 'src/app/types/interfaces/responsive-photo
     TagModule,
     PanelModule,
     FormsModule,
-  ],
+    ReseauxSociauxComponent
+],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainComponent {
   images: any[] | undefined;
-  responsivePhotosOptions: ResponsivePhotoOption[] = [
-    {
-      breakpoint: '768px',
-      numVisible: 3,
-    },
-    {
-      breakpoint: '560px',
-      numVisible: 1,
-    },
-  ];
+  responsivePhotosOptions: ResponsivePhotoOption[] = responsivePhotosOptions;
 
   protected poleItems = PoleItems;
   protected adresseMail = adresseMailGAM;
@@ -59,7 +53,7 @@ export class MainComponent {
   protected faCircleCheck = faCircleCheck;
   protected faCircleRight = faCircleRight;
 
-  responsiveOptions: any[] | undefined;
+  carouselResponsiveOptions: any[] | undefined;
   partenaires: Partenaire[] = [];
 
   constructor(
@@ -74,7 +68,7 @@ export class MainComponent {
       this.partenaires = partenaire;
     });
 
-    this.responsiveOptions = [
+    this.carouselResponsiveOptions = [
       {
         breakpoint: '1199px',
         numVisible: 1,
@@ -91,18 +85,6 @@ export class MainComponent {
         numScroll: 1,
       },
     ];
-  }
-
-  getSeverity(status: string) {
-    switch (status) {
-      case 'INSTOCK':
-        return 'success';
-      case 'LOWSTOCK':
-        return 'warning';
-      case 'OUTOFSTOCK':
-        return 'danger';
-    }
-    return 'danger';
   }
 
   private hidePoleItems() {
@@ -129,20 +111,4 @@ export class MainComponent {
   protected onSubmit(formValue: any) {
     console.log(formValue);
   }
-
-  protected selectCurrentPartner(partner: any): void {
-    this.canShowPartnerComment = true;
-    this.partnerComment = `Commentaire du partenaire : ${partner.id} ${partner.code} ${partner.name} `;
-  }
-}
-
-interface City {
-  name: string;
-  code: string;
-}
-
-export interface Partenaire {
-  name: string;
-  commentaire: string;
-  image: string
 }

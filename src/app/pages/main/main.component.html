@@ -5,9 +5,9 @@
     </section>
 
     <section id="poles" class="my-4">
-        <div class="row m-1 justify-content-around mb-3">
-            <button type="button" class="col-lg-3 col-md-3 col-sm-12 mb-3 btn bg-light rounded-5 d-flex align-items-center justify-content-center" [ngClass]="[canShowHerbergement ? 'reset-shadow' : 'apply-shadow']" (click)="showPoleItem(poleItems.Hebergement)"> <fa-icon [icon]="faCircleCheck" [fixedWidth]="true" class="pe-2"></fa-icon> Hebergement</button>
-            <button type="button" class="col-lg-3 col-md-3 col-sm-12 mb-3 btn bg-light rounded-5 d-flex align-items-center justify-content-center" [ngClass]="[canShowAccAdmin ? 'reset-shadow' : 'apply-shadow']" (click)="showPoleItem(poleItems.AccompagnementAdmin)"> <fa-icon [icon]="faCircleCheck" [fixedWidth]="true" class="pe-2"></fa-icon> Accompagnement administratif</button>
+        <div class="row m-3 justify-content-around mb-3">
+            <button type="button" class="col-lg-3 col-md-3 col-sm-12 mb-3 btn bg-light rounded-5 align-items-center justify-content-center" [ngClass]="[canShowHerbergement ? 'reset-shadow' : 'apply-shadow']" (click)="showPoleItem(poleItems.Hebergement)"> <fa-icon [icon]="faCircleCheck" [fixedWidth]="true" class="pe-2"></fa-icon> Hebergement</button>
+            <button type="button" class="col-lg-3 col-md-5 col-sm-12 mb-3 btn bg-light rounded-5 d-flex align-items-center justify-content-center" [ngClass]="[canShowAccAdmin ? 'reset-shadow' : 'apply-shadow']" (click)="showPoleItem(poleItems.AccompagnementAdmin)"> <fa-icon [icon]="faCircleCheck" [fixedWidth]="true" class="pe-2"></fa-icon> Accompagnement administratif</button>
             <button type="button" class="col-lg-3 col-md-3 col-sm-12 mb-3 btn bg-light rounded-5 d-flex align-items-center justify-content-center" [ngClass]="[canShowEven ? 'reset-shadow' : 'apply-shadow']" (click)="showPoleItem(poleItems.Evenementiel)"> <fa-icon [icon]="faCircleCheck" [fixedWidth]="true" class="pe-2"></fa-icon> Evenementiel</button>
         </div>
         <div>
@@ -128,15 +128,7 @@
                                         <h6 class="text-center d-sm-block d-md-block d-md-none">Pour nos evenements à venir</h6>
                                         <h6 class="text-center fst-italic">suivez-nous sur nos reseaux</h6>
                                         <div class="text-center">
-                                            <a href="https://www.facebook.com/GUINEEAMARSEILLE">
-                                                <i class="pi pi-facebook" style="font-size: 1.8rem"></i>
-                                            </a>
-                                            <a href="https://www.instagram.com/guineeamarseille/" class="mx-2">
-                                                <i class="pi pi-instagram" style="font-size: 1.8rem"></i>
-                                            </a>
-                                            <a href="http://twitter.com/GuineeMarseill1">
-                                                <i class="pi pi-twitter" style="font-size: 1.8rem"></i>
-                                            </a>
+                                            <reseaux-sociaux></reseaux-sociaux>
                                         </div>    
                                     </div>
                                 </div>
@@ -159,11 +151,11 @@
             [numScroll]="3"
             [circular]="false"
             [showIndicators]="false"
-            [responsiveOptions]="responsiveOptions">
+            [responsiveOptions]="carouselResponsiveOptions">
                 <ng-template let-partenaire pTemplate="item">
                     <div class="p-2">
                         <div class="partners position-relative">
-                            <div class="relative partner-img" (click)="selectCurrentPartner(partenaire)">
+                            <div class="relative partner-img">
                                 <img 
                                 src="{{ partenaire.image }}" 
                                 [alt]="partenaire.name" 
@@ -232,15 +224,7 @@
                     <a href="mailto:guineeamarseille13@gmail.com">{{adresseMail}}</a>
                 </div>  
                 <div class="col-lg-4 col-md-2 col-sm-12 px-0 py-2 d-flex justify-content-center">
-                    <a href="https://www.facebook.com/GUINEEAMARSEILLE">
-                        <i class="pi pi-facebook" style="font-size: 1.8rem"></i>
-                    </a>
-                    <a href="https://www.instagram.com/guineeamarseille/" class="mx-3">
-                        <i class="pi pi-instagram" style="font-size: 1.8rem"></i>
-                    </a>
-                    <a href="http://twitter.com/GuineeMarseill1" class="">
-                        <i class="pi pi-twitter" style="font-size: 1.8rem"></i>
-                    </a>
+                    <reseaux-sociaux></reseaux-sociaux>
                 </div>      
             </div>
         </div>
@@ -248,7 +232,6 @@
         <div class="text-center p-1 mt-3">
             <span>
                 © 2024 Guinée à marseille. Crée par Aboubacar Sidig DIALLO
-                <!-- <a href="mailto:asd1194diallo@gmail.com">asd1194diallo&#64;gmail&#46;com</a> -->
             </span>
         </div>
     </footer>
