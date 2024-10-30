@@ -1,6 +1,5 @@
 
 /* Header */ 
-
 .gam-logo-sm{
   width: 40px;
   height: 40px;
@@ -38,10 +37,10 @@ li a.box-shadow-lg{
 }
 
 /* Bouton faire un don */
-#faireUnDon {
+#faireUnDon, #adhesion {
+  box-sizing: border-box;
   animation: 5s linear infinite border-animation;
 }
-
 
 @keyframes border-animation {
   0% {
@@ -54,47 +53,3 @@ li a.box-shadow-lg{
     border: solid green 3px;
   }
 }
-
-/* Bouton adhesion et don */
-#flotting-bouton-adhesion {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-}
-
-#adhesion:focus {
-  border: none;
-}
-
-#adhesion fa-icon{
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background-color: lightgrey;
-  border-radius: 50%;
-  box-shadow: 0px 0px 3px 2px rgba(58, 90, 64, .5);
-}
-
-#adhesion span{
-  position: relative;
-  right: 0;
-  width: 0;
-  height: auto;
-  font-weight: bold;
-  background-color: lightgrey;
-  border-radius: 15px 0 0 15px;
-  z-index: -10;
-  overflow: hidden;
-}
-
-#adhesion:hover span {
-  right: -10px;
-  width: 100px;
-  padding: 2px;
-  box-shadow: 0px 0px 3px 2px rgba(58, 90, 64, .5);
-  transition: width 0.5s ease-in-out;
-}
-

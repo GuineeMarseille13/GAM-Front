@@ -38,9 +38,8 @@ import { ReseauxSociauxComponent } from "../../shared/composants/reseaux-sociaux
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainComponent {
-  images: any[] | undefined;
-  responsivePhotosOptions: ResponsivePhotoOption[] = responsivePhotosOptions;
-
+  protected images: any[] | undefined;
+  protected responsivePhotosOptions: ResponsivePhotoOption[] = responsivePhotosOptions;
   protected poleItems = PoleItems;
   protected adresseMail = adresseMailGAM;
   protected partnerComment: string = '';
