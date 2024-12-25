@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCircleCheck, faCircleRight } from '@fortawesome/free-regular-svg-icons';
 import { PoleItems } from 'src/app/types/enums/poleItems.enum';
@@ -16,6 +16,7 @@ import { PartenaireService } from 'src/app/services/partenaire.service';
 import { ResponsivePhotoOption } from 'src/app/types/interfaces/responsive-photo-option';
 import { Partenaire } from 'src/app/types/interfaces/Partenaire';
 import { ReseauxSociauxComponent } from "../../shared/composants/reseaux-sociaux/reseaux-sociaux.component";
+import { PoleComponent } from 'src/app/composants/pole/pole.component';
 
 
 @Component({
@@ -31,11 +32,13 @@ import { ReseauxSociauxComponent } from "../../shared/composants/reseaux-sociaux
     TagModule,
     PanelModule,
     FormsModule,
-    ReseauxSociauxComponent
+    ReseauxSociauxComponent,
+    PoleComponent
 ],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class MainComponent {
   protected images: any[] | undefined;

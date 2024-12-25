@@ -13,51 +13,23 @@
         <div>
             <div *ngIf="canShowHerbergement">
                 <div class="card p-2">
-                        <div class="row">
-                            <div class="h-50 col-lg-4 col-md-12 col-sm-12 d-flex justify-content-lg-start justify-content-center">
-                                <p-galleria 
-                                    [value]="images" 
-                                    [responsiveOptions]="responsivePhotosOptions" 
-                                    [containerStyle]="{ 'max-width': '340px'}" 
-                                    [numVisible]="3" 
-                                    >
-                                        <ng-template pTemplate="item" let-item>
-                                            <img [src]="item.itemImageSrc" style="width: 100%;" />
-                                        </ng-template>
-                                        <ng-template pTemplate="thumbnail" let-item>
-                                            <div class="grid grid-nogutter justify-content-center">
-                                                <img [src]="item.thumbnailImageSrc" />
-                                            </div>
-                                        </ng-template>
-                                </p-galleria>
-                            </div>
-                            <ul class="col d-flex flex-column justify-content-center align-items-sm-start m-4">
-                                <li>Mise en relation d'Africains arrivants à Marseille avec des membres de l'association afin de trouver un hébergement solidaire.</li>
-                                <li class="my-2">Orientation de Guinéens vers les structures adaptées.</li>
-                                <li>Accompagnement à la recherche de stage et contrat d'apprentissage pour des jeunes en foyer.</li>
-                            </ul>
+                    <div class="row">
+                        <div class="h-50 col-lg-4 col-md-12 col-sm-12 d-flex justify-content-lg-start justify-content-center">
+                            <pole></pole>
                         </div>
+                        <ul class="col d-flex flex-column justify-content-center align-items-sm-start m-4">
+                            <li>Mise en relation d'Africains arrivants à Marseille avec des membres de l'association afin de trouver un hébergement solidaire.</li>
+                            <li class="my-2">Orientation de Guinéens vers les structures adaptées.</li>
+                            <li>Accompagnement à la recherche de stage et contrat d'apprentissage pour des jeunes en foyer.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div *ngIf="canShowAccAdmin">
                 <div class="card p-2">
                     <div class="row">
                         <div class="h-50 col-lg-4 col-md-12 col-sm-12 d-flex justify-content-lg-start justify-content-center">
-                            <p-galleria 
-                                [value]="images" 
-                                [responsiveOptions]="responsivePhotosOptions" 
-                                [containerStyle]="{ 'max-width': '350px'}" 
-                                [numVisible]="3"
-                                >
-                                    <ng-template pTemplate="item" let-item>
-                                        <img [src]="item.itemImageSrc" style="width: 100%;" />
-                                    </ng-template>
-                                    <ng-template pTemplate="thumbnail" let-item>
-                                        <div class="grid grid-nogutter justify-content-center">
-                                            <img [src]="item.thumbnailImageSrc" />
-                                        </div>
-                                    </ng-template>
-                            </p-galleria>
+                            <pole></pole>
                         </div>
                         <ul class="col d-flex flex-column justify-content-center align-items-sm-start m-4">
                         <li>Accompagnement pour demande de carte consulaire guinéenne.</li>
@@ -71,21 +43,7 @@
                 <div class="card p-2">
                     <div class="row">
                         <div class="h-50 col-lg-4 col-md-12 col-sm-12 d-flex justify-content-lg-start justify-content-center">
-                        <p-galleria 
-                            [value]="images" 
-                            [responsiveOptions]="responsivePhotosOptions" 
-                            [containerStyle]="{ 'max-width': '350px'}" 
-                            [numVisible]="3" 
-                            >
-                                <ng-template pTemplate="item" let-item>
-                                    <img [src]="item.itemImageSrc" style="width: 100%;" />
-                                </ng-template>
-                                <ng-template pTemplate="thumbnail" let-item>
-                                    <div class="grid grid-nogutter justify-content-center">
-                                        <img [src]="item.thumbnailImageSrc" />
-                                    </div>
-                                </ng-template>
-                        </p-galleria>
+                            <pole></pole>
                         </div>
                         <ul class="col d-flex flex-column justify-content-center align-items-sm-start m-4">
                             <li>
@@ -144,33 +102,10 @@
         <h2 class="d-none d-lg-block text-center mb-3">Nos partenaires</h2>
         <h3 class="d-none d-md-block d-lg-none text-center mb-3">Nos partenaires</h3>
         <h4 class="d-sm-block d-md-none text-center mb-3">Nos partenaires</h4>
-        <p-panel styleClass="">
-            <p-carousel 
-            [value]="partenaires" 
-            [numVisible]="3" 
-            [numScroll]="3"
-            [circular]="false"
-            [showIndicators]="false"
-            [responsiveOptions]="carouselResponsiveOptions">
-                <ng-template let-partenaire pTemplate="item">
-                    <div class="p-2">
-                        <div class="partners position-relative">
-                            <div class="relative partner-img">
-                                <img 
-                                src="{{ partenaire.image }}" 
-                                [alt]="partenaire.name" 
-                                class="w-full border-round" />
-                            </div>
-                            <div class="partner-comment" *ngIf="partenaire.commentaire">
-                                <div class="comment fst-italic">
-                                   {{partenaire.commentaire}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </ng-template>
-            </p-carousel>
-        </p-panel>
+        <swiper-container style="--swiper-navigation-color: #000;" class="mySwiper" background-color="red" pagination="true"
+            pagination-clickable="true" space-between="5" slides-per-view="5" slides-per-group="3" navigation>
+            <swiper-slide *ngFor="let partenaire of partenaires"><img [src]="partenaire.image"></swiper-slide>
+        </swiper-container>
     </section>
 
     <section id="contacts" class="mb-4">
