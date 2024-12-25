@@ -102,10 +102,29 @@
         <h2 class="d-none d-lg-block text-center mb-3">Nos partenaires</h2>
         <h3 class="d-none d-md-block d-lg-none text-center mb-3">Nos partenaires</h3>
         <h4 class="d-sm-block d-md-none text-center mb-3">Nos partenaires</h4>
-        <swiper-container style="--swiper-navigation-color: #000;" class="mySwiper" background-color="red" pagination="true"
+        <!-- <swiper-container style="--swiper-navigation-color: #000;" class="mySwiper" background-color="red" pagination="true"
             pagination-clickable="true" space-between="5" slides-per-view="5" slides-per-group="3" navigation>
             <swiper-slide *ngFor="let partenaire of partenaires"><img [src]="partenaire.image"></swiper-slide>
-        </swiper-container>
+        </swiper-container> -->
+        <p-panel styleClass="">
+            <p-carousel [value]="partenaires" [numVisible]="3" [numScroll]="3" [circular]="false" [showIndicators]="false"
+                [responsiveOptions]="carouselResponsiveOptions">
+                <ng-template let-partenaire pTemplate="item">
+                    <div class="p-2">
+                        <div class="partners position-relative">
+                            <div class="relative partner-img">
+                                <img src="{{ partenaire.image }}" [alt]="partenaire.name" class="w-full border-round" />
+                            </div>
+                            <div class="partner-comment" *ngIf="partenaire.commentaire">
+                                <div class="comment fst-italic">
+                                    {{partenaire.commentaire}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-carousel>
+        </p-panel>
     </section>
 
     <section id="contacts" class="mb-4">
