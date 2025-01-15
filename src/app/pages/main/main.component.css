@@ -19,18 +19,6 @@ section {
   background-attachment: fixed;
 }
 
-/* Poles */
-.apply-shadow {
-  /* border: 2px solid black; */
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2),
-    -5px -5px 5px rgba(255, 255, 255, 0.3);
-}
-
-.reset-shadow{
-  box-shadow: 0;
-  /* border: blue solid 2px; */
-}
-
 /* Nos events */
 
 #evenements img {
@@ -86,4 +74,23 @@ section {
   border-top: 1px solid #e5e7eb;
   padding: 0;
 }
+
+
+ /* swiper-container {
+     width: 100%;
+     height: 100%;
+ }
+
+ swiper-slide {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ swiper-slide img{
+     display: block;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+ } */
 

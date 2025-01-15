@@ -1,25 +1,39 @@
-<div class="container d-flex justify-content-center mt-3">
-    <h2 class="d-none d-lg-block text-center mb-3">{{galerie.titre}}</h2>
-    <h3 class="d-none d-md-block d-lg-none text-center mb-3">{{galerie.titre}}</h3>
-    <h6 class="d-sm-block d-md-none text-center mb-3">{{galerie.titre}}</h6>
+<div class="container mt-3">
+    <h2 class="d-none d-lg-block text-center mb-0">{{galerie.titre}}</h2>
+    <h3 class="d-none d-md-block d-lg-none text-center mb-0">{{galerie.titre}}</h3>
+    <h4 class="d-sm-block d-md-none text-center mb-0">{{galerie.titre}}</h4>
 
-    <div class="row">
-        <div class="h-50 col-lg-4 col-md-12 col-sm-12 d-flex justify-content-lg-start justify-content-center">
-            <p-galleria 
-                [value]="galerie.photos" 
-                [responsiveOptions]="responsivePhotosOptions" 
-                [containerStyle]="{ 'max-width': '340px'}" 
-                [numVisible]="3" 
-                >
-                    <ng-template pTemplate="item" let-item>
-                        <img [src]="item.itemImageSrc" style="width: 100%;" />
-                    </ng-template>
-                    <ng-template pTemplate="thumbnail" let-item>
-                        <div class="grid grid-nogutter justify-content-center">
-                            <img [src]="item.thumbnailImageSrc" />
-                        </div>
-                    </ng-template>
-            </p-galleria>
-        </div>
+    <div class="row d-flex justify-content-center align-items-center">
+        <swiper-container pagination="true" effect="coverflow" grab-cursor="true" centered-slides="true" slides-per-view="auto"
+            coverflow-effect-rotate="50" coverflow-effect-stretch="0" coverflow-effect-depth="100" coverflow-effect-modifier="1"
+            coverflow-effect-slide-shadows="true">
+            <swiper-slide>
+                <img src=" https://swiperjs.com/demos/images/nature-1.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+                <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+            </swiper-slide>
+        </swiper-container>
     </div>
 </div>

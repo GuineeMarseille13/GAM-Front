@@ -17,3 +17,15 @@
   .card-shadow {
     box-shadow: 0 0.135rem 0.45rem rgba(0, 0, 0, 0.2)
   }
+
+  /* Styler appliquer lorsqu'on clique sur un bouton  */
+  .apply-shadow {
+    /* border: 2px solid black; */
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2),
+      -5px -5px 5px rgba(255, 255, 255, 0.3);
+  }
+
+  .reset-shadow {
+    box-shadow: 0;
+    /* border: blue solid 2px; */
+  }

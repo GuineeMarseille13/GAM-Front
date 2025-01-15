@@ -13,6 +13,13 @@ import { faUser } from '@fortawesome/free-regular-svg-icons';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  protected IsAccueilClicked: boolean = false;
+  protected IsContactClicked: boolean = false;
+  protected IsAssociationClicked: boolean = false;
+  protected IsAdhesionClicked: boolean = false;
+  protected IsBoutiqueClicked: boolean = false;
+  protected IsDonClicked: boolean = false;
+
   protected faBarsStaggered = faBarsStaggered;
   protected faUsers = faUsers;
   protected faHandHoldingDollar = faHandHoldingDollar;
@@ -28,4 +35,14 @@ export class AppComponent {
     this.renderer.addClass(collapseButton, 'collapsed');
     this.renderer.removeClass(collapseContent, 'show');
   }
+
+  //   protected handleButtonClick(buttonName: string): void {
+  //   // Mettre à jour le bouton actif
+  //   this.activeButton = buttonName;
+  // }
+
+  // // Méthode pour vérifier si un bouton est actif
+  // protected isButtonActive(buttonName: string): boolean {
+  //   return this.activeButton === buttonName;
+  // }
 }

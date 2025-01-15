@@ -5,7 +5,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import { PanelModule } from 'primeng/panel';
 import { faImages } from '@fortawesome/free-regular-svg-icons';
-import { PhotoService } from 'src/app/shared/photo.service';
+import { PhotoService } from 'src/app/shared/services/photo.service';
 import { EventPasse } from 'src/app/types/interfaces/eventPasse';
 import { EvenementAnnuelComponent } from "../../composants/evenement-annuel/evenement-annuel.component";
 import { EventPasseService } from 'src/app/services/event-passe.service';
