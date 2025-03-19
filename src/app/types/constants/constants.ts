@@ -20,7 +20,6 @@ export const responsivePhotosOptions: ResponsivePhotoOption[] = [
     { itemImageSrc: 'assets/pole/accompagnement/Photos 3.jpg', alt: 'Image 1' },
     { itemImageSrc: 'assets/pole/accompagnement/Photos 4.jpg', alt: 'Image 1' },
     { itemImageSrc: 'assets/pole/accompagnement/Photos 5.jpg', alt: 'Image 1' },
-    { itemImageSrc: 'assets/pole/accompagnement/Photos 6_1.jpg', alt: 'Image 1' },
     { itemImageSrc: 'assets/pole/accompagnement/Photos 6.jpg', alt: 'Image 1' },
     { itemImageSrc: 'assets/pole/accompagnement/Photos 7.jpg', alt: 'Image 1' },
     { itemImageSrc: 'assets/pole/accompagnement/Photos 8.jpg', alt: 'Image 1' },
@@ -31,6 +30,24 @@ export const responsivePhotosOptions: ResponsivePhotoOption[] = [
     { itemImageSrc: 'assets/pole/accompagnement/Photos 3.jpg', alt: 'Image 1' },
 ];
 
-  export const IMAGE_ITEMS_EVEN: any[] = [];
+  export const IMAGE_ITEMS_EVEN: any[] = [
 
-  export const IMAGE_ITEMS_HEBERGEMENT: any[] = [];
+  ];
+
+  export const IMAGE_ITEMS_HEBERGEMENT: any[] = [
+    { itemImageSrc: 'assets/pole/mise-en-relation/PHOTOS 2.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/mise-en-relation/PHOTOS 3.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/mise-en-relation/PHOTOS 4-1.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/mise-en-relation/PHOTOS 4.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/mise-en-relation/PHOTOS 5-1.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/mise-en-relation/PHOTOS 5.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/mise-en-relation/PHOTOS 6.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/mise-en-relation/PHOTOS 7.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/mise-en-relation/PHOTOS 8.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/mise-en-relation/PHOTOS 9_1.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/mise-en-relation/PHOTOS 9_2.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/mise-en-relation/PHOTOS 9_3.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/mise-en-relation/PHOTOS 9_4.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/mise-en-relation/PHOTOS 9_5.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/mise-en-relation/PHOTOS 10.jpg', alt: 'Image 1' },
+  ];
