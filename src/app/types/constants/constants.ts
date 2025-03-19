@@ -72,3 +72,8 @@ export const responsivePhotosOptions: ResponsivePhotoOption[] = [
     { itemImageSrc: 'assets/pole/mise-en-relation/PHOTOS 9_5.jpg', alt: 'Image 1' },
     { itemImageSrc: 'assets/pole/mise-en-relation/PHOTOS 10.jpg', alt: 'Image 1' },
   ];
+
+
+  export const IMAGE_AFICHHE_HEBERGEMENT: string = 'assets/pole/mise-en-relation/Photos affiche.jpg';
+  export const IMAGE_AFICHHE_EVEN: string = 'assets/pole/evenementiel/Photos affiche.jpg';
+  export const IMAGE_AFICHHE_ADMIN: string = 'assets/pole/accompagnement/Photos affiche.jpg';
