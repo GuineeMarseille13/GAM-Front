@@ -20,6 +20,7 @@ export const responsivePhotosOptions: ResponsivePhotoOption[] = [
     { itemImageSrc: 'assets/pole/accompagnement/Photos 3.jpg', alt: 'Image 1' },
     { itemImageSrc: 'assets/pole/accompagnement/Photos 4.jpg', alt: 'Image 1' },
     { itemImageSrc: 'assets/pole/accompagnement/Photos 5.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/accompagnement/Photos 6_1.jpg', alt: 'Image 1' },
     { itemImageSrc: 'assets/pole/accompagnement/Photos 6.jpg', alt: 'Image 1' },
     { itemImageSrc: 'assets/pole/accompagnement/Photos 7.jpg', alt: 'Image 1' },
     { itemImageSrc: 'assets/pole/accompagnement/Photos 8.jpg', alt: 'Image 1' },
