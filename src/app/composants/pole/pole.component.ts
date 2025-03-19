@@ -19,6 +19,7 @@ export class PoleComponent {
   activeIndex: number = 0;
 
   @Input() images: any[] = [];
+  @Input() imagesAffiche!: string;
 
   responsiveOptions: any[] = [
       {

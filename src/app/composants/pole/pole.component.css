@@ -15,11 +15,12 @@
 
 .clickable-image:hover {
   transform: scale(1.1); /* effet de zoom amélioré */
-  box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.452); /* ombre plus accentuée */
+  box-shadow: 0px 6px 10px #538b67; /* ombre plus accentuée */
   border: 3px solid #538b67; /* bordure verte au survol */
 }
 
 .click-message {
+  cursor: pointer;
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -35,7 +36,7 @@
   justify-content: center;
   opacity: 1;
   transition: opacity 0.3s ease, transform 0.3s ease;
-  transform: translateY(20px);
+  transform: translateY(30px);
 }
 
 .grid:hover .click-message {
@@ -44,10 +45,6 @@
 }
 
 
-.grid:hover {
-  transform: translateX(5px); /* effet d'animation pour l'icône */
-}
-
 .clickable-image:hover {
-  opacity: 0.8; /* l'image devient légèrement transparente au survol */
+  opacity: 0.75; /* l'image devient légèrement transparente au survol */
 }

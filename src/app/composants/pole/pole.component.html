@@ -1,10 +1,9 @@
 <div class="my-3">
-    <div *ngIf="images" class="grid" style="max-width: 800px; position: relative;">
-        <img 
-            [src]="images[0].itemImageSrc" 
-            [alt]="images[0].alt" 
-            class="clickable-image"
-            (click)="imageClick(0)" />
+    <div *ngIf="images && imagesAffiche" class="grid" style="max-width: 800px; position: relative;" (click)="imageClick(0)">
+        <img
+            [src]="imagesAffiche" 
+            alt="Images" 
+            class="clickable-image" />
         <div class="click-message">
             <p>Cliquez pour découvrir plus d'images</p>
         </div>
