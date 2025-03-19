@@ -11,7 +11,7 @@ import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
 import { PanelModule } from 'primeng/panel';
 import { FormsModule } from '@angular/forms';
-import { adresseMailGAM, responsivePhotosOptions } from 'src/app/types/constants/constants';
+import { adresseMailGAM, IMAGE_ITEMS_ADMIN, IMAGE_ITEMS_EVEN, IMAGE_ITEMS_HEBERGEMENT, responsivePhotosOptions } from 'src/app/types/constants/constants';
 import { PartenaireService } from 'src/app/services/partenaire.service';
 import { ResponsivePhotoOption } from 'src/app/types/interfaces/responsive-photo-option';
 import { Partenaire } from 'src/app/types/interfaces/Partenaire';
@@ -57,6 +57,10 @@ export class MainComponent {
 
   carouselResponsiveOptions: any[] | undefined;
   partenaires: Partenaire[] = [];
+
+  protected readonly poleHerbergementItems: any[] = IMAGE_ITEMS_HEBERGEMENT;
+  protected readonly poleAdminItems: any[] = IMAGE_ITEMS_ADMIN;
+  protected readonly poleEvenItems: any[] = IMAGE_ITEMS_EVEN;
 
   constructor(
     private photoService: PhotoService,

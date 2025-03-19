@@ -1,92 +1,53 @@
-html,
-body {
+.grid {
   position: relative;
-  height: 100%;
+  display: inline-block;
 }
 
-body {
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: #fff;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
-}
-
-html,
-body {
-  position: relative;
-  height: 100%;
-}
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-swiper-container {
-  width: 280px;
-  height: 380px;
-}
-
-swiper-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 18px;
-  font-size: 22px;
-  font-weight: bold;
-  color: #fff;
-  height: 100%;
+.clickable-image {
   width: 100%;
+  max-width: 350px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  border: 3px solid transparent;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-/* swiper-slide:nth-child(1n) {
-  background-color: rgb(206, 17, 17);
+.clickable-image:hover {
+  transform: scale(1.1); /* effet de zoom amélioré */
+  box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.452); /* ombre plus accentuée */
+  border: 3px solid #538b67; /* bordure verte au survol */
 }
 
-swiper-slide:nth-child(2n) {
-  background-color: rgb(0, 140, 255);
+.click-message {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #538b67;
+  padding: 10px 15px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(20px);
 }
 
-swiper-slide:nth-child(3n) {
-  background-color: rgb(10, 184, 111);
+.grid:hover .click-message {
+  opacity: 0.75;
+  transform: translateY(0);
 }
 
-swiper-slide:nth-child(4n) {
-  background-color: rgb(211, 122, 7);
+
+.grid:hover {
+  transform: translateX(5px); /* effet d'animation pour l'icône */
 }
 
-swiper-slide:nth-child(5n) {
-  background-color: rgb(118, 163, 12);
+.clickable-image:hover {
+  opacity: 0.8; /* l'image devient légèrement transparente au survol */
 }
-
-swiper-slide:nth-child(6n) {
-  background-color: rgb(180, 10, 47);
-}
-
-swiper-slide:nth-child(7n) {
-  background-color: rgb(35, 99, 19);
-}
-
-swiper-slide:nth-child(8n) {
-  background-color: rgb(0, 68, 255);
-}
-
-swiper-slide:nth-child(9n) {
-  background-color: rgb(218, 12, 218);
-}
-
-swiper-slide:nth-child(10n) {
-  background-color: rgb(54, 94, 77);
-} */
