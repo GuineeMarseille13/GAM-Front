@@ -31,7 +31,28 @@ export const responsivePhotosOptions: ResponsivePhotoOption[] = [
 ];
 
   export const IMAGE_ITEMS_EVEN: any[] = [
-
+    { itemImageSrc: 'assets/pole/evenementiel/Photos 1.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/evenementiel/Photos 2.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/evenementiel/Photos 3.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/evenementiel/Photos 4.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/evenementiel/Photos 4_1.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/evenementiel/Photos 4_2.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/evenementiel/Photos 5.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/evenementiel/Photos 6.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/evenementiel/Photos 7.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/evenementiel/Photos 8.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/evenementiel/Photos 9.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/evenementiel/Photos 10.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/evenementiel/Photos 11.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/evenementiel/Photos 12.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/evenementiel/Photos 13.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/evenementiel/Photos 13_1.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/evenementiel/Photos 13_2.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/evenementiel/Photos 14.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/evenementiel/Photos 15.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/evenementiel/Photos 16.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/evenementiel/Photos 17.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/pole/evenementiel/Photos 18.jpg', alt: 'Image 1' },
   ];
 
   export const IMAGE_ITEMS_HEBERGEMENT: any[] = [
