@@ -1,15 +1,39 @@
 <div class="container overflow-hidden p-0">
     <section id="gam-photo-famille" class="row mt-0">
-        <div id="large" class="d-none d-lg-block d-md-block"></div>
-        <div id="small" class="d-lg-none d-md-none"></div>
-    </section>
+        <div>
+          <p-carousel [value]="imagesAccueilItem" 
+                      [numVisible]="1" [numScroll]="1" 
+                      [autoplay]="true" [autoplayInterval]="10000" 
+                      [loop]="true" 
+                      [responsiveOptions]="carouselResponsiveOptions"
+                      [showIndicators]="false">
+            <ng-template let-item pTemplate="item">
+              <img [src]="item.itemImageSrc" alt="Image famille" class="carousel-image">
+            </ng-template>
+          </p-carousel>
+          <div class="panel-poles">
+            <div class="pole" *ngFor="let pole of imagesPolesItem">
+              <img 
+                [src]="pole.image" 
+                [alt]="pole.title" 
+                [@zoomAnimation]="pole.state"
+                (mouseenter)="toggleZoom(pole)"
+                (mouseleave)="toggleZoom(pole)"
+              />
+              <div class="barre">{{ pole.title }}</div>
+            </div>
+        </div>
+        </div>
+      </section>
+      
 
     <section id="poles" class="my-4">
-        <div class="row m-3 justify-content-around mb-3">
+        <!-- <div class="row m-3 justify-content-around mb-3">
             <button type="button" class="col-lg-3 col-md-3 col-sm-12 mb-3 btn bg-light rounded-5 align-items-center justify-content-center" [ngClass]="[canShowHerbergement ? 'reset-shadow' : 'apply-shadow']" (click)="showPoleItem(poleItems.Hebergement)"> <fa-icon [icon]="faCircleCheck" [fixedWidth]="true" class="pe-2"></fa-icon> Pôle Mise en relation </button>
             <button type="button" class="col-lg-3 col-md-5 col-sm-12 mb-3 btn bg-light rounded-5 d-flex align-items-center justify-content-center" [ngClass]="[canShowAccAdmin ? 'reset-shadow' : 'apply-shadow']" (click)="showPoleItem(poleItems.AccompagnementAdmin)"> <fa-icon [icon]="faCircleCheck" [fixedWidth]="true" class="pe-2"></fa-icon> Accompagnement administratif</button>
             <button type="button" class="col-lg-3 col-md-3 col-sm-12 mb-3 btn bg-light rounded-5 d-flex align-items-center justify-content-center" [ngClass]="[canShowEven ? 'reset-shadow' : 'apply-shadow']" (click)="showPoleItem(poleItems.Evenementiel)"> <fa-icon [icon]="faCircleCheck" [fixedWidth]="true" class="pe-2"></fa-icon> Evenementiel</button>
-        </div>
+        </div> -->
+          
         <div>
             <div class="mt-5">
                 <h2 class="d-none d-lg-block text-center mb-3">Pôle Mise en relation </h2>
