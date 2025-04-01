@@ -18,6 +18,7 @@ import { Partenaire } from 'src/app/types/interfaces/Partenaire';
 import { ReseauxSociauxComponent } from "../../shared/composants/reseaux-sociaux/reseaux-sociaux.component";
 import { PoleComponent } from 'src/app/composants/pole/pole.component';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { SousMenuComponent } from "./sous-menu/sous-menu.component";
 
 
 @Component({
@@ -34,7 +35,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
     PanelModule,
     FormsModule,
     ReseauxSociauxComponent,
-    PoleComponent
+    SousMenuComponent
 ],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],

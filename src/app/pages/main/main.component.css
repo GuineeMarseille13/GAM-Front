@@ -141,6 +141,10 @@
   
 }
 
+img:hover {
+  cursor: pointer;
+}
+
 .barre {
   background-color: #2e5b2d;
   padding: 10px 0;

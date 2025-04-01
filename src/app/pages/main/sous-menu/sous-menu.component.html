@@ -1,0 +1,13 @@
+<div class="container">
+    <div *ngFor="let section of sections; let i = index" 
+        class="card"
+        [id]="'section-' + i"
+        [@fadeIn]="section.visible ? 'visible' : 'hidden'">
+        
+        <div class="icon"> 
+            <fa-icon [icon]="section.icon" size="2x" class="ms-3 style-icone"></fa-icon>
+        </div>
+        <h3>{{ section.title }}</h3>
+        <p>{{ section.description }}</p>
+    </div>
+</div>
