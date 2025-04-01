@@ -77,3 +77,24 @@ export const responsivePhotosOptions: ResponsivePhotoOption[] = [
   export const IMAGE_AFICHHE_HEBERGEMENT: string = 'assets/pole/mise-en-relation/Photos affiche.jpg';
   export const IMAGE_AFICHHE_EVEN: string = 'assets/pole/evenementiel/Photos affiche.jpg';
   export const IMAGE_AFICHHE_ADMIN: string = 'assets/pole/accompagnement/Photos affiche.jpg';
+
+  export const IMAGE_ITEMS_ACCUEIl: any[] = [
+    { itemImageSrc: 'assets/main/accueil/Stand Vivacité 09.2023.jpeg', alt: 'Stand Vivacité' },
+    { itemImageSrc: 'assets/main/accueil/IMG 20231124 WA0068.jpg', alt: 'Image 1' },
+    { itemImageSrc: 'assets/main/accueil/Défilé Guinée 65.jpg', alt: 'Défilé Guinée 65' },
+    { itemImageSrc: 'assets/main/accueil/Repas Guinée65_2.jpg', alt: 'Repas Guinée65_2' },
+    { itemImageSrc: 'assets/main/accueil/Muleketu Guinée 65_3.jpg', alt: 'Muleketu Guinée 65_3' },
+    { itemImageSrc: 'assets/main/accueil/Jeune Guinée 65.jpg', alt: 'Jeune Guinée 65' },
+    { itemImageSrc: 'assets/main/accueil/AG GAM 2024.jpg', alt: 'AG GAM 2024' },
+    { itemImageSrc: 'assets/main/accueil/AG GAM 2025.jpg', alt: 'AG GAM 2025' },
+    { itemImageSrc: 'assets/main/accueil/Bureau 2025.jpg', alt: 'Bureau 2025' },
+
+
+  ];
+
+
+  export const IMAGE_ITEMS_POLE: any[] = [
+    { image: 'assets/pole/evenementiel/Photos affiche.jpg', title: 'PÔLE ÉVÉNEMENTS', state: 'normal' },
+    { image: 'assets/pole/accompagnement/Photos affiche.jpg', title: 'PÔLE ACCOMPAGNEMENT ADMINISTRATIF', state: 'normal' },
+    { image: 'assets/pole/mise-en-relation/Photos affiche.jpg', title: 'PÔLE MISE EN RELATIONS', state: 'normal' }
+  ];
