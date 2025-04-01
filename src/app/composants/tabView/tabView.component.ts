@@ -9,11 +9,12 @@ import { InfoRapportActivite } from 'src/app/types/interfaces/info-rapport-activ
 import { RapportActiviteComponent } from "../rapport-activite/rapport-activite.component";
 import { MembreBureauInfo } from 'src/app/types/interfaces/membre-bureau-info';
 import { MembreBureauInfoService } from 'src/app/services/membre-bureau-info.service';
+import { MotDuPresidentComponent } from "./mot-du-president/mot-du-president.component";
 
 @Component({
   selector: 'tabView',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule, ProfilMembreBureauComponent, RapportActiviteComponent],
+  imports: [CommonModule, FontAwesomeModule, ProfilMembreBureauComponent, RapportActiviteComponent, MotDuPresidentComponent],
   templateUrl: './tabView.component.html',
   styleUrl: './tabView.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
