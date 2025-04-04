@@ -5,7 +5,7 @@
 
 .clickable-image {
   width: 100%;
-  max-width: 350px;
+  max-width: 200px;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
   border: 3px solid transparent;
@@ -19,27 +19,8 @@
   border: 3px solid #538b67; /* bordure verte au survol */
 }
 
-.click-message {
-  cursor: pointer;
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-  background-color: #538b67;
-  padding: 10px 15px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 1;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  transform: translateY(30px);
-}
 
-.grid:hover .click-message {
+.grid:hover {
   opacity: 0.75;
   transform: translateY(0);
 }

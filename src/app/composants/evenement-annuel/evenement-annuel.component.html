@@ -1,15 +1,10 @@
     <div class="shadow-sm row p-2 m-3" *ngFor="let event of events">
-        <div class="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-lg-start justify-content-center">
-            <img [src]="event.photo_couverture.photoSrc" alt="" class="w-100">
+        <div class="col-lg-3 col-md-12 col-sm-12 d-flex">
+            <!-- <img [src]="event.photo_couverture.photoSrc" alt="" class="w-100 mt-3"> -->
+             <pole [imagesAffiche]="event.photo_couverture.photoSrc" [images]="event.voir_plus_photos"></pole>
         </div>
-        <div class="col d-flex flex-column justify-content-center align-items-sm-start">
-            <h4 class="align-self-center">{{event.titre}}</h4>
-            <p>
-                {{event.description}}
-            </p>
-            <a *ngIf="event.voir_plus_photos.length > 0" (click)="goToGaleries(event.voir_plus_photos)" class="btn fst-italic my-4 btn-outline-secondary align-self-center">
-                Voir plus de photos
-                <fa-icon [icon]="faImages" size="1x" [fixedWidth]="true"></fa-icon>
-            </a>
+        <div class="col d-flex flex-column">
+            <h4 class="align-self-center py-3">{{event.titre}}</h4>
+            <div [innerHTML]="getSafeText(event.description)"></div>
         </div>
     </div>

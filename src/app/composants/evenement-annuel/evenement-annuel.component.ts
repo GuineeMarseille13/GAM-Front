@@ -1,17 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faImages } from '@fortawesome/free-regular-svg-icons';
 import { PanelModule } from 'primeng/panel';
 import { EventGam } from 'src/app/types/interfaces/event';
-import { VoirPlusphotos } from 'src/app/types/interfaces/VoirPlusphotos';
+import { PoleComponent } from "../pole/pole.component";
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
   selector: 'evenement-annuel',
   standalone: true,
-  imports: [CommonModule, PanelModule, RouterLink, FontAwesomeModule],
+  imports: [CommonModule, PanelModule, FontAwesomeModule, PoleComponent],
   templateUrl: './evenement-annuel.component.html',
   styleUrl: './evenement-annuel.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -19,13 +18,9 @@ import { VoirPlusphotos } from 'src/app/types/interfaces/VoirPlusphotos';
 export class EvenementAnnuelComponent {
   @Input({ required: true }) events!: EventGam[];
 
-  faImages = faImages;
+  constructor(private sanitizer: DomSanitizer) {}
 
-  constructor(private router: Router) {  }
-
-  protected goToGaleries(galeriePhoto: VoirPlusphotos[]) {
-    this.router.navigate(['evenements-passes/voir-plus-photo'], {
-      state: { galerie: galeriePhoto },
-    });
+  getSafeText(text: string) {
+    return this.sanitizer.bypassSecurityTrustHtml(text);
   }
 }
