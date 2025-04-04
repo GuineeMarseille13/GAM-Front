@@ -2,11 +2,9 @@
     <div *ngIf="images && imagesAffiche" class="grid" style="max-width: 800px; position: relative;" (click)="imageClick(0)">
         <img
             [src]="imagesAffiche" 
-            alt="Images" 
+            alt="Images"
+            title="Cliquez pour découvrir plus d'images"
             class="clickable-image" />
-        <div class="click-message">
-            <p>Cliquez pour découvrir plus d'images</p>
-        </div>
     </div>
 
     <p-galleria
@@ -17,7 +15,7 @@
         [containerStyle]="{ 'max-width': '850px' }"
         [numVisible]="7"
         [circular]="true"
-        [fullScreen]="true"
+        [fullScreen]="isImageLoaded()"
         [showItemNavigators]="true"
         [showThumbnails]="false">
         <ng-template pTemplate="item" let-item>

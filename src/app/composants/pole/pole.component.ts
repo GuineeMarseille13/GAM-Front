@@ -18,8 +18,8 @@ export class PoleComponent {
 
   activeIndex: number = 0;
 
-  @Input() images: any[] = [];
-  @Input() imagesAffiche!: string;
+  @Input() images: any[] | undefined = [];
+  @Input() imagesAffiche: string | undefined = '';
 
   responsiveOptions: any[] = [
       {
@@ -43,6 +43,10 @@ export class PoleComponent {
   imageClick(index: number) {
       this.activeIndex = index;
       this.displayCustom = true;
+  }
+
+  isImageLoaded(): boolean {
+    return this.images !== undefined && this.images.length > 0;
   }
 
 }
