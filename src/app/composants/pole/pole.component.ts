@@ -1,33 +1,52 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA, Input } from '@angular/core';
-import { Photo } from 'src/app/types/interfaces/photo';
-import { ResponsivePhotoOption } from 'src/app/types/interfaces/responsive-photo-option';
+import { Component, Input } from '@angular/core';
 import { GalleriaModule } from 'primeng/galleria';
+import { ImageModule } from 'primeng/image';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @Component({
   selector: 'pole',
   standalone: true,
-  imports: [CommonModule, GalleriaModule],
+  imports: [CommonModule, GalleriaModule, ImageModule, FontAwesomeModule],
   templateUrl: './pole.component.html',
   styleUrl: './pole.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class PoleComponent {
-  // @Input({ required: true }) images: Partial<Photo>[] = [];
-  // @Input({ required: true }) photoSrc: string = '';
-  // @Input({ required: true }) photoMiniSrc: string = '';
-  // @Input({ required: true }) descriptions: string[] = [];
 
-  // responsivePhotoOption: ResponsivePhotoOption[] = [
-  //   {
-  //     breakpoint: '768px',
-  //     numVisible: 3,
-  //   },
-  //   {
-  //     breakpoint: '560px',
-  //     numVisible: 1,
-  //   },
-  // ];
+  displayCustom: boolean = false;
+
+  activeIndex: number = 0;
+
+  @Input() images: any[] | undefined = [];
+  @Input() imagesAffiche: string | undefined = '';
+
+  responsiveOptions: any[] = [
+      {
+          breakpoint: '1500px',
+          numVisible: 5
+      },
+      {
+          breakpoint: '1024px',
+          numVisible: 3
+      },
+      {
+          breakpoint: '768px',
+          numVisible: 2
+      },
+      {
+          breakpoint: '560px',
+          numVisible: 1
+      }
+  ];
+
+  imageClick(index: number) {
+      this.activeIndex = index;
+      this.displayCustom = true;
+  }
+
+  isImageLoaded(): boolean {
+    return this.images !== undefined && this.images.length > 0;
+  }
+
 }

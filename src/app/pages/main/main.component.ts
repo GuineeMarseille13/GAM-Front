@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCircleCheck, faCircleRight } from '@fortawesome/free-regular-svg-icons';
 import { PoleItems } from 'src/app/types/enums/poleItems.enum';
@@ -11,12 +11,14 @@ import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
 import { PanelModule } from 'primeng/panel';
 import { FormsModule } from '@angular/forms';
-import { adresseMailGAM, responsivePhotosOptions } from 'src/app/types/constants/constants';
+import { adresseMailGAM, IMAGE_AFICHHE_ADMIN, IMAGE_AFICHHE_EVEN, IMAGE_AFICHHE_HEBERGEMENT, IMAGE_ITEMS_ACCUEIl, IMAGE_ITEMS_ADMIN, IMAGE_ITEMS_EVEN, IMAGE_ITEMS_HEBERGEMENT, IMAGE_ITEMS_POLE, responsivePhotosOptions } from 'src/app/types/constants/constants';
 import { PartenaireService } from 'src/app/services/partenaire.service';
 import { ResponsivePhotoOption } from 'src/app/types/interfaces/responsive-photo-option';
 import { Partenaire } from 'src/app/types/interfaces/Partenaire';
 import { ReseauxSociauxComponent } from "../../shared/composants/reseaux-sociaux/reseaux-sociaux.component";
 import { PoleComponent } from 'src/app/composants/pole/pole.component';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { SousMenuComponent } from "./sous-menu/sous-menu.component";
 
 
 @Component({
@@ -33,12 +35,24 @@ import { PoleComponent } from 'src/app/composants/pole/pole.component';
     PanelModule,
     FormsModule,
     ReseauxSociauxComponent,
-    PoleComponent
+    SousMenuComponent
 ],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  animations: [
+    trigger('zoomAnimation', [
+      state('normal', style({ transform: 'scale(1)',         boxShadow: '0px 8px 20px rgba(255, 204, 0, 0.8)' })),
+      state('zoomed', style({ 
+        transform: 'scale(1.2)',
+        boxShadow: '0px 8px 20px rgba(255, 204, 0, 0.8)' // Ombre jaune doré
+      })),
+      transition('normal <=> zoomed', [
+        animate('300ms ease-in-out')
+      ])
+    ])
+  ]
 })
 export class MainComponent {
   protected images: any[] | undefined;
@@ -58,12 +72,24 @@ export class MainComponent {
   carouselResponsiveOptions: any[] | undefined;
   partenaires: Partenaire[] = [];
 
+  protected readonly poleHerbergementItems: any[] = IMAGE_ITEMS_HEBERGEMENT;
+  protected readonly poleAdminItems: any[] = IMAGE_ITEMS_ADMIN;
+  protected readonly poleEvenItems: any[] = IMAGE_ITEMS_EVEN;
+  protected readonly imagesAccueilItem: any[] = IMAGE_ITEMS_ACCUEIl;
+  protected readonly imagesPolesItem: any[] = IMAGE_ITEMS_POLE;
+
+
+  protected readonly poleHerbergementAffiche: string = IMAGE_AFICHHE_HEBERGEMENT;
+  protected readonly poleAdminAffiche: string = IMAGE_AFICHHE_ADMIN;
+  protected readonly poleEvenAffiche: string = IMAGE_AFICHHE_EVEN;
+
   constructor(
     private photoService: PhotoService,
     private partenaireService: PartenaireService
   ) {}
 
   ngOnInit() {
+
     this.photoService.getImages().then((images) => (this.images = images));
 
     this.partenaireService.getPartners().then((partenaire) => {
@@ -78,7 +104,7 @@ export class MainComponent {
       },
       {
         breakpoint: '991px',
-        numVisible: 2,
+        numVisible: 1,
         numScroll: 1,
       },
       {
@@ -87,6 +113,11 @@ export class MainComponent {
         numScroll: 1,
       },
     ];
+    
+  }
+
+  toggleZoom(pole: any) {
+    pole.state = pole.state === 'normal' ? 'zoomed' : 'normal';
   }
 
   private hidePoleItems() {

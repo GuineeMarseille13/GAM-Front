@@ -1,7 +1,5 @@
 /* Global */
-section {
-  margin-top: 20px;
-}
+
 
 /* Photo accueille */
 #large {
@@ -12,12 +10,12 @@ section {
   height: 200px;
 }
 
-#gam-photo-famille #large, #small{
+/* #gam-photo-famille #large, #small{
   background-image: url("../../../assets/main/game-acceil.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-}
+} */
 
 /* Nos events */
 
@@ -76,21 +74,121 @@ section {
 }
 
 
- /* swiper-container {
-     width: 100%;
-     height: 100%;
- }
 
- swiper-slide {
-     display: flex;
-     justify-content: center;
-     align-items: center;
- }
 
- swiper-slide img{
-     display: block;
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
- } */
 
+ 
+ /**************** DEBUT Style CAROUSELLE***********************/
+
+
+
+
+ /* Palette de couleurs modernes */
+:root {
+  --primary-color: #3498db;  /* Bleu vif */
+  --secondary-color: #2ecc71; /* Vert */
+  --background-color: #f4f4f4; /* Gris clair */
+  --text-color: #333333; /* Gris foncé */
+  --highlight-color: #e74c3c; /* Rouge accent */
+}
+
+
+/* Taille et adaptation des images */
+.carousel-image {
+  width: 100%;
+  height: 400px;  /* Tu peux ajuster cette hauteur selon tes besoins */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Pour les petits écrans, ajuster les images */
+@media (max-width: 767px) {
+  .carousel-image {
+    height: 200px;  /* Taille réduite pour petits écrans */
+    object-fit: cover;  /* Pour que l'image ne déborde pas */
+  }
+}
+
+
+
+
+ /**************** FIN Style CAROUSELLE***********************/
+
+
+ 
+ /**************** DEBUT Style poles-section***********************/
+
+ .panel-poles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  
+}
+
+.pole {
+  width: 30%;
+  text-align: center;
+}
+
+.pole img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  
+}
+
+img:hover {
+  cursor: pointer;
+}
+
+.barre {
+  background-color: #2e5b2d;
+  padding: 10px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  font-size: small;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .panel-poles {
+    flex-direction: column;
+  }
+  .pole {
+    width: 80%;
+    margin: 15px;
+  }
+  .pole img {
+    width: 100px;
+    height: 100px;
+  }
+  .barre {
+    flex-direction: column;
+    padding: 5px 0;
+    font-size: small;
+  }
+}
+
+
+@media (min-width: 1000px) {
+  .panel-poles {
+    position: relative; 
+    top: -100px;
+  }
+
+  .barre {
+    top: -60px;
+  }
+}
+
+
+
+  /**************** FIN Style poles-section***********************/
