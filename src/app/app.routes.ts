@@ -34,4 +34,11 @@ export const routes: Routes = [
         (p) => p.HebergementComponent
       ),
   },
+  {
+    path: 'nos-valeurs',
+    loadComponent: () =>
+      import('../app/pages/nos-valeurs/nos-valeurs.component').then(
+        (c) => c.NosValeursComponent
+      ),
+  },
 ];
