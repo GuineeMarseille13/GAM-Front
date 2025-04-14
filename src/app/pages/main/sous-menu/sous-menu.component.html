@@ -2,7 +2,7 @@
     <div *ngFor="let section of sections; let i = index" 
         class="card"
         [id]="'section-' + i"
-        [@fadeIn]="section.visible ? 'visible' : 'hidden'">
+        [@fadeIn]="section.visible ? 'visible' : 'hidden'" (click)="redirectByUrl(section)">
         
         <div class="icon"> 
             <fa-icon [icon]="section.icon" size="2x" class="ms-3 style-icone"></fa-icon>

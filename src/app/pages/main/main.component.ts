@@ -68,23 +68,19 @@ import { SousMenuComponent } from './sous-menu/sous-menu.component';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   animations: [
     trigger('zoomAnimation', [
-      state(
-        'normal',
-        style({
-          transform: 'scale(1)',
-          boxShadow: '0px 8px 20px rgba(255, 204, 0, 0.8)',
-        })
-      ),
-      state(
-        'zoomed',
-        style({
-          transform: 'scale(1.2)',
-          boxShadow: '0px 8px 20px rgba(255, 204, 0, 0.8)', // Ombre jaune doré
-        })
-      ),
-      transition('normal <=> zoomed', [animate('300ms ease-in-out')]),
-    ]),
-  ],
+      state('normal', style({ 
+        transform: 'scale(1)',         
+        boxShadow: '0px 8px 20px rgba(255, 204, 0, 0.8)' 
+      })),
+      state('zoomed', style({ 
+        transform: 'scale(1.2)',
+        boxShadow: '0px 8px 20px rgba(255, 204, 0, 0.8)' // Ombre jaune doré
+      })),
+      transition('normal <=> zoomed', [
+        animate('300ms ease-in-out')
+      ])
+    ])
+  ]
 })
 export class MainComponent {
   protected images: any[] | undefined;
