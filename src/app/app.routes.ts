@@ -1,4 +1,4 @@
-import { Routes } from "@angular/router";
+import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
@@ -11,6 +11,13 @@ export const routes: Routes = [
     loadComponent: () =>
       import('../app/pages/voir-plus-photo/voir-plus-photo.component').then(
         (c) => c.VoirPlusPhotoComponent
+      ),
+  },
+  {
+    path: 'evenement',
+    loadComponent: () =>
+      import('../app/pages/poles/evenementiel/evenementiel.component').then(
+        (p) => p.EvenementielComponent
       ),
   },
 ];
