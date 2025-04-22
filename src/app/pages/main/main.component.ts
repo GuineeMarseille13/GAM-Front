@@ -183,6 +183,7 @@ export class MainComponent {
         this.router.navigate(['/evenement']);
         break;
       case 'PÔLE ACCOMPAGNEMENT ADMINISTRATIF':
+        this.router.navigate(['/administratif']);
         break;
 
       default:
