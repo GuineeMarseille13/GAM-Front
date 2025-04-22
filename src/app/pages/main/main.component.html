@@ -1,37 +1,48 @@
 <div class="container overflow-hidden p-0">
-    <section id="gam-photo-famille" class="row mt-0">
-        <div>
-          <p-carousel [value]="imagesAccueilItem" 
-                      [numVisible]="1" [numScroll]="1" 
-                      [autoplay]="true" [autoplayInterval]="10000" 
-                      [loop]="true" 
-                      [responsiveOptions]="carouselResponsiveOptions"
-                      [showIndicators]="false">
-            <ng-template let-item pTemplate="item">
-              <img [src]="item.itemImageSrc" alt="Image famille" class="carousel-image">
-            </ng-template>
-          </p-carousel>
-          <div class="panel-poles">
-            <div class="pole" *ngFor="let pole of imagesPolesItem">
-              <img 
-                [src]="pole.image" 
-                [alt]="pole.title" 
-                [@zoomAnimation]="pole.state"
-                (mouseenter)="toggleZoom(pole)"
-                (mouseleave)="toggleZoom(pole)"
-              />
-              <div class="barre">{{ pole.title }}</div>
-            </div>
+  <section id="gam-photo-famille" class="row mt-0">
+    <div>
+      <p-carousel
+        [value]="imagesAccueilItem"
+        [numVisible]="1"
+        [numScroll]="1"
+        [autoplay]="true"
+        [autoplayInterval]="10000"
+        [loop]="true"
+        [responsiveOptions]="carouselResponsiveOptions"
+        [showIndicators]="false"
+      >
+        <ng-template let-item pTemplate="item">
+          <img
+            [src]="item.itemImageSrc"
+            alt="Image famille"
+            class="carousel-image"
+          />
+        </ng-template>
+      </p-carousel>
+      <div class="panel-poles">
+        <div
+          class="pole"
+          *ngFor="let pole of imagesPolesItem"
+          (click)="handlePole(pole.title)"
+        >
+          <img
+            [src]="pole.image"
+            [alt]="pole.title"
+            [@zoomAnimation]="pole.state"
+            (mouseenter)="toggleZoom(pole)"
+            (mouseleave)="toggleZoom(pole)"
+          />
+          <div class="barre">{{ pole.title }}</div>
         </div>
-        </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <section id="poles" class="my-4">
-        <sous-menu></sous-menu>
-      </section>
-      
+  <section id="poles" class="my-4">
+    <sous-menu></sous-menu>
+  </section>
 
-    <!-- <section id="poles" class="my-4">
+  <!-- <section id="poles" class="my-4">
         <div class="row m-3 justify-content-around mb-3">
             <button type="button" class="col-lg-3 col-md-3 col-sm-12 mb-3 btn bg-light rounded-5 align-items-center justify-content-center" [ngClass]="[canShowHerbergement ? 'reset-shadow' : 'apply-shadow']" (click)="showPoleItem(poleItems.Hebergement)"> <fa-icon [icon]="faCircleCheck" [fixedWidth]="true" class="pe-2"></fa-icon> Pôle Mise en relation </button>
             <button type="button" class="col-lg-3 col-md-5 col-sm-12 mb-3 btn bg-light rounded-5 d-flex align-items-center justify-content-center" [ngClass]="[canShowAccAdmin ? 'reset-shadow' : 'apply-shadow']" (click)="showPoleItem(poleItems.AccompagnementAdmin)"> <fa-icon [icon]="faCircleCheck" [fixedWidth]="true" class="pe-2"></fa-icon> Accompagnement administratif</button>
@@ -92,140 +103,218 @@
             </div>
         </div>
     </section> -->
-   
-    <section id="evenements" class="my-5">              
-        <div class="row m-0">
-            <h2 class="d-none d-lg-block text-center mb-3">Nos événements</h2>
-            <h3 class="d-none d-md-block d-lg-none text-center mb-3">Nos événements</h3>
-            <h4 class="d-sm-block d-md-none text-center mb-3">Nos événements</h4>
-            <div class="card p-3">
-                <div class="row m-0">
-                    <div class="col-lg-3 col-md-12 p-0">
-                        <img src="../../../assets/main/gam-event.webp" alt="" class="rounded-1 w-100">
-                    </div>
-                    <div class="col m-2">
-                       <div class="row h-100 flex-column">
-                            <p class="col d-flex align-items-center fst-italic"> Le projet de l'association est d'organiser des activités solidaires, sportives et culturelles,
-                            de créer un réseau entre Guinéen.ne.s et Marseillais.e.s et  d'aider des personnes dans le besoin afin de lutter activement contre le racisme et la discrimination.
-                            </p>
-                            <div class="col py-0">
-                                <div class="row m-0 d-flex justify-content-between h-100">
-                                    <div class="col-lg-6 col-md-6 col-sm-8 bg-light d-flex flex-column align-items-center justify-content-center p-2 rounded-2 shadow-sm">
-                                        <div class="d-flex justify-content-between align-items-center text-start">
-                                            <h4 class="d-none d-sm-block">Nos evenements passés</h4>
-                                            <h6 class="d-sm-block d-md-none">Nos evenements passés</h6>
-                                            <a [routerLink]="['evenements-passes']"> <fa-icon [icon]="faCircleRight" size="2x" class="ms-3 text-primary"></fa-icon> </a>                                           
-                                        </div>
-                                    </div>
-                                    <hr class="d-sm-block d-md-none d-lg-none border-0 ">
-                                    <div class="col-lg-5 col-md-5 col-sm-8 bg-light d-flex flex-column align-items-center justify-content-center p-2 rounded-2 shadow-sm">
-                                        <h4 class="text-center d-none d-sm-block">Pour nos evenements à venir</h4>
-                                        <h6 class="text-center d-sm-block d-md-block d-md-none">Pour nos evenements à venir</h6>
-                                        <h6 class="text-center fst-italic">suivez-nous sur nos reseaux</h6>
-                                        <div class="text-center">
-                                            <reseaux-sociaux></reseaux-sociaux>
-                                        </div>    
-                                    </div>
-                                </div>
-                            </div>
-                       </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="partenaires" class="mb-4 text-center">
-        <h2 class="d-none d-lg-block text-center mb-3">Nos partenaires</h2>
-        <h3 class="d-none d-md-block d-lg-none text-center mb-3">Nos partenaires</h3>
-        <h4 class="d-sm-block d-md-none text-center mb-3">Nos partenaires</h4>
-        <!-- <swiper-container style="--swiper-navigation-color: #000;" class="mySwiper" background-color="red" pagination="true"
+  <section id="evenements" class="my-5">
+    <div class="row m-0">
+      <h2 class="d-none d-lg-block text-center mb-3">Nos événements</h2>
+      <h3 class="d-none d-md-block d-lg-none text-center mb-3">
+        Nos événements
+      </h3>
+      <h4 class="d-sm-block d-md-none text-center mb-3">Nos événements</h4>
+      <div class="card p-3">
+        <div class="row m-0">
+          <div class="col-lg-3 col-md-12 p-0">
+            <img
+              src="../../../assets/main/gam-event.webp"
+              alt=""
+              class="rounded-1 w-100"
+            />
+          </div>
+          <div class="col m-2">
+            <div class="row h-100 flex-column">
+              <p class="col d-flex align-items-center fst-italic">
+                Le projet de l'association est d'organiser des activités
+                solidaires, sportives et culturelles, de créer un réseau entre
+                Guinéen.ne.s et Marseillais.e.s et d'aider des personnes dans le
+                besoin afin de lutter activement contre le racisme et la
+                discrimination.
+              </p>
+              <div class="col py-0">
+                <div class="row m-0 d-flex justify-content-between h-100">
+                  <div
+                    class="col-lg-6 col-md-6 col-sm-8 bg-light d-flex flex-column align-items-center justify-content-center p-2 rounded-2 shadow-sm"
+                  >
+                    <div
+                      class="d-flex justify-content-between align-items-center text-start"
+                    >
+                      <h4 class="d-none d-sm-block">Nos evenements passés</h4>
+                      <h6 class="d-sm-block d-md-none">
+                        Nos evenements passés
+                      </h6>
+                      <a [routerLink]="['evenements-passes']">
+                        <fa-icon
+                          [icon]="faCircleRight"
+                          size="2x"
+                          class="ms-3 text-primary"
+                        ></fa-icon>
+                      </a>
+                    </div>
+                  </div>
+                  <hr class="d-sm-block d-md-none d-lg-none border-0" />
+                  <div
+                    class="col-lg-5 col-md-5 col-sm-8 bg-light d-flex flex-column align-items-center justify-content-center p-2 rounded-2 shadow-sm"
+                  >
+                    <h4 class="text-center d-none d-sm-block">
+                      Pour nos evenements à venir
+                    </h4>
+                    <h6 class="text-center d-sm-block d-md-block d-md-none">
+                      Pour nos evenements à venir
+                    </h6>
+                    <h6 class="text-center fst-italic">
+                      suivez-nous sur nos reseaux
+                    </h6>
+                    <div class="text-center">
+                      <reseaux-sociaux></reseaux-sociaux>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="partenaires" class="mb-4 text-center">
+    <h2 class="d-none d-lg-block text-center mb-3">Nos partenaires</h2>
+    <h3 class="d-none d-md-block d-lg-none text-center mb-3">
+      Nos partenaires
+    </h3>
+    <h4 class="d-sm-block d-md-none text-center mb-3">Nos partenaires</h4>
+    <!-- <swiper-container style="--swiper-navigation-color: #000;" class="mySwiper" background-color="red" pagination="true"
             pagination-clickable="true" space-between="5" slides-per-view="5" slides-per-group="3" navigation>
             <swiper-slide *ngFor="let partenaire of partenaires"><img [src]="partenaire.image"></swiper-slide>
         </swiper-container> -->
-        <p-panel styleClass="">
-            <p-carousel [value]="partenaires" [numVisible]="3" [numScroll]="3" [circular]="false" [showIndicators]="false"
-                [responsiveOptions]="carouselResponsiveOptions">
-                <ng-template let-partenaire pTemplate="item">
-                    <div class="p-2">
-                        <div class="partners position-relative">
-                            <div class="relative partner-img">
-                                <img src="{{ partenaire.image }}" [alt]="partenaire.name" class="w-full border-round" />
-                            </div>
-                            <div class="partner-comment" *ngIf="partenaire.commentaire">
-                                <div class="comment fst-italic">
-                                    {{partenaire.commentaire}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </ng-template>
-            </p-carousel>
-        </p-panel>
-    </section>
-
-    <section id="contacts" class="mb-4">
-        <h2 class="d-none d-lg-block text-center mb-3">Contactez-nous</h2>
-        <h3 class="d-none d-md-block d-lg-none text-center mb-3">Contactez-nous</h3>
-        <h4 class="d-sm-block d-md-none text-center mb-3">Contactez-nous</h4>
-        <div class="shadow-sm m-1">
-            <form #form="ngForm" (ngSubmit)="onSubmit(form.value)" class="row justify-content-center">
-                <div class="row mt-3">
-                    <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                        <!-- <label class="form-label">Prénom</label> -->
-                        <input type="text" class="form-control" ngModel name="prenom" placeholder="Prénom">
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                    <!-- <label class="form-label">Nom de famille</label> -->
-                    <input type="text" class="form-control" ngModel name="nom" placeholder="Nom de famille">
-                    </div>
+    <p-panel styleClass="">
+      <p-carousel
+        [value]="partenaires"
+        [numVisible]="3"
+        [numScroll]="3"
+        [circular]="false"
+        [showIndicators]="false"
+        [responsiveOptions]="carouselResponsiveOptions"
+      >
+        <ng-template let-partenaire pTemplate="item">
+          <div class="p-2">
+            <div class="partners position-relative">
+              <div class="relative partner-img">
+                <img
+                  src="{{ partenaire.image }}"
+                  [alt]="partenaire.name"
+                  class="w-full border-round"
+                />
+              </div>
+              <div class="partner-comment" *ngIf="partenaire.commentaire">
+                <div class="comment fst-italic">
+                  {{ partenaire.commentaire }}
                 </div>
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                        <!-- <label class="form-label">Numéro de téléphone</label> -->
-                        <input type="tel" class="form-control" ngModel name="telephone" placeholder="Numéro de téléphone">
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                        <!-- <label class="form-label">Email</label> -->
-                        <input type="email" class="form-control" ngModel name="email" placeholder="Email">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12">
-                    <!-- <label class="form-label">Commentaire</label> -->
-                    <textarea class="form-control" ngModel name="commentaire" placeholder="Commentaire" rows="5"></textarea>
-                    </div>
-                </div>
-                <div class="row justify-content-center my-2">
-                    <button type="submit" class="btn btn-primary col-3">Envoyer</button>
-                </div>
-            </form>
-        </div> 
-    </section>
-
-    <footer id="footer" class="mt-3 mb-5">
-        <div class="p-2 shadow-sm border">
-            <div class="row justify-content-around">
-                <div class="col-lg-4 col-md-4 col-sm-12 px-0 d-flex justify-content-center align-items-center">
-                    <span class="me-2">Téléphone: </span>
-                    <a href="tel:+33767133928">+33767133928</a>
-                </div>     
-                <div class="col-lg-4 col-md-4 col-sm-12 px-0 d-flex justify-content-center align-items-center">
-                    <span class="me-2">Email: </span>
-                    <a href="mailto:guineeamarseille13@gmail.com">{{adresseMail}}</a>
-                </div>  
-                <div class="col-lg-4 col-md-2 col-sm-12 px-0 py-2 d-flex justify-content-center">
-                    <reseaux-sociaux></reseaux-sociaux>
-                </div>      
+              </div>
             </div>
-        </div>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </p-panel>
+  </section>
 
-        <div class="text-center p-1 mt-3">
-            <span>
-                © 2024 Guinée à marseille. Crée par Aboubacar Sidig DIALLO
-            </span>
+  <section id="contacts" class="mb-4">
+    <h2 class="d-none d-lg-block text-center mb-3">Contactez-nous</h2>
+    <h3 class="d-none d-md-block d-lg-none text-center mb-3">Contactez-nous</h3>
+    <h4 class="d-sm-block d-md-none text-center mb-3">Contactez-nous</h4>
+    <div class="shadow-sm m-1">
+      <form
+        #form="ngForm"
+        (ngSubmit)="onSubmit(form.value)"
+        class="row justify-content-center"
+      >
+        <div class="row mt-3">
+          <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+            <!-- <label class="form-label">Prénom</label> -->
+            <input
+              type="text"
+              class="form-control"
+              ngModel
+              name="prenom"
+              placeholder="Prénom"
+            />
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+            <!-- <label class="form-label">Nom de famille</label> -->
+            <input
+              type="text"
+              class="form-control"
+              ngModel
+              name="nom"
+              placeholder="Nom de famille"
+            />
+          </div>
         </div>
-    </footer>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+            <!-- <label class="form-label">Numéro de téléphone</label> -->
+            <input
+              type="tel"
+              class="form-control"
+              ngModel
+              name="telephone"
+              placeholder="Numéro de téléphone"
+            />
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+            <!-- <label class="form-label">Email</label> -->
+            <input
+              type="email"
+              class="form-control"
+              ngModel
+              name="email"
+              placeholder="Email"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <!-- <label class="form-label">Commentaire</label> -->
+            <textarea
+              class="form-control"
+              ngModel
+              name="commentaire"
+              placeholder="Commentaire"
+              rows="5"
+            ></textarea>
+          </div>
+        </div>
+        <div class="row justify-content-center my-2">
+          <button type="submit" class="btn btn-primary col-3">Envoyer</button>
+        </div>
+      </form>
+    </div>
+  </section>
 
-   
+  <footer id="footer" class="mt-3 mb-5">
+    <div class="p-2 shadow-sm border">
+      <div class="row justify-content-around">
+        <div
+          class="col-lg-4 col-md-4 col-sm-12 px-0 d-flex justify-content-center align-items-center"
+        >
+          <span class="me-2">Téléphone: </span>
+          <a href="tel:+33767133928">+33767133928</a>
+        </div>
+        <div
+          class="col-lg-4 col-md-4 col-sm-12 px-0 d-flex justify-content-center align-items-center"
+        >
+          <span class="me-2">Email: </span>
+          <a href="mailto:guineeamarseille13@gmail.com">{{ adresseMail }}</a>
+        </div>
+        <div
+          class="col-lg-4 col-md-2 col-sm-12 px-0 py-2 d-flex justify-content-center"
+        >
+          <reseaux-sociaux></reseaux-sociaux>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center p-1 mt-3">
+      <span> © 2024 Guinée à marseille. Crée par Aboubacar Sidig DIALLO </span>
+    </div>
+  </footer>
 </div>
