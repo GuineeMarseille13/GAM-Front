@@ -20,4 +20,11 @@ export const routes: Routes = [
         (p) => p.EvenementielComponent
       ),
   },
+  {
+    path: 'administratif',
+    loadComponent: () =>
+      import('../app/pages/poles/administratif/administratif.component').then(
+        (p) => p.AdministratifComponent
+      ),
+  },
 ];

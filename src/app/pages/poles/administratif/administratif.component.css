@@ -1,3 +1,41 @@
 :host {
   display: block;
 }
+
+.admin {
+  max-width: 400px;
+}
+
+.nb-acc-admin {
+  font-size: 70px;
+  font-weight: bold;
+  color: #ffe993;
+}
+
+.acc-admin {
+  background-color: #9fc8aa;
+}
+
+.acc-admin-stats {
+  background: #9fc8aa;
+  text-align: center;
+  padding: 16px;
+  position: relative;
+  top: -50px;
+  left: 50px;
+}
+
+.acc-admin-stats-sm {
+  background: #9fc8aa;
+  text-align: center;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.permanence {
+  height: 450px;
+}
+
+h6 {
+  margin-bottom: 0;
+}
