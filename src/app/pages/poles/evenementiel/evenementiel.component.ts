@@ -8,4 +8,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './evenementiel.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class EvenementielComponent {}
+export class EvenementielComponent {
+  protected PAGE_TITLE = 'ÉVÉNEMENTS';
+}

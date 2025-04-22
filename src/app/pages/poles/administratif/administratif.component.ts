@@ -8,4 +8,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './administratif.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AdministratifComponent {}
+export class AdministratifComponent {
+  protected PAGE_TITLE = 'ACCOMPAGNEMENT ADMINISTRATIF';
+}
