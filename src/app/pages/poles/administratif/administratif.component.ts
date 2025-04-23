@@ -7,11 +7,12 @@ import {
 } from '@angular/core';
 import { fromEvent, Observable, Subscription } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import { PoleHeaderComponent } from '../../../shared/composants/poleHeader/poleHeader.component';
 
 @Component({
   selector: 'administratif',
   standalone: true,
-  imports: [NgClass, NgFor, AsyncPipe],
+  imports: [NgClass, NgFor, AsyncPipe, PoleHeaderComponent],
   templateUrl: './administratif.component.html',
   styleUrl: './administratif.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

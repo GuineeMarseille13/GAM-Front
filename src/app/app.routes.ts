@@ -27,4 +27,11 @@ export const routes: Routes = [
         (p) => p.AdministratifComponent
       ),
   },
+  {
+    path: 'hebergement',
+    loadComponent: () =>
+      import('../app/pages/poles/hebergement/hebergement.component').then(
+        (p) => p.HebergementComponent
+      ),
+  },
 ];

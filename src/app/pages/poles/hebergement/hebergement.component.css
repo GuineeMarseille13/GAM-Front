@@ -1,0 +1,44 @@
+:host {
+  display: block;
+}
+
+.heb-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.heb-container-not-sm {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.stat {
+  width: 350px;
+  padding: 50px;
+  background-color: #538b67;
+}
+
+.not-sm {
+  position: absolute;
+  top: -50px;
+  right: 50px;
+}
+
+.is-sm {
+  position: relative;
+}
+
+.heb-img {
+  max-width: 800px;
+  width: 100%; /* S'assure que l'image est responsive */
+}
+
+@media (max-width: 768px) {
+  .heb-img {
+    max-width: 600px; /* Taille réduite pour les écrans plus petits */
+  }
+}
