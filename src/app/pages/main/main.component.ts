@@ -187,6 +187,7 @@ export class MainComponent {
         break;
 
       default:
+        this.router.navigate(['/hebergement']);
         break;
     }
   }
