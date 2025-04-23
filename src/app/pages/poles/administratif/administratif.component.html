@@ -37,39 +37,14 @@
       </p>
     </div>
   </div>
-  <!-- <div class="">
-    <div class="position-relative">
-      <img
-        src="../../../../assets/pole/accompagnement/acc-admin.jpg"
-        alt=""
-        class="admin"
-      />
-    </div>
-    <div class="acc-admin">
-      <div class="col text-center">
-        <span class="nb-acc-admin">122</span>
-        <h5 class="d-none d-lg-block text-white mb-0">
-          Accompagnements <br />
-          administratifs faits par <br />
-          nos bénévoles
-        </h5>
-        <h5 class="d-none d-md-block d-lg-none text-white mb-0">
-          Accompagnements <br />
-          administratifs faits par <br />
-          nos bénévoles
-        </h5>
-        <h5 class="d-sm-block d-md-none text-white mb-0">
-          Accompagnements <br />
-          administratifs faits par <br />
-          nos bénévoles
-        </h5>
-      </div>
-      <div class="col"></div>
-      <div class="col"></div>
-    </div>
-  </div> -->
 
-  <div class="overflow-hidden d-none d-md-block d-lg-block">
+  <div
+    class="overflow-hidden mb-4"
+    [ngClass]="{
+      'd-none d-md-block d-lg-block': !(isMobile$ | async),
+      'd-sm-block d-md-none': isMobile$ | async
+    }"
+  >
     <div class="row">
       <div class="col-lg-10 col-md-10 col-sm-12">
         <img
@@ -80,121 +55,17 @@
       </div>
     </div>
 
-    <div class="acc-admin-stats px-md-5 pt-md-5 pb-0">
+    <div
+      [ngClass]="{
+        'acc-admin-stats px-md-5 pt-md-5 pb-0': !(isMobile$ | async),
+        'acc-admin-stats-sm px-md-5 pt-md-5 pb-0': isMobile$ | async
+      }"
+    >
       <div class="row text-center">
-        <div class="col-lg col-md col-sm-12">
-          <div class="d-flex flex-column">
-            <div class="mb-5">
-              <span class="nb-acc-admin">122</span>
-              <h6>
-                Accompagnements <br />
-                administratifs faits par <br />
-                nos bénévoles
-              </h6>
-            </div>
-            <div>
-              <span class="nb-acc-admin">27</span>
-              <h6>Permanences administratives</h6>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg col-md col-sm-12">
-          <div class="d-flex flex-column mb-5">
-            <h6>
-              Faire venir des <br />
-              actes de naissance
-            </h6>
-            <span class="nb-acc-admin">22</span>
-          </div>
-          <div class="d-flex flex-column mb-5">
-            <h6>Conseil juridique</h6>
-            <span class="nb-acc-admin">6</span>
-          </div>
-          <div class="d-flex flex-column mb-5">
-            <h6>Accompagnement visa étudiant</h6>
-            <span class="nb-acc-admin">12</span>
-          </div>
-        </div>
-
-        <div class="col-lg col-md col-sm-12">
-          <div class="d-flex flex-column mb-5">
-            <h6>Cartes consulaires</h6>
-            <span class="nb-acc-admin">49</span>
-          </div>
-          <div class="d-flex flex-column mb-5">
-            <h6>Sur-légalisation d’actes de naissance</h6>
-            <span class="nb-acc-admin">29</span>
-          </div>
-          <div class="d-flex flex-column mb-5">
-            <h6>Autres (livrets de famille, carte AME,.. )</h6>
-            <span class="nb-acc-admin">6</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="overflow-hidden d-sm-block d-md-none">
-    <div class="row">
-      <div class="col-lg-10 col-md-10 col-sm-12">
-        <img
-          src="../../../../assets/pole/accompagnement/acc-admin.jpg"
-          alt="Accompagnement administratif"
-          class="img-fluid w-100"
-        />
-      </div>
-    </div>
-
-    <div class="acc-admin-stats-sm px-md-5 pt-md-5 pb-0">
-      <div class="row text-center">
-        <div class="col-lg col-md col-sm-12 mb-5">
-          <div class="d-flex flex-column">
-            <div class="mb-5">
-              <span class="nb-acc-admin">122</span>
-              <h6>
-                Accompagnements <br />
-                administratifs faits par <br />
-                nos bénévoles
-              </h6>
-            </div>
-            <div>
-              <span class="nb-acc-admin">27</span>
-              <h6>Permanences administratives</h6>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg col-md col-sm-12 mb-5">
-          <div class="d-flex flex-column mb-5">
-            <h6>
-              Faire venir des <br />
-              actes de naissance
-            </h6>
-            <span class="nb-acc-admin">22</span>
-          </div>
-          <div class="d-flex flex-column mb-5">
-            <h6>Conseil juridique</h6>
-            <span class="nb-acc-admin">6</span>
-          </div>
-          <div class="d-flex flex-column mb-5">
-            <h6>Accompagnement visa étudiant</h6>
-            <span class="nb-acc-admin">12</span>
-          </div>
-        </div>
-
-        <div class="col-lg col-md col-sm-12">
-          <div class="d-flex flex-column mb-5">
-            <h6>Cartes consulaires</h6>
-            <span class="nb-acc-admin">49</span>
-          </div>
-          <div class="d-flex flex-column mb-5">
-            <h6>Sur-légalisation d’actes de naissance</h6>
-            <span class="nb-acc-admin">29</span>
-          </div>
-          <div class="d-flex flex-column mb-5">
-            <h6>Autres (livrets de famille, carte AME,.. )</h6>
-            <span class="nb-acc-admin">6</span>
+        <div class="col-lg col-md col-sm-12" *ngFor="let stat of stats">
+          <div class="d-flex flex-column mb-5" *ngFor="let item of stat.items">
+            <h6 [innerHTML]="item.title"></h6>
+            <span class="nb-acc-admin">{{ item.value }}</span>
           </div>
         </div>
       </div>
