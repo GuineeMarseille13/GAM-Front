@@ -1,0 +1,66 @@
+<div class="container">
+  <pole-header [title]="PAGE_TITLE"></pole-header>
+  <div class="mt-5">
+    <p>
+      L’hébergement solidaire est un dispositif qui permet à des personnes en
+      situation de précarité ou de vulnérabilité de bénéficier d’un hébergement
+      temporaire dans le cadre d’un accueil familial. Ce dispositif est mis en
+      place par l’association Guinée À Marseille pour répondre aux besoins
+      urgents d’hébergement des personnes qui se trouvent dans une situation
+      difficile.
+    </p>
+    <p>
+      L’association met en relation les personnes qui souhaitent offrir un
+      hébergement temporaire avec celles qui en ont besoin, tout en garantissant
+      la sécurité et le bien-être de chacun.
+    </p>
+  </div>
+
+  <div
+    class="mb-5"
+    [class]="(isMobile$ | async) ? 'heb-container' : 'heb-container-not-sm'"
+  >
+    <div class="stat" [class]="(isMobile$ | async) ? 'is-sm' : 'not-sm'">
+      <hebergement-stat
+        [iconUrl]="faCircleUser"
+        [stat]="14"
+        [title]="'Bénévoles HEBERGEANTS SOLIDAIRES'"
+      ></hebergement-stat>
+      <hebergement-stat
+        [iconUrl]="faPeopleRoof"
+        [stat]="19"
+        [title]="'PERSONNES HEBERGEES'"
+      ></hebergement-stat>
+      <hebergement-stat
+        [iconUrl]="faHouseUser"
+        [stat]="1468"
+        [title]="'NUITS D’HEBERGEMENT OFFERTES'"
+      ></hebergement-stat>
+    </div>
+    <img
+      src="../../../../assets/pole/mise-en-relation/heb.jpg"
+      alt=""
+      class="heb-img mt-5"
+    />
+  </div>
+  <p>
+    Des bénévoles de l’association ouvrent leur porte à des personnes en
+    recherche d’un hébergement temporaire chez eux. Des étudiants étrangers et
+    mineurs non accompagnés ont ainsi un lieu où ils peuvent se poser le temps
+    de trouver une solution d’hébergement plus pérenne ou d’être pris en charge
+    par le service MNA du département des Bouches du Rhône.
+  </p>
+  <p>
+    L'association Guinée À Marseille s'engage également à fournir un soutien en
+    produits alimentaires et d’hygiène aux hébergeants solidaires afin de les
+    soutenir financièrement.
+  </p>
+  <p>
+    Ce sont toutes ces actions ( trouver un hébergement temporaire, obtenir des
+    conseils juridiques et administratifs et s’integrer dans la société
+    française) qui visent à faciliter l'installation des Guinéens et plus
+    globalement Africains nouvellement arrivés. C’est en leur offrant un
+    environnement sûr et décent, qu'ils vont réussir à établir leurs repères
+    dans leur nouveau pays d'adoption.
+  </p>
+</div>
