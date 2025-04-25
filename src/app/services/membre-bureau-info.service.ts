@@ -16,16 +16,16 @@ export class MembreBureauInfoService {
         photo_profil: 'assets/notre-association/photo-profil/president.jpg',
       },
       {
-        prenon: 'Aboubacar Sidig',
-        nom: 'DIALLO',
-        poste: '1er vice-président',
-        photo_profil: 'assets/notre-association/photo-profil/aboubacar_sidig.JPG',
-      },
-      {
         prenon: 'Guillaume',
         nom: 'MADEC',
-        poste: '2e vice-président',
+        poste: '1er vice-président',
         photo_profil: 'assets/notre-association/photo-profil/vicepresident.jpg',
+      },
+      {
+        prenon: 'Ibrahim',
+        nom: 'BAH',
+        poste: '2e vice-président',
+        photo_profil: 'assets/notre-association/photo-profil/vicepresident2.jpg',
       },
       {
         prenon: 'Michelle',
@@ -34,8 +34,8 @@ export class MembreBureauInfoService {
         photo_profil: 'assets/notre-association/photo-profil/secretaire.jpg',
       },
       {
-        prenon: 'Manon',
-        nom: 'BELAGI',
+        prenon: 'Mamadou Alpha',
+        nom: 'DIALLO',
         poste: 'Sécretaire adjointe',
         photo_profil: 'assets/notre-association/photo-profil/secretaireadjointe.jpg',
       },
@@ -43,13 +43,13 @@ export class MembreBureauInfoService {
         prenon: 'Julie',
         nom: 'DELABY',
         poste: 'Trésorière',
-        photo_profil: 'assets/notre-association/photo-profil/cresoriere.webp',
+        photo_profil: 'assets/notre-association/photo-profil/tresoriere.jpg',
       },
       {
-        prenon: 'Mody Hady',
-        nom: 'BARRY',
+        prenon: 'Aminata',
+        nom: 'FOFANA',
         poste: 'Trésorier adjoint',
-        photo_profil: 'assets/notre-association/photo-profil/vicecresorier.jpg',
+        photo_profil: 'assets/notre-association/photo-profil/vicetresorier.jpg',
       },
     ]);
   }
