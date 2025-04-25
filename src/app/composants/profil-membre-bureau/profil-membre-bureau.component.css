@@ -16,11 +16,12 @@
 #profil-membre .member-info {
   width: 180px;
   height: 180px;
-  background-color: #ffd500;
+  background-color: #2e5b2d;
   position: absolute;
   left: 6%;
   top: 15%;
   border-radius: 0 0 40% 0;
+  color: white;
 }
 
 .member-info span:first-child {
