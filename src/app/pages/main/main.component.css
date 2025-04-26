@@ -1,5 +1,11 @@
 /* Global */
 
+@media (min-width: 1000px) {
+  .entete-accueil {
+    width: 100%;
+    height: 500px;    
+  }
+}
 
 /* Photo accueille */
 #large {
@@ -9,13 +15,6 @@
 #small {
   height: 200px;
 }
-
-/* #gam-photo-famille #large, #small{
-  background-image: url("../../../assets/main/game-acceil.webp");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-} */
 
 /* Nos events */
 

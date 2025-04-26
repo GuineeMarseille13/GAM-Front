@@ -30,27 +30,27 @@ export class SousMenuComponent {
   protected faHandshake = faHandshake;
 
   sections = [
-    { title: 'Le mot du Président', description: 'Découvrez le message du président.', icon: this.faBullhorn, visible: false, animation: 'fadeInRight', url: "/notre-association"},
-    { title: 'Qui sommes-nous ?', description: 'Apprenez-en plus sur notre identité.', icon: this.faQuestionCircle, visible: false, animation: 'fadeInLeft', url: "/notre-association" },
-    { title: 'Notre bureau', description: 'Présentation de notre bureau et notre équipe.', icon: this.faBuilding, visible: false, animation: 'fadeInTop', url: "/notre-association" },
-    { title: 'Nos valeurs', description: 'Découvrez les principes qui nous guident.', icon: this.faLightbulb, visible: false, animation: 'fadeInDown', url: "/nos-valeurs" },
-    { title: 'Nos événements 2024', description: 'Les événements marquants de cette année.', icon: this.faCalendarAlt, visible: false, animation: 'fadeInRight', url: "/evenements-passes" },
-    { title: 'Nos partenaires', description: 'Les entreprises et associations qui nous accompagnent.', icon: this.faHandshake, visible: false, animation: 'fadeInLeft', url: "#" },
+    { title: 'Le mot du Président', description: 'Découvrez le message du président.', icon: this.faBullhorn, visible: true, animation: 'fadeInRight', url: "/notre-association"},
+    { title: 'Qui sommes-nous ?', description: 'Apprenez-en plus sur notre identité.', icon: this.faQuestionCircle, visible: true, animation: 'fadeInLeft', url: "/notre-association" },
+    { title: 'Notre bureau', description: 'Présentation de notre bureau et notre équipe.', icon: this.faBuilding, visible: true, animation: 'fadeInTop', url: "/notre-association" },
+    { title: 'Nos valeurs', description: 'Découvrez les principes qui nous guident.', icon: this.faLightbulb, visible: true, animation: 'fadeInDown', url: "/nos-valeurs" },
+    { title: 'Nos événements 2024', description: 'Les événements marquants de cette année.', icon: this.faCalendarAlt, visible: true, animation: 'fadeInRight', url: "/evenements-passes" },
+    { title: 'Nos partenaires', description: 'Les entreprises et associations qui nous accompagnent.', icon: this.faHandshake, visible: true, animation: 'fadeInLeft', url: "#" },
   ];
 
-  @HostListener('window:scroll', [])
-  onScroll(): void {
-      const triggerHeight = window.innerHeight * 0.8;
-      this.sections.forEach((section, index) => {
-          const element = document.getElementById(`section-${index}`);
-          if (element) {
-              const position = element.getBoundingClientRect().top;
-              if (position < triggerHeight) {
-                  section.visible = true;
-              }
-          }
-      });
-  }
+  // @HostListener('window:scroll', [])
+  // onScroll(): void {
+  //     const triggerHeight = window.innerHeight * 0.1;
+  //     this.sections.forEach((section, index) => {
+  //         const element = document.getElementById(`section-${index}`);
+  //         if (element) {
+  //             const position = element.getBoundingClientRect().bottom;
+  //             if (position < triggerHeight) {
+  //                 section.visible = true;
+  //             }
+  //         }
+  //     });
+  // }
 
   redirectByUrl(section: any): void {
     if (section?.url) {
