@@ -1,13 +1,20 @@
 <div class="container">
-    <div *ngFor="let section of sections; let i = index" 
-        class="card"
-        [id]="'section-' + i"
-        [@fadeIn]="section.visible ? 'visible' : 'hidden'" (click)="redirectByUrl(section)">
-        
-        <div class="icon"> 
-            <fa-icon [icon]="section.icon" size="2x" class="ms-3 style-icone"></fa-icon>
-        </div>
-        <h3>{{ section.title }}</h3>
-        <p>{{ section.description }}</p>
+  <div
+    *ngFor="let section of sections; let i = index"
+    class="card p-2"
+    [id]="'section-' + i"
+    [@fadeIn]="section.visible ? 'visible' : 'hidden'"
+    (click)="redirectByUrl(section)"
+  >
+    <div class="icon">
+      <fa-icon
+        [icon]="section.icon"
+        size="2x"
+        class="ms-3 style-icone"
+        [fixedWidth]="true"
+      ></fa-icon>
     </div>
+    <h3>{{ section.title }}</h3>
+    <p>{{ section.description }}</p>
+  </div>
 </div>

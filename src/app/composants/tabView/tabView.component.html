@@ -1,82 +1,151 @@
 <div class="">
-    <div class="row tab-box">
-        <button class="col tab-button" [ngClass]="{'select-item': isPresidentActive}" (click)="activeTabItem(tabItems.President)">
-            <h3 class="d-none d-lg-block text-center mb-2">Le président</h3>
-            <h5 class="d-none d-md-block d-lg-none text-center mb-2">Le président</h5>
-            <h6 class="d-sm-block d-md-none text-center mb-2 tab-item-title">Le président</h6>
-        </button>
-        <button class="col tab-button" [ngClass]="{'select-item': isQuiSommesNousActive}" (click)="activeTabItem(tabItems.QuiSommesNous)">
-            <h3 class="d-none d-lg-block text-center mb-2">Qui somme-nous ?</h3>
-            <h5 class="d-none d-md-block d-lg-none text-center mb-2">Qui somme-nous ?</h5>
-            <h6 class="d-sm-block d-md-none text-center mb-2 tab-item-title">Qui somme-nous ?</h6>
-        </button>
-        <button class="col tab-button" [ngClass]="{'select-item': isRapportActiviteActive }" (click)="activeTabItem(tabItems.RapportActivite)">
-            <h3 class="d-none d-lg-block text-center mb-2">Rapport d'activité</h3>
-            <h5 class="d-none d-md-block d-lg-none text-center mb-2">Rapport d'activité</h5>
-            <h6 class="d-sm-block d-md-none text-center mb-2 tab-item-title">Rapport d'activité</h6>
-        </button>
-        <button class="col tab-button" [ngClass]="{'select-item': isNotreEquipeActive }" (click)="activeTabItem(tabItems.NotreEquipe)">
-            <h3 class="d-none d-lg-block text-center mb-2">Notre équipe</h3>
-            <h5 class="d-none d-md-block d-lg-none text-center mb-2">Notre équipe</h5>
-            <h6 class="d-sm-block d-md-none text-center mb-2 tab-item-title">Notre équipe</h6>
-        </button>
-    </div>
-    <div class="tab-content pt-2">
-        <ng-container *ngIf="isPresidentActive">
-            <div>
-                <mot-du-president></mot-du-president>
-            </div>
-        </ng-container>
-        <ng-container *ngIf="isQuiSommesNousActive">
-            <div class="card card-semi-arrondi p-3 mt-3 border-0 shadow-lg">
-                <h4 class="d-none d-lg-block tab-content-title">QUI SOMMES-NOUS ?</h4>
-                <h5 class="d-none d-md-block d-lg-none">QUI SOMMES-NOUS ?</h5>
-                <h6 class="d-sm-block d-md-none">QUI SOMMES-NOUS ?</h6>
-                <div class="d-flex justify-content-between align-items-center mt-2 row">
-                    <img src="../../../assets/notre-association/qui-sommes-nous.webp" alt="Qui sommes-nous ?" class="photo-semi-arrondi col-lg-5 col-md-12 col-sm-12 d-flex justify-content-lg-start justify-content-center">
-                    <p class="col">
-                        Après quelques années en France et particulièrement, Marseille, Moussa Camara constate que beaucoup de jeunes guinéens et plus généralement africains arrivent dans la ville sans orientation,
-                        sans accompagnement, sans aides ou repères de la part de membres de leur pays d'origine ou de leur communauté linguistique ou culturelle.<br>
-                        Lorsque l'on arrive, on peut parfois se sentir déboussolé, un peu perdu, on ne sait pas forcément vers qui se tourner, à qui parler et où aller.<br>
-                        Alors, créer une association pour venir en aide à ces personnes a semblé primordial pour Moussa Camara ainsil’association Guinée à Marseille (nommée GAM) voit le jour le 17 Mai 2021.
-                    </p>
-                </div>  
-            </div>
-            <div id="a-propose-asso" class="card card-semi-arrondi p-3 border-0 shadow-lg my-5">
-                <h4 class="d-none d-lg-block tab-content-title">QUE PROPOSE L'ASSOCIATION ?</h4>
-                <h5 class="d-none d-md-block d-lg-none">QUE PROPOSE L'ASSOCIATION ?</h5>
-                <h6 class="d-sm-block d-md-none">QUE PROPOSE L'ASSOCIATION ?</h6>
-                <div class="d-flex justify-content-between align-items-center mt-3 row">
-                    <img src="../../../assets/notre-association/que-propose-association.webp" alt="Que propose l'association" class="photo-semi-arrondi col-lg-5 col-md-12 col-sm-12 d-flex justify-content-lg-start justify-content-center">
-                    <p class="col">
-                        Le projet de GAM est d'organiser des activités sportives et culturelles, de permettre de créer un réseau entre Guinéen.ne.s 
-                        et Marseillais.e.s et d'aider des personnes dans le besoin afin de lutter activement contre le racisme et la discrimination.<br>
-                        Si GAM souhaite avant tout faciliter l’insertion des Guinéen.ne.s et des étranger.e.s qui viennent s’installer dans la ville,
-                        l'association a également des liens étroits avec des collectifs et des indépendants en Guinée. Elle souhaite créer un pont entre l'Afrique et la France,
-                        entre ces cultures et ces peuples visiteurs.
-                    </p>
-                </div>  
-            </div>
-        </ng-container>
-        <ng-container *ngIf="isRapportActiviteActive">
-            <div class="my-3">
-                <rapport-activite *ngFor="let ra of rapportsActivites" [info]="ra"></rapport-activite>
-            </div>
-        </ng-container>
-        <div *ngIf="isNotreEquipeActive">
-            <div class="d-flex justify-content-center flex-wrap my-3">
-                <profil-membre-bureau [membreBureauInfo]="membreBureauInfos[0]"></profil-membre-bureau>
-            </div>
-            <div class="d-flex justify-content-evenly flex-wrap mb-3">
-                <profil-membre-bureau [membreBureauInfo]="membreBureauInfos[1]"></profil-membre-bureau>
-                <profil-membre-bureau [membreBureauInfo]="membreBureauInfos[2]"></profil-membre-bureau>
-            </div>
-            <div class="d-flex justify-content-evenly flex-wrap">
-                <profil-membre-bureau [membreBureauInfo]="membreBureauInfos[3]"></profil-membre-bureau>
-                <profil-membre-bureau [membreBureauInfo]="membreBureauInfos[4]"></profil-membre-bureau>
-                <profil-membre-bureau [membreBureauInfo]="membreBureauInfos[5]"></profil-membre-bureau>
-                <profil-membre-bureau [membreBureauInfo]="membreBureauInfos[6]"></profil-membre-bureau>
-            </div>
+  <div class="row tab-box">
+    <button
+      class="col tab-button"
+      [ngClass]="{ 'select-item': isPresidentActive }"
+      (click)="getActiveTabItem(tabItems.President)"
+    >
+      <h3 class="d-none d-lg-block text-center mb-2">Le président</h3>
+      <h5 class="d-none d-md-block d-lg-none text-center mb-2">Le président</h5>
+      <h6 class="d-sm-block d-md-none text-center mb-2 tab-item-title">
+        Le président
+      </h6>
+    </button>
+    <button
+      class="col tab-button"
+      [ngClass]="{ 'select-item': isQuiSommesNousActive }"
+      (click)="getActiveTabItem(tabItems.QuiSommesNous)"
+    >
+      <h3 class="d-none d-lg-block text-center mb-2">Qui somme-nous ?</h3>
+      <h5 class="d-none d-md-block d-lg-none text-center mb-2">
+        Qui somme-nous ?
+      </h5>
+      <h6 class="d-sm-block d-md-none text-center mb-2 tab-item-title">
+        Qui somme-nous ?
+      </h6>
+    </button>
+    <button
+      class="col tab-button"
+      [ngClass]="{ 'select-item': isRapportActiviteActive }"
+      (click)="getActiveTabItem(tabItems.RapportActivite)"
+    >
+      <h3 class="d-none d-lg-block text-center mb-2">Rapport d'activité</h3>
+      <h5 class="d-none d-md-block d-lg-none text-center mb-2">
+        Rapport d'activité
+      </h5>
+      <h6 class="d-sm-block d-md-none text-center mb-2 tab-item-title">
+        Rapport d'activité
+      </h6>
+    </button>
+    <button
+      class="col tab-button"
+      [ngClass]="{ 'select-item': isNotreEquipeActive }"
+      (click)="getActiveTabItem(tabItems.NotreEquipe)"
+    >
+      <h3 class="d-none d-lg-block text-center mb-2">Notre équipe</h3>
+      <h5 class="d-none d-md-block d-lg-none text-center mb-2">Notre équipe</h5>
+      <h6 class="d-sm-block d-md-none text-center mb-2 tab-item-title">
+        Notre équipe
+      </h6>
+    </button>
+  </div>
+  <div class="tab-content pt-2">
+    <ng-container *ngIf="isPresidentActive">
+      <div>
+        <mot-du-president></mot-du-president>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="isQuiSommesNousActive">
+      <div class="card card-semi-arrondi p-3 mt-3 border-0 shadow-lg">
+        <h4 class="d-none d-lg-block tab-content-title">QUI SOMMES-NOUS ?</h4>
+        <h5 class="d-none d-md-block d-lg-none">QUI SOMMES-NOUS ?</h5>
+        <h6 class="d-sm-block d-md-none">QUI SOMMES-NOUS ?</h6>
+        <div class="d-flex justify-content-between align-items-center mt-2 row">
+          <img
+            src="../../../assets/notre-association/qui-sommes-nous.webp"
+            alt="Qui sommes-nous ?"
+            class="photo-semi-arrondi col-lg-5 col-md-12 col-sm-12 d-flex justify-content-lg-start justify-content-center"
+          />
+          <p class="col">
+            Après quelques années en France et particulièrement, Marseille,
+            Moussa Camara constate que beaucoup de jeunes guinéens et plus
+            généralement africains arrivent dans la ville sans orientation, sans
+            accompagnement, sans aides ou repères de la part de membres de leur
+            pays d'origine ou de leur communauté linguistique ou culturelle.<br />
+            Lorsque l'on arrive, on peut parfois se sentir déboussolé, un peu
+            perdu, on ne sait pas forcément vers qui se tourner, à qui parler et
+            où aller.<br />
+            Alors, créer une association pour venir en aide à ces personnes a
+            semblé primordial pour Moussa Camara ainsil’association Guinée à
+            Marseille (nommée GAM) voit le jour le 17 Mai 2021.
+          </p>
         </div>
+      </div>
+      <div
+        id="a-propose-asso"
+        class="card card-semi-arrondi p-3 border-0 shadow-lg my-5"
+      >
+        <h4 class="d-none d-lg-block tab-content-title">
+          QUE PROPOSE L'ASSOCIATION ?
+        </h4>
+        <h5 class="d-none d-md-block d-lg-none">QUE PROPOSE L'ASSOCIATION ?</h5>
+        <h6 class="d-sm-block d-md-none">QUE PROPOSE L'ASSOCIATION ?</h6>
+        <div class="d-flex justify-content-between align-items-center mt-3 row">
+          <img
+            src="../../../assets/notre-association/que-propose-association.webp"
+            alt="Que propose l'association"
+            class="photo-semi-arrondi col-lg-5 col-md-12 col-sm-12 d-flex justify-content-lg-start justify-content-center"
+          />
+          <p class="col">
+            Le projet de GAM est d'organiser des activités sportives et
+            culturelles, de permettre de créer un réseau entre Guinéen.ne.s et
+            Marseillais.e.s et d'aider des personnes dans le besoin afin de
+            lutter activement contre le racisme et la discrimination.<br />
+            Si GAM souhaite avant tout faciliter l’insertion des Guinéen.ne.s et
+            des étranger.e.s qui viennent s’installer dans la ville,
+            l'association a également des liens étroits avec des collectifs et
+            des indépendants en Guinée. Elle souhaite créer un pont entre
+            l'Afrique et la France, entre ces cultures et ces peuples visiteurs.
+          </p>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="isRapportActiviteActive">
+      <div class="my-3">
+        <rapport-activite
+          *ngFor="let ra of rapportsActivites"
+          [info]="ra"
+        ></rapport-activite>
+      </div>
+    </ng-container>
+    <div *ngIf="isNotreEquipeActive">
+      <div class="d-flex justify-content-center flex-wrap my-3">
+        <profil-membre-bureau
+          [membreBureauInfo]="membreBureauInfos[0]"
+        ></profil-membre-bureau>
+      </div>
+      <div class="d-flex justify-content-evenly flex-wrap mb-3">
+        <profil-membre-bureau
+          [membreBureauInfo]="membreBureauInfos[1]"
+        ></profil-membre-bureau>
+        <profil-membre-bureau
+          [membreBureauInfo]="membreBureauInfos[2]"
+        ></profil-membre-bureau>
+      </div>
+      <div class="d-flex justify-content-evenly flex-wrap">
+        <profil-membre-bureau
+          [membreBureauInfo]="membreBureauInfos[3]"
+        ></profil-membre-bureau>
+        <profil-membre-bureau
+          [membreBureauInfo]="membreBureauInfos[4]"
+        ></profil-membre-bureau>
+        <profil-membre-bureau
+          [membreBureauInfo]="membreBureauInfos[5]"
+        ></profil-membre-bureau>
+        <profil-membre-bureau
+          [membreBureauInfo]="membreBureauInfos[6]"
+        ></profil-membre-bureau>
+      </div>
     </div>
+  </div>
 </div>
