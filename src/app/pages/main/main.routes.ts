@@ -1,4 +1,4 @@
-import { Routes } from "@angular/router";
+import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
@@ -8,12 +8,18 @@ export const routes: Routes = [
   },
   {
     path: 'evenements-passes',
-    loadComponent: () => import('../evenements-passes/evenements-passes.component').then(
+    loadComponent: () =>
+      import('../evenements-passes/evenements-passes.component').then(
         (c) => c.EvenementsPassesComponent
       ),
   },
   {
     path: 'notre-association',
+    redirectTo: 'notre-association/President', // Redirige vers l'onglet par défaut
+    pathMatch: 'full',
+  },
+  {
+    path: 'notre-association/:tabItem',
     loadComponent: () =>
       import('../notre-association/notre-association.component').then(
         (p) => p.NotreAssociationComponent
