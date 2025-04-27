@@ -45,6 +45,9 @@ import {
   trigger,
 } from '@angular/animations';
 import { SousMenuComponent } from './sous-menu/sous-menu.component';
+import { Container, Engine, ISourceOptions } from '@tsparticles/engine';
+import { tsParticles } from '@tsparticles/engine';
+import { loadFull } from 'tsparticles';
 
 @Component({
   selector: 'app-main',
@@ -53,7 +56,6 @@ import { SousMenuComponent } from './sous-menu/sous-menu.component';
     CommonModule,
     FontAwesomeModule,
     GalleriaModule,
-    RouterLink,
     CarouselModule,
     ButtonModule,
     TagModule,
@@ -68,19 +70,23 @@ import { SousMenuComponent } from './sous-menu/sous-menu.component';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   animations: [
     trigger('zoomAnimation', [
-      state('normal', style({ 
-        transform: 'scale(1)',         
-        boxShadow: '0px 8px 20px rgba(255, 204, 0, 0.8)' 
-      })),
-      state('zoomed', style({ 
-        transform: 'scale(1.2)',
-        boxShadow: '0px 8px 20px rgba(255, 204, 0, 0.8)' // Ombre jaune doré
-      })),
-      transition('normal <=> zoomed', [
-        animate('300ms ease-in-out')
-      ])
-    ])
-  ]
+      state(
+        'normal',
+        style({
+          transform: 'scale(1)',
+          boxShadow: '0px 8px 20px rgba(255, 204, 0, 0.8)',
+        })
+      ),
+      state(
+        'zoomed',
+        style({
+          transform: 'scale(1.2)',
+          boxShadow: '0px 8px 20px rgba(255, 204, 0, 0.8)', // Ombre jaune doré
+        })
+      ),
+      transition('normal <=> zoomed', [animate('300ms ease-in-out')]),
+    ]),
+  ],
 })
 export class MainComponent {
   protected images: any[] | undefined;
@@ -117,7 +123,6 @@ export class MainComponent {
     private partenaireService: PartenaireService,
     private router: Router
   ) {}
-
   ngOnInit() {
     this.photoService.getImages().then((images) => (this.images = images));
 
@@ -169,8 +174,10 @@ export class MainComponent {
     }
   }
 
-  protected onSubmit(formValue: any) {
-    console.log(formValue);
+  protected onSubmit(form: any): void {
+    loadFull(tsParticles);
+    form.resetForm();
+    this.triggerParticles();
   }
 
   protected handlePole(pole: string) {
@@ -186,5 +193,101 @@ export class MainComponent {
         this.router.navigate(['/hebergement']);
         break;
     }
+  }
+
+  protected async triggerParticles(): Promise<void> {
+    const options: ISourceOptions = {
+      particles: {
+        number: { value: 0 }, // Pas de particules initiales
+        color: {
+          value: ['#FF0000', '#FFFF00', '#00FF00'],
+        }, // Couleurs vives
+        shape: { type: ['polygon'] }, // Formes adaptées pour un feu d'artifice
+        opacity: { value: { min: 0.3, max: 1 } }, // Opacité variable
+        size: { value: { min: 1, max: 3 } }, // Taille variable des particules
+        move: {
+          enable: true,
+          speed: { min: 5, max: 15 }, // Vitesse variable
+          direction: 'none', // Mouvement aléatoire
+          random: true,
+          straight: false,
+          outModes: { default: 'destroy' }, // Les particules disparaissent après explosion
+        },
+      },
+      interactivity: {
+        detectsOn: 'window',
+        events: {
+          onClick: { enable: false }, // Pas d'interaction utilisateur
+          onHover: { enable: false },
+        },
+      },
+      emitters: [
+        {
+          direction: 'top',
+          life: {
+            count: 2, // Une seule explosion par émetteur
+            duration: 0.1, // Explosion instantanée
+            delay: 0,
+          },
+          rate: {
+            delay: 0,
+            quantity: 100, // Nombre de particules par explosion
+          },
+          size: {
+            width: 100,
+            height: 100,
+          },
+          position: {
+            x: 10, // Position à 10% de la largeur de l'écran
+            y: 100, // Position en bas de l'écran
+          },
+        },
+        {
+          direction: 'top',
+          life: {
+            count: 1,
+            duration: 0.1,
+            delay: 0,
+          },
+          rate: {
+            delay: 0,
+            quantity: 100,
+          },
+          size: {
+            width: 100,
+            height: 100,
+          },
+          position: {
+            x: 50, // Position à 50% de la largeur de l'écran
+            y: 100,
+          },
+        },
+        {
+          direction: 'top',
+          life: {
+            count: 2,
+            duration: 0.1,
+            delay: 0,
+          },
+          rate: {
+            delay: 0,
+            quantity: 100,
+          },
+          size: {
+            width: 100,
+            height: 100,
+          },
+          position: {
+            x: 90, // Position à 90% de la largeur de l'écran
+            y: 100,
+          },
+        },
+      ],
+      detectRetina: true,
+    };
+    await tsParticles.load({
+      id: 'tsparticles',
+      options: options,
+    });
   }
 }
