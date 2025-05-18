@@ -3,10 +3,9 @@ import { Observable, of } from 'rxjs';
 import { MembreBureauInfo } from '../types/interfaces/membre-bureau-info';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MembreBureauInfoService {
-
   private getInfos(): Observable<MembreBureauInfo[]> {
     return of([
       {
@@ -25,7 +24,8 @@ export class MembreBureauInfoService {
         prenon: 'Ibrahim',
         nom: 'BAH',
         poste: '2e vice-président',
-        photo_profil: 'assets/notre-association/photo-profil/vicepresident2.jpg',
+        photo_profil:
+          'assets/notre-association/photo-profil/vicepresident2.jpg',
       },
       {
         prenon: 'Michelle',
@@ -36,8 +36,9 @@ export class MembreBureauInfoService {
       {
         prenon: 'Mamadou Alpha',
         nom: 'DIALLO',
-        poste: 'Sécretaire adjointe',
-        photo_profil: 'assets/notre-association/photo-profil/secretaireadjointe.jpg',
+        poste: 'Sécretaire adjoint',
+        photo_profil:
+          'assets/notre-association/photo-profil/secretaireadjointe.jpg',
       },
       {
         prenon: 'Julie',
@@ -48,7 +49,7 @@ export class MembreBureauInfoService {
       {
         prenon: 'Aminata',
         nom: 'FOFANA',
-        poste: 'Trésorier adjoint',
+        poste: 'Trésorière adjointe',
         photo_profil: 'assets/notre-association/photo-profil/vicetresorier.jpg',
       },
     ]);
