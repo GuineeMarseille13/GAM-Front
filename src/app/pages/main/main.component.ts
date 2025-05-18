@@ -74,14 +74,14 @@ import { loadFull } from 'tsparticles';
         'normal',
         style({
           transform: 'scale(1)',
-          boxShadow: '0px 8px 20px rgba(255, 204, 0, 0.8)',
+          boxShadow: '0px 8px 20px rgba(46, 91, 45, 0.8)',
         })
       ),
       state(
         'zoomed',
         style({
           transform: 'scale(1.2)',
-          boxShadow: '0px 8px 20px rgba(255, 204, 0, 0.8)', // Ombre jaune doré
+          boxShadow: '0px 8px 20px rgba(46, 91, 45, 0.8)', // Ombre vert
         })
       ),
       transition('normal <=> zoomed', [animate('300ms ease-in-out')]),
