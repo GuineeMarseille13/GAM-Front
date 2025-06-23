@@ -79,15 +79,51 @@ export const responsivePhotosOptions: ResponsivePhotoOption[] = [
   export const IMAGE_AFICHHE_ADMIN: string = 'assets/pole/accompagnement/Photos affiche.jpg';
 
   export const IMAGE_ITEMS_ACCUEIl: any[] = [
-    { itemImageSrc: 'assets/main/accueil/Stand Vivacité 09.2023.jpeg', alt: 'Stand Vivacité' },
-    { itemImageSrc: 'assets/main/accueil/IMG 20231124 WA0068.jpg', alt: 'Image 1' },
-    { itemImageSrc: 'assets/main/accueil/Défilé Guinée 65.jpg', alt: 'Défilé Guinée 65' },
-    { itemImageSrc: 'assets/main/accueil/Repas Guinée65_2.jpg', alt: 'Repas Guinée65_2' },
-    { itemImageSrc: 'assets/main/accueil/Muleketu Guinée 65_3.jpg', alt: 'Muleketu Guinée 65_3' },
-    { itemImageSrc: 'assets/main/accueil/Jeune Guinée 65.jpg', alt: 'Jeune Guinée 65' },
-    { itemImageSrc: 'assets/main/accueil/AG GAM 2024.jpg', alt: 'AG GAM 2024' },
-    { itemImageSrc: 'assets/main/accueil/AG GAM 2025.jpg', alt: 'AG GAM 2025' },
-    { itemImageSrc: 'assets/main/accueil/Bureau 2025.jpg', alt: 'Bureau 2025' },
+    { 
+      itemImageSrc: 'assets/main/accueil/Stand Vivacité 09.2023.jpeg', 
+      alt: 'Stand Vivacité',
+      description: "Participation de l'association Guinée à Marseille à la grande manifestation Vivacité aux côtés des autres associations marseillaises.",
+    },
+    { 
+      itemImageSrc: 'assets/main/accueil/IMG 20231124 WA0068.jpg', 
+      alt: 'Image 1',
+      description: 'Soirée cinéma organisée par le GAM : un moment convivial de partage et de détente autour d’un bon film.',
+    },
+    { 
+      itemImageSrc: 'assets/main/accueil/Défilé Guinée 65.jpg', 
+      alt: 'Défilé Guinée 65',
+      description: 'Célébration de la Fête de la Guinée organisée en 2023.',
+    },
+    { 
+      itemImageSrc: 'assets/main/accueil/Repas Guinée65_2.jpg', 
+      alt: 'Repas Guinée65_2',
+      description: 'Nouvelle édition festive de la Fête de la Guinée en 2025.',
+    },
+    { 
+      itemImageSrc: 'assets/main/accueil/Muleketu Guinée 65_3.jpg', 
+      alt: 'Muleketu Guinée 65_3',
+      description: 'Prestation musicale du groupe Moulékétoux lors de la Fête de la Guinée.',
+    },
+    { 
+      itemImageSrc: 'assets/main/accueil/Jeune Guinée 65.jpg', 
+      alt: 'Jeune Guinée 65',
+      description: 'Performance des rappeurs invités à l’occasion Guinée à Marseille lors de la Fête de la Guinée 2024.',
+    },
+    { 
+      itemImageSrc: 'assets/main/accueil/AG GAM 2024.jpg', 
+      alt: 'AG GAM 2024',
+      description: 'Réunion annuelle de l’association pour échanger et présenter les projets à venir.',
+    },
+    { 
+      itemImageSrc: 'assets/main/accueil/AG GAM 2025.jpg', 
+      alt: 'AG GAM 2025',
+      description: "Assemblée Générale 2025 marquée par l'engagement des membres pour la nouvelle année.",
+    },
+    { 
+      itemImageSrc: 'assets/main/accueil/Bureau 2025.jpg', 
+      alt: 'Bureau 2025',
+      description: 'Présentation de l’équipe dirigeante élue pour l’année 2025.',
+    },
 
 
   ];
