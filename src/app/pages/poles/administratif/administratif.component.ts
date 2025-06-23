@@ -43,9 +43,9 @@ export class AdministratifComponent implements OnInit, OnDestroy {
     },
     {
       items: [
-        { title: 'Cartes consulaires', value: 49 },
-        { title: 'Sur-légalisation d’actes de naissance', value: 29 },
-        { title: 'Autres (livrets de famille, carte AME,.. )', value: 6 },
+        { title: 'Demande de cartes consulaires <br/> (plateforme EKADI)', value: 49 },
+        { title: 'Demande de sur-légalisation <br/> d’actes de naissance <br /> (plateforme EKADI)', value: 29 },
+        { title: 'Autres demandes <br/> (livrets de famille, carte AME,.. ) <br /> (plateforme EKADI)', value: 6 },
       ],
     },
   ];
