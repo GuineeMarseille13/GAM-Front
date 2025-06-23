@@ -53,6 +53,16 @@
         'acc-admin-stats-sm px-md-5 pt-md-5 pb-0': isMobile$ | async
       }"
     >
+      
+      <!-- Titre avec style -->
+      <div [ngClass]="'row mb-3 ' + ((isMobile$ | async) ? 'w-100' : 'w-50 mx-auto')">
+        <div class="col-12 text-center m-5" style="color: #538b67; background-color: white; font-weight: bold; padding: 1rem; border-radius: 0.25rem;">
+          <h3 class="mb-3">
+            Rapport sur les accompagnements administratifs en 2024 : chiffres clés
+          </h3>
+        </div>
+      </div>
+
       <div class="row text-center">
         <div class="col-lg col-md col-sm-12" *ngFor="let stat of stats">
           <div class="d-flex flex-column mb-5" *ngFor="let item of stat.items">
