@@ -12,13 +12,20 @@
         [showIndicators]="false"
       >
         <ng-template let-item pTemplate="item">
-          <img
-            [src]="item.itemImageSrc"
-            alt="Image famille"
-            class="carousel-image"
-          />
+          <figure class="carousel-figure position-relative m-0">
+            <img
+              [src]="item.itemImageSrc"
+              [alt]="item.alt || 'Image famille'"
+              class="carousel-image w-100 d-block"
+            />
+            <figcaption class="carousel-caption-modern top-right">
+              <span>{{ item.description }}</span>
+            </figcaption>
+          </figure>
         </ng-template>
       </p-carousel>
+
+
       <div class="panel-poles">
         <div
           class="pole"
