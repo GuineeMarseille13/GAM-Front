@@ -3,19 +3,9 @@
 @media (min-width: 1000px) {
   .entete-accueil {
     width: 100%;
-    height: 500px;    
+    height: 550px;    
   }
 }
-
-/* Photo accueille */
-#large {
-  height: 400px;
-}
-
-#small {
-  height: 200px;
-}
-
 /* Nos events */
 
 #evenements img {
@@ -73,29 +63,14 @@
 }
 
 
-
-
-
  
- /**************** DEBUT Style CAROUSELLE***********************/
-
-
-
-
- /* Palette de couleurs modernes */
-:root {
-  --primary-color: #3498db;  /* Bleu vif */
-  --secondary-color: #2ecc71; /* Vert */
-  --background-color: #f4f4f4; /* Gris clair */
-  --text-color: #333333; /* Gris foncé */
-  --highlight-color: #e74c3c; /* Rouge accent */
-}
+ /**************** DEBUT Style CAROUSELLE***********************
 
 
 /* Taille et adaptation des images */
 .carousel-image {
   width: 100%;
-  height: 400px;  /* Tu peux ajuster cette hauteur selon tes besoins */
+  height: 450px;  /* Tu peux ajuster cette hauteur selon tes besoins */
   object-fit: cover;
   border-radius: 8px;
 }
