@@ -10,6 +10,14 @@ export class RapportActiviteService {
   private getInfos(): Observable<InfoRapportActivite[]> {
     return of([
       {
+        annee: '2024',
+        url: '../../../assets/rapport-activite/rapport_activites_2024.pdf',
+      },
+      {
+        annee: '2024',
+        url: '../../../assets/rapport-activite/rapport_activites_2023.pdf',
+      },
+      {
         annee: '2022',
         url: '../../../assets/rapport-activite/rapport_activites_2022.pdf',
       },
