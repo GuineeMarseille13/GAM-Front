@@ -17,9 +17,10 @@ body, html {
   margin: 0; padding: 0;
   font-family: var(--font-family);
   background-color: var(--background-color);
-  color: var(--text-color);
+  color: var(--text-accent);
   scroll-behavior: smooth;
 }
+
 
 /* TITRES */
 h2, h3, h4 {
@@ -29,7 +30,6 @@ h2, h3, h4 {
   text-transform: uppercase;
   letter-spacing: 1.5px;
 }
-
 
 .hover-style:hover {
   box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.5);
