@@ -1,5 +1,4 @@
 import { Photo } from "./photo";
-import { VoirPlusphotos } from "./VoirPlusphotos";
 
 export interface EventGam {
   titre: string;
