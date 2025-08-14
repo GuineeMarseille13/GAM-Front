@@ -1,0 +1,128 @@
+<div class="fete-guinee-container">
+  <div class="stars-bg"></div>
+  
+  <div class="fete-header">
+    <div class="flag-animation">
+      <div class="flag-stripe red"></div>
+      <div class="flag-stripe yellow"></div>
+      <div class="flag-stripe green"></div>
+    </div>
+    
+    <h2 class="fete-title">
+      <span class="title-line-1">Fête de l'Indépendance</span>
+      <span class="title-line-2">de la Guinée</span>
+    </h2>
+    
+    <p class="fete-subtitle">
+      Célébrons ensemble le {{ targetYear }}ème anniversaire de notre indépendance
+    </p>
+  </div>
+
+  <div class="countdown-section">
+    <div class="countdown-title">
+      <h3>Compte à rebours</h3>
+      <p>Jusqu'au 4 octobre {{ targetDate.getFullYear() }}</p>
+    </div>
+
+    <div class="countdown-display">
+      <div class="countdown-item" [@countAnimation]="timeLeft.days">
+        <div class="countdown-number">
+          <span class="number-display">{{ timeLeft.days }}</span>
+          <div class="number-glow"></div>
+        </div>
+        <div class="countdown-label">Jours</div>
+        <div class="countdown-bar">
+          <div class="bar-fill" [style.width]="getDayProgress() + '%'"></div>
+        </div>
+      </div>
+
+      <div class="countdown-separator">:</div>
+
+      <div class="countdown-item" [@countAnimation]="timeLeft.hours">
+        <div class="countdown-number">
+          <span class="number-display">{{ formatNumber(timeLeft.hours) }}</span>
+          <div class="number-glow"></div>
+        </div>
+        <div class="countdown-label">Heures</div>
+        <div class="countdown-bar">
+          <div class="bar-fill" [style.width]="getHourProgress() + '%'"></div>
+        </div>
+      </div>
+
+      <div class="countdown-separator">:</div>
+
+      <div class="countdown-item" [@countAnimation]="timeLeft.minutes">
+        <div class="countdown-number">
+          <span class="number-display">{{ formatNumber(timeLeft.minutes) }}</span>
+          <div class="number-glow"></div>
+        </div>
+        <div class="countdown-label">Minutes</div>
+        <div class="countdown-bar">
+          <div class="bar-fill" [style.width]="getMinuteProgress() + '%'"></div>
+        </div>
+      </div>
+
+      <div class="countdown-separator">:</div>
+
+      <div class="countdown-item" [@countAnimation]="timeLeft.seconds">
+        <div class="countdown-number">
+          <span class="number-display">{{ formatNumber(timeLeft.seconds) }}</span>
+          <div class="number-glow"></div>
+        </div>
+        <div class="countdown-label">Secondes</div>
+        <div class="countdown-bar">
+          <div class="bar-fill" [style.width]="getSecondProgress() + '%'"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="celebration-info" *ngIf="!isEventDay; else eventDayMessage">
+    <div class="info-card">
+      <div class="info-icon">
+        <i class="fas fa-calendar-alt"></i>
+      </div>
+      <div class="info-content">
+        <h4>Préparez-vous pour la célébration !</h4>
+        <p>Rejoignez-nous pour une journée mémorable remplie de musique, de danse, de cuisine traditionnelle et de joie partagée.</p>
+        <ul class="event-highlights">
+          <li><i class="fas fa-music"></i> Concerts de musique traditionnelle</li>
+          <li><i class="fas fa-utensils"></i> Dégustation de plats guinéens</li>
+          <li><i class="fas fa-users"></i> Rencontres communautaires</li>
+          <li><i class="fas fa-gift"></i> Activités pour toute la famille</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #eventDayMessage>
+    <div class="event-day-celebration">
+      <div class="celebration-animation">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <h3>🎉 C'est aujourd'hui ! 🎉</h3>
+      <p>Bonne fête de l'indépendance de la Guinée !</p>
+      <button class="btn-celebrate" (click)="celebrate()">
+        <i class="fas fa-rocket"></i>
+        Célébrer !
+      </button>
+    </div>
+  </ng-template>
+
+  <div class="historical-info">
+    <div class="history-card">
+      <div class="history-icon">
+        <i class="fas fa-landmark"></i>
+      </div>
+      <div class="history-content">
+        <h4>2 octobre 1958</h4>
+        <p>La Guinée devient le premier pays d'Afrique francophone à accéder à l'indépendance sous la direction d'Ahmed Sékou Touré.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fireworks container -->
+  <div class="fireworks-container" id="fireworks-container"></div>
+</div>
