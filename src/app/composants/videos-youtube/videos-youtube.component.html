@@ -1,0 +1,261 @@
+<div class="videos-container">
+  <div class="videos-background">
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+    </div>
+  </div>
+
+  <div class="videos-header">
+    <h2 class="videos-title">
+      <i class="fab fa-youtube"></i>
+      Nos Vidéos & Témoignages
+    </h2>
+    <p class="videos-subtitle">
+      Découvrez nos événements, témoignages et moments forts en vidéo
+    </p>
+  </div>
+
+  <!-- Video Categories Filter -->
+  <div class="categories-filter">
+    <button 
+      *ngFor="let category of categories"
+      [class.active]="selectedCategory === category.id"
+      (click)="filterByCategory(category.id)"
+      class="category-btn"
+    >
+      <i [class]="category.icon"></i>
+      {{ category.name }}
+    </button>
+  </div>
+
+  <!-- Featured Video -->
+  <div class="featured-video" *ngIf="featuredVideo" [@slideIn]="'in'">
+    <div class="featured-container">
+      <div class="video-player">
+        <iframe
+          [src]="getSafeUrl(featuredVideo.embedUrl)"
+          frameborder="0"
+          allowfullscreen
+          class="video-iframe"
+          [title]="featuredVideo.title"
+        ></iframe>
+        <div class="video-overlay" *ngIf="!featuredVideo.isPlaying" (click)="playVideo(featuredVideo)">
+          <div class="play-button">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+      </div>
+      <div class="featured-info">
+        <div class="video-badge">
+          <i class="fas fa-star"></i>
+          À la une
+        </div>
+        <h3 class="featured-title">{{ featuredVideo.title }}</h3>
+        <p class="featured-description">{{ featuredVideo.description }}</p>
+        <div class="video-meta">
+          <div class="meta-item">
+            <i class="fas fa-calendar"></i>
+            <span>{{ formatDate(featuredVideo.publishedAt) }}</span>
+          </div>
+          <div class="meta-item">
+            <i class="fas fa-eye"></i>
+            <span>{{ formatViews(featuredVideo.views) }} vues</span>
+          </div>
+          <div class="meta-item">
+            <i class="fas fa-thumbs-up"></i>
+            <span>{{ featuredVideo.likes }} J'aime</span>
+          </div>
+        </div>
+        <div class="video-actions">
+          <button class="btn-share" (click)="shareVideo(featuredVideo)">
+            <i class="fas fa-share-alt"></i>
+            Partager
+          </button>
+          <button class="btn-playlist" (click)="addToPlaylist(featuredVideo)">
+            <i class="fas fa-list"></i>
+            Playlist
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Videos Grid -->
+  <div class="videos-grid">
+    <div 
+      *ngFor="let video of filteredVideos; let i = index"
+      class="video-card"
+      [@videoAnimation]="'in'"
+      [style.animation-delay]="(i * 0.1) + 's'"
+      (click)="selectVideo(video)"
+    >
+      <div class="video-thumbnail">
+        <img [src]="video.thumbnail" [alt]="video.title" class="thumbnail-image">
+        <div class="video-duration">{{ video.duration }}</div>
+        <div class="video-overlay-grid">
+          <div class="play-button-small">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+        <div class="video-category-badge" [class]="'category-' + video.category">
+          {{ getCategoryName(video.category) }}
+        </div>
+      </div>
+      
+      <div class="video-info">
+        <h4 class="video-title">{{ video.title }}</h4>
+        <p class="video-description">{{ video.description }}</p>
+        <div class="video-stats">
+          <div class="stat">
+            <i class="fas fa-eye"></i>
+            <span>{{ formatViews(video.views) }}</span>
+          </div>
+          <div class="stat">
+            <i class="fas fa-calendar"></i>
+            <span>{{ formatDate(video.publishedAt) }}</span>
+          </div>
+          <div class="stat">
+            <i class="fas fa-thumbs-up"></i>
+            <span>{{ video.likes }}</span>
+          </div>
+        </div>
+        <div class="video-tags" *ngIf="video.tags && video.tags.length > 0">
+          <span *ngFor="let tag of video.tags" class="tag">#{{ tag }}</span>
+        </div>
+      </div>
+
+      <div class="video-actions-card">
+        <button class="action-btn" (click)="toggleFavorite(video); $event.stopPropagation()">
+          <i [class]="video.isFavorite ? 'fas fa-heart' : 'far fa-heart'"></i>
+        </button>
+        <button class="action-btn" (click)="shareVideo(video); $event.stopPropagation()">
+          <i class="fas fa-share-alt"></i>
+        </button>
+        <button class="action-btn" (click)="addToPlaylist(video); $event.stopPropagation()">
+          <i class="fas fa-list"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load More Button -->
+  <div class="load-more-container" *ngIf="hasMoreVideos">
+    <button class="btn-load-more" (click)="loadMoreVideos()" [disabled]="isLoading">
+      <span *ngIf="!isLoading">
+        <i class="fas fa-plus"></i>
+        Voir plus de vidéos
+      </span>
+      <span *ngIf="isLoading" class="loading">
+        <i class="fas fa-spinner fa-spin"></i>
+        Chargement...
+      </span>
+    </button>
+  </div>
+
+  <!-- Video Modal -->
+  <div class="video-modal" *ngIf="selectedVideo" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeModal()">
+        <i class="fas fa-times"></i>
+      </button>
+      
+      <div class="modal-video">
+        <iframe
+          [src]="getSafeUrl(selectedVideo.embedUrl)"
+          frameborder="0"
+          allowfullscreen
+          class="modal-iframe"
+          [title]="selectedVideo.title"
+        ></iframe>
+      </div>
+      
+      <div class="modal-info">
+        <div class="modal-header">
+          <h3 class="modal-title">{{ selectedVideo.title }}</h3>
+          <div class="modal-meta">
+            <span class="meta-date">{{ formatDate(selectedVideo.publishedAt) }}</span>
+            <span class="meta-views">{{ formatViews(selectedVideo.views) }} vues</span>
+          </div>
+        </div>
+        
+        <p class="modal-description">{{ selectedVideo.description }}</p>
+        
+        <div class="modal-tags" *ngIf="selectedVideo.tags && selectedVideo.tags.length > 0">
+          <span *ngFor="let tag of selectedVideo.tags" class="tag">#{{ tag }}</span>
+        </div>
+        
+        <div class="modal-actions">
+          <button class="btn-like" [class.active]="selectedVideo.isLiked" (click)="toggleLike(selectedVideo)">
+            <i [class]="selectedVideo.isLiked ? 'fas fa-thumbs-up' : 'far fa-thumbs-up'"></i>
+            {{ selectedVideo.likes }} J'aime
+          </button>
+          <button class="btn-share-modal" (click)="shareVideo(selectedVideo)">
+            <i class="fas fa-share-alt"></i>
+            Partager
+          </button>
+          <button class="btn-playlist-modal" (click)="addToPlaylist(selectedVideo)">
+            <i class="fas fa-list"></i>
+            Ajouter à la playlist
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Statistics Section -->
+  <div class="video-stats-section">
+    <div class="stats-container">
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-video"></i>
+        </div>
+        <div class="stat-content">
+          <h4>{{ totalVideos }}</h4>
+          <p>Vidéos</p>
+        </div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-eye"></i>
+        </div>
+        <div class="stat-content">
+          <h4>{{ formatViews(totalViews) }}</h4>
+          <p>Vues totales</p>
+        </div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fab fa-youtube"></i>
+        </div>
+        <div class="stat-content">
+          <h4>{{ subscribers }}</h4>
+          <p>Abonnés</p>
+        </div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-thumbs-up"></i>
+        </div>
+        <div class="stat-content">
+          <h4>{{ totalLikes }}</h4>
+          <p>J'aime</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="subscribe-section">
+      <h3>Suivez-nous sur YouTube</h3>
+      <p>Abonnez-vous pour ne manquer aucune de nos vidéos !</p>
+      <a href="https://youtube.com/@GAMGuineeMarseille" target="_blank" class="btn-subscribe">
+        <i class="fab fa-youtube"></i>
+        S'abonner
+      </a>
+    </div>
+  </div>
+</div>
