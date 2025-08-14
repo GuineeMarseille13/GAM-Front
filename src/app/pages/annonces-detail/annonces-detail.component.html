@@ -1,0 +1,286 @@
+<div class="annonces-detail-container">
+  <!-- Header Section -->
+  <div class="page-header">
+    <div class="header-bg">
+      <div class="header-waves">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+      </div>
+    </div>
+    <div class="header-content">
+      <button class="btn-back" (click)="goBack()">
+        <i class="fas fa-arrow-left"></i>
+        Retour
+      </button>
+      <h1 class="page-title">
+        <i class="fas fa-newspaper"></i>
+        Actualités & Annonces
+      </h1>
+      <p class="page-subtitle">Toutes les dernières nouvelles de la communauté GAM</p>
+    </div>
+  </div>
+
+  <!-- Filters & Search Section -->
+  <div class="filters-section">
+    <div class="filters-container">
+      <div class="filter-group">
+        <label>Catégorie:</label>
+        <select [(ngModel)]="selectedCategory" (change)="filterAnnonces()" class="filter-select">
+          <option value="">Toutes les catégories</option>
+          <option value="événement">Événements</option>
+          <option value="culture">Culture</option>
+          <option value="communauté">Communauté</option>
+          <option value="sport">Sport</option>
+        </select>
+      </div>
+      
+      <div class="filter-group">
+        <label>Date:</label>
+        <select [(ngModel)]="selectedDateRange" (change)="filterAnnonces()" class="filter-select">
+          <option value="">Toutes les dates</option>
+          <option value="today">Aujourd'hui</option>
+          <option value="week">Cette semaine</option>
+          <option value="month">Ce mois-ci</option>
+          <option value="older">Plus ancien</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label>Tri:</label>
+        <select [(ngModel)]="sortBy" (change)="sortAnnonces()" class="filter-select">
+          <option value="date-desc">Plus récentes</option>
+          <option value="date-asc">Plus anciennes</option>
+          <option value="title">Titre A-Z</option>
+          <option value="views">Plus vues</option>
+        </select>
+      </div>
+
+      <div class="search-group">
+        <div class="search-input-container">
+          <input 
+            type="text" 
+            [(ngModel)]="searchTerm" 
+            (input)="searchAnnonces()"
+            placeholder="Rechercher une annonce..."
+            class="search-input"
+          >
+          <i class="fas fa-search search-icon"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Annonces List -->
+  <div class="annonces-section">
+    <div class="section-header">
+      <h2>{{ filteredAnnonces.length }} annonces trouvées</h2>
+      <div class="view-toggle">
+        <button 
+          [class.active]="viewMode === 'card'"
+          (click)="viewMode = 'card'"
+          class="view-btn"
+        >
+          <i class="fas fa-th-large"></i>
+        </button>
+        <button 
+          [class.active]="viewMode === 'list'"
+          (click)="viewMode = 'list'"
+          class="view-btn"
+        >
+          <i class="fas fa-list"></i>
+        </button>
+      </div>
+    </div>
+
+    <div [class]="'annonces-grid view-' + viewMode">
+      <article 
+        *ngFor="let annonce of paginatedAnnonces; let i = index"
+        class="annonce-card"
+        [class.urgent]="annonce.isUrgent"
+        [@annonceAnimation]="'in'"
+        [style.animation-delay]="(i * 0.1) + 's'"
+        (click)="openAnnonceDetail(annonce)"
+      >
+        <div class="annonce-image-container">
+          <img [src]="annonce.image" [alt]="annonce.title" class="annonce-image">
+          <div class="annonce-overlay">
+            <div class="overlay-content">
+              <button class="btn-read-full">
+                <i class="fas fa-book-open"></i>
+                Lire l'article
+              </button>
+            </div>
+          </div>
+          <div class="annonce-badges">
+            <span class="badge category" [class]="'category-' + annonce.category.toLowerCase()">
+              {{ annonce.category }}
+            </span>
+            <span class="badge urgent" *ngIf="annonce.isUrgent">
+              <i class="fas fa-exclamation-triangle"></i>
+              URGENT
+            </span>
+          </div>
+          <div class="annonce-date-badge">
+            <span class="date-day">{{ formatDate(annonce.date).day }}</span>
+            <span class="date-month">{{ formatDate(annonce.date).month }}</span>
+          </div>
+        </div>
+
+        <div class="annonce-content">
+          <h3 class="annonce-title">{{ annonce.title }}</h3>
+          <p class="annonce-excerpt">{{ annonce.excerpt }}</p>
+          
+          <div class="annonce-meta">
+            <div class="author-info">
+              <img [src]="annonce.author.avatar" [alt]="annonce.author.name" class="author-avatar">
+              <div class="author-details">
+                <span class="author-name">{{ annonce.author.name }}</span>
+                <span class="author-role">{{ annonce.author.role || 'Membre' }}</span>
+              </div>
+            </div>
+            
+            <div class="annonce-stats">
+              <span class="stat-item">
+                <i class="fas fa-eye"></i>
+                {{ annonce.views }}
+              </span>
+              <span class="stat-item">
+                <i class="fas fa-comment"></i>
+                {{ annonce.comments }}
+              </span>
+              <span class="stat-item">
+                <i class="fas fa-heart"></i>
+                {{ annonce.likes || 0 }}
+              </span>
+            </div>
+          </div>
+
+          <div class="annonce-tags" *ngIf="annonce.tags && annonce.tags.length > 0">
+            <span 
+              *ngFor="let tag of annonce.tags" 
+              class="tag"
+              (click)="searchByTag(tag); $event.stopPropagation()"
+            >
+              #{{ tag }}
+            </span>
+          </div>
+
+          <div class="annonce-actions">
+            <button class="btn-share" (click)="share(annonce); $event.stopPropagation()">
+              <i class="fas fa-share-alt"></i>
+              Partager
+            </button>
+            <button 
+              class="btn-bookmark" 
+              [class.active]="annonce.isBookmarked"
+              (click)="toggleBookmark(annonce); $event.stopPropagation()"
+            >
+              <i [class]="annonce.isBookmarked ? 'fas fa-bookmark' : 'far fa-bookmark'"></i>
+              {{ annonce.isBookmarked ? 'Sauvegardé' : 'Sauvegarder' }}
+            </button>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination-container" *ngIf="totalPages > 1">
+      <button 
+        class="page-btn" 
+        [disabled]="currentPage === 1"
+        (click)="changePage(currentPage - 1)"
+      >
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      
+      <span 
+        *ngFor="let page of getPagesArray()" 
+        class="page-number"
+        [class.active]="page === currentPage"
+        (click)="changePage(page)"
+      >
+        {{ page }}
+      </span>
+      
+      <button 
+        class="page-btn" 
+        [disabled]="currentPage === totalPages"
+        (click)="changePage(currentPage + 1)"
+      >
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Annonce Detail Modal -->
+  <div class="modal-overlay" *ngIf="selectedAnnonce" (click)="closeAnnonceDetail()">
+    <div class="annonce-modal" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeAnnonceDetail()">
+        <i class="fas fa-times"></i>
+      </button>
+      
+      <div class="modal-header">
+        <img [src]="selectedAnnonce.image" [alt]="selectedAnnonce.title" class="modal-image">
+        <div class="modal-header-content">
+          <div class="modal-category">{{ selectedAnnonce.category }}</div>
+          <h1 class="modal-title">{{ selectedAnnonce.title }}</h1>
+          <div class="modal-meta">
+            <div class="author-info">
+              <img [src]="selectedAnnonce.author.avatar" [alt]="selectedAnnonce.author.name" class="author-avatar">
+              <div class="author-details">
+                <span class="author-name">{{ selectedAnnonce.author.name }}</span>
+                <span class="author-role">{{ selectedAnnonce.author.role || 'Membre' }}</span>
+              </div>
+            </div>
+            <div class="date-info">
+              <span class="publish-date">{{ formatFullDate(selectedAnnonce.date) }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div class="article-content">
+          <p class="article-lead">{{ selectedAnnonce.excerpt }}</p>
+          <div class="article-text" [innerHTML]="selectedAnnonce.fullContent || getDefaultContent(selectedAnnonce)"></div>
+        </div>
+
+        <div class="article-tags" *ngIf="selectedAnnonce.tags && selectedAnnonce.tags.length > 0">
+          <h4>Tags:</h4>
+          <span *ngFor="let tag of selectedAnnonce.tags" class="tag">#{{ tag }}</span>
+        </div>
+
+        <div class="article-actions">
+          <button class="btn-like" [class.active]="selectedAnnonce.isLiked" (click)="toggleLike(selectedAnnonce)">
+            <i [class]="selectedAnnonce.isLiked ? 'fas fa-heart' : 'far fa-heart'"></i>
+            {{ selectedAnnonce.likes || 0 }} J'aime
+          </button>
+          <button class="btn-share-modal" (click)="share(selectedAnnonce)">
+            <i class="fas fa-share-alt"></i>
+            Partager
+          </button>
+          <button class="btn-bookmark-modal" [class.active]="selectedAnnonce.isBookmarked" (click)="toggleBookmark(selectedAnnonce)">
+            <i [class]="selectedAnnonce.isBookmarked ? 'fas fa-bookmark' : 'far fa-bookmark'"></i>
+            {{ selectedAnnonce.isBookmarked ? 'Sauvegardé' : 'Sauvegarder' }}
+          </button>
+        </div>
+
+        <div class="comments-section">
+          <h3>Commentaires ({{ selectedAnnonce.comments }})</h3>
+          <div class="comment-form">
+            <textarea 
+              [(ngModel)]="newComment" 
+              placeholder="Ajouter un commentaire..."
+              class="comment-input"
+            ></textarea>
+            <button class="btn-comment" (click)="addComment(selectedAnnonce)">
+              <i class="fas fa-paper-plane"></i>
+              Commenter
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

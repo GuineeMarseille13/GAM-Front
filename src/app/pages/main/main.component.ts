@@ -45,6 +45,9 @@ import {
   trigger,
 } from '@angular/animations';
 import { SousMenuComponent } from './sous-menu/sous-menu.component';
+import { BoutiqueComponent } from '../../composants/boutique/boutique.component';
+import { AnnoncesComponent } from '../../composants/annonces/annonces.component';
+import { FeteGuineeComponent } from '../../composants/fete-guinee/fete-guinee.component';
 import { Container, Engine, ISourceOptions } from '@tsparticles/engine';
 import { tsParticles } from '@tsparticles/engine';
 import { loadFull } from 'tsparticles';
@@ -63,6 +66,9 @@ import { loadFull } from 'tsparticles';
     FormsModule,
     ReseauxSociauxComponent,
     SousMenuComponent,
+    BoutiqueComponent,
+    AnnoncesComponent,
+    FeteGuineeComponent,
   ],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],

@@ -1,0 +1,232 @@
+<div class="boutique-detail-container">
+  <!-- Header Section -->
+  <div class="page-header">
+    <div class="header-bg">
+      <div class="header-particles"></div>
+    </div>
+    <div class="header-content">
+      <button class="btn-back" (click)="goBack()">
+        <i class="fas fa-arrow-left"></i>
+        Retour
+      </button>
+      <h1 class="page-title">
+        <i class="fas fa-store"></i>
+        Boutique GAM - Collection Complète
+      </h1>
+      <p class="page-subtitle">Découvrez toute notre gamme de produits authentiques de Guinée</p>
+    </div>
+  </div>
+
+  <!-- Filters Section -->
+  <div class="filters-section">
+    <div class="filters-container">
+      <div class="filter-group">
+        <label>Catégorie:</label>
+        <select [(ngModel)]="selectedCategory" (change)="filterProducts()" class="filter-select">
+          <option value="">Toutes les catégories</option>
+          <option value="vêtements">Vêtements</option>
+          <option value="bijoux">Bijoux</option>
+          <option value="artisanat">Artisanat</option>
+          <option value="musique">Musique</option>
+          <option value="alimentation">Alimentation</option>
+        </select>
+      </div>
+      
+      <div class="filter-group">
+        <label>Prix:</label>
+        <select [(ngModel)]="selectedPriceRange" (change)="filterProducts()" class="filter-select">
+          <option value="">Tous les prix</option>
+          <option value="0-50">0€ - 50€</option>
+          <option value="50-100">50€ - 100€</option>
+          <option value="100-200">100€ - 200€</option>
+          <option value="200+">200€ et plus</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label>Tri:</label>
+        <select [(ngModel)]="sortBy" (change)="sortProducts()" class="filter-select">
+          <option value="name">Nom</option>
+          <option value="price-asc">Prix croissant</option>
+          <option value="price-desc">Prix décroissant</option>
+          <option value="newest">Plus récents</option>
+        </select>
+      </div>
+
+      <div class="search-group">
+        <div class="search-input-container">
+          <input 
+            type="text" 
+            [(ngModel)]="searchTerm" 
+            (input)="searchProducts()"
+            placeholder="Rechercher un produit..."
+            class="search-input"
+          >
+          <i class="fas fa-search search-icon"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Products Grid -->
+  <div class="products-section">
+    <div class="section-header">
+      <h2>{{ filteredProducts.length }} produits trouvés</h2>
+      <div class="view-toggle">
+        <button 
+          [class.active]="viewMode === 'grid'"
+          (click)="viewMode = 'grid'"
+          class="view-btn"
+        >
+          <i class="fas fa-th"></i>
+        </button>
+        <button 
+          [class.active]="viewMode === 'list'"
+          (click)="viewMode = 'list'"
+          class="view-btn"
+        >
+          <i class="fas fa-list"></i>
+        </button>
+      </div>
+    </div>
+
+    <div [class]="'products-grid view-' + viewMode">
+      <div 
+        *ngFor="let product of paginatedProducts; let i = index"
+        class="product-card"
+        [@productAnimation]="'in'"
+        [style.animation-delay]="(i * 0.1) + 's'"
+      >
+        <div class="product-image-container">
+          <img [src]="product.image" [alt]="product.name" class="product-image">
+          <div class="product-overlay">
+            <button class="btn-quick-view" (click)="openProductModal(product)">
+              <i class="fas fa-eye"></i>
+              Voir détails
+            </button>
+          </div>
+          <div class="product-badges">
+            <span class="badge new" *ngIf="product.isNew">Nouveau</span>
+            <span class="badge sale" *ngIf="product.onSale">-{{ product.discount }}%</span>
+            <span class="badge limited" *ngIf="product.isLimited">Édition limitée</span>
+          </div>
+        </div>
+
+        <div class="product-info">
+          <div class="product-category">{{ product.category }}</div>
+          <h3 class="product-name">{{ product.name }}</h3>
+          <p class="product-description">{{ product.description }}</p>
+          
+          <div class="product-rating" *ngIf="product.rating">
+            <div class="stars">
+              <i 
+                *ngFor="let star of getStarsArray(product.rating)" 
+                [class]="star ? 'fas fa-star' : 'far fa-star'"
+              ></i>
+            </div>
+            <span class="rating-count">({{ product.reviewCount }})</span>
+          </div>
+
+          <div class="product-price">
+            <span class="current-price">{{ product.price }}€</span>
+            <span class="old-price" *ngIf="product.oldPrice">{{ product.oldPrice }}€</span>
+          </div>
+
+          <div class="product-actions">
+            <button class="btn-add-cart" (click)="addToCart(product)">
+              <i class="fas fa-shopping-cart"></i>
+              Ajouter au panier
+            </button>
+            <button 
+              class="btn-favorite" 
+              [class.active]="product.isFavorite"
+              (click)="toggleFavorite(product)"
+            >
+              <i [class]="product.isFavorite ? 'fas fa-heart' : 'far fa-heart'"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination-container" *ngIf="totalPages > 1">
+      <button 
+        class="page-btn" 
+        [disabled]="currentPage === 1"
+        (click)="changePage(currentPage - 1)"
+      >
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      
+      <span 
+        *ngFor="let page of getPagesArray()" 
+        class="page-number"
+        [class.active]="page === currentPage"
+        (click)="changePage(page)"
+      >
+        {{ page }}
+      </span>
+      
+      <button 
+        class="page-btn" 
+        [disabled]="currentPage === totalPages"
+        (click)="changePage(currentPage + 1)"
+      >
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Product Modal -->
+  <div class="modal-overlay" *ngIf="selectedProduct" (click)="closeProductModal()">
+    <div class="product-modal" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeProductModal()">
+        <i class="fas fa-times"></i>
+      </button>
+      
+      <div class="modal-content">
+        <div class="modal-image">
+          <img [src]="selectedProduct.image" [alt]="selectedProduct.name">
+        </div>
+        <div class="modal-info">
+          <div class="modal-category">{{ selectedProduct.category }}</div>
+          <h2 class="modal-title">{{ selectedProduct.name }}</h2>
+          <div class="modal-rating" *ngIf="selectedProduct.rating">
+            <div class="stars">
+              <i 
+                *ngFor="let star of getStarsArray(selectedProduct.rating)" 
+                [class]="star ? 'fas fa-star' : 'far fa-star'"
+              ></i>
+            </div>
+            <span class="rating-count">({{ selectedProduct.reviewCount }} avis)</span>
+          </div>
+          <p class="modal-description">{{ selectedProduct.fullDescription || selectedProduct.description }}</p>
+          
+          <div class="modal-features" *ngIf="selectedProduct.features">
+            <h4>Caractéristiques:</h4>
+            <ul>
+              <li *ngFor="let feature of selectedProduct.features">{{ feature }}</li>
+            </ul>
+          </div>
+
+          <div class="modal-price">
+            <span class="current-price">{{ selectedProduct.price }}€</span>
+            <span class="old-price" *ngIf="selectedProduct.oldPrice">{{ selectedProduct.oldPrice }}€</span>
+          </div>
+
+          <div class="modal-actions">
+            <button class="btn-add-cart-modal" (click)="addToCart(selectedProduct)">
+              <i class="fas fa-shopping-cart"></i>
+              Ajouter au panier
+            </button>
+            <button class="btn-contact">
+              <i class="fas fa-envelope"></i>
+              Contacter le vendeur
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

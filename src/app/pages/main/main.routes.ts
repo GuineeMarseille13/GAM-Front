@@ -25,4 +25,25 @@ export const routes: Routes = [
         (p) => p.NotreAssociationComponent
       ),
   },
+  {
+    path: 'boutique-detail',
+    loadComponent: () =>
+      import('../boutique-detail/boutique-detail.component').then(
+        (c) => c.BoutiqueDetailComponent
+      ),
+  },
+  {
+    path: 'annonces-detail',
+    loadComponent: () =>
+      import('../annonces-detail/annonces-detail.component').then(
+        (c) => c.AnnoncesDetailComponent
+      ),
+  },
+  {
+    path: 'annonces-detail/:id',
+    loadComponent: () =>
+      import('../annonces-detail/annonces-detail.component').then(
+        (c) => c.AnnoncesDetailComponent
+      ),
+  },
 ];

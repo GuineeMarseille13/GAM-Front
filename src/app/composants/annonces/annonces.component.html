@@ -1,0 +1,86 @@
+<div class="annonces-container">
+  <div class="annonces-header">
+    <h2 class="annonces-title">
+      <i class="fas fa-bullhorn"></i>
+      Actualités & Annonces
+    </h2>
+    <p class="annonces-subtitle">Restez informés de nos dernières nouvelles</p>
+  </div>
+
+  <div class="annonces-grid">
+    <article class="annonce-card featured" 
+             *ngFor="let annonce of annonces; let i = index"
+             [@slideInUp]="'in'"
+             [style.animation-delay]="(i * 0.1) + 's'">
+      
+      <div class="annonce-image-container">
+        <img [src]="annonce.image" [alt]="annonce.title" class="annonce-image">
+        <div class="annonce-category">
+          <span [class]="'category-' + annonce.category.toLowerCase()">
+            {{ annonce.category }}
+          </span>
+        </div>
+        <div class="annonce-date">
+          <span class="date-day">{{ formatDate(annonce.date).day }}</span>
+          <span class="date-month">{{ formatDate(annonce.date).month }}</span>
+        </div>
+      </div>
+
+      <div class="annonce-content">
+        <h3 class="annonce-title">{{ annonce.title }}</h3>
+        <p class="annonce-excerpt">{{ annonce.excerpt }}</p>
+        
+        <div class="annonce-meta">
+          <div class="author-info">
+            <img [src]="annonce.author.avatar" [alt]="annonce.author.name" class="author-avatar">
+            <span class="author-name">{{ annonce.author.name }}</span>
+          </div>
+          <div class="annonce-stats">
+            <span class="stat-item">
+              <i class="fas fa-eye"></i>
+              {{ annonce.views }}
+            </span>
+            <span class="stat-item">
+              <i class="fas fa-comment"></i>
+              {{ annonce.comments }}
+            </span>
+          </div>
+        </div>
+
+        <div class="annonce-actions">
+          <button class="btn-read-more" (click)="readMore(annonce)">
+            Lire la suite
+            <i class="fas fa-arrow-right"></i>
+          </button>
+          <button class="btn-share" (click)="share(annonce)">
+            <i class="fas fa-share-alt"></i>
+          </button>
+          <button class="btn-bookmark" (click)="toggleBookmark(annonce)">
+            <i [class]="annonce.isBookmarked ? 'fas fa-bookmark' : 'far fa-bookmark'"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="annonce-overlay" *ngIf="annonce.isUrgent">
+        <div class="urgent-badge">
+          <i class="fas fa-exclamation-triangle"></i>
+          URGENT
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div class="annonces-footer">
+    <button class="btn-voir-plus-annonces" (click)="voirPlusAnnonces()">
+      <span>Voir toutes les annonces</span>
+      <i class="fas fa-newspaper"></i>
+    </button>
+  </div>
+
+  <!-- Background decoration -->
+  <div class="bg-decoration">
+    <div class="decoration-circle circle-1"></div>
+    <div class="decoration-circle circle-2"></div>
+    <div class="decoration-circle circle-3"></div>
+  </div>
+</div>
