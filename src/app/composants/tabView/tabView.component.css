@@ -1,6 +1,12 @@
 /* Tab bouton */
 .tab-item-title {
-  font-size: 9px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.tab-title {
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .tab-box {
@@ -13,11 +19,17 @@
   color: #919191;
   padding: 0;
   border: none;
+  transition: all 0.3s ease;
+  position: relative;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .select-item{
-  color: blue;
-  border-bottom: 2px solid blue;
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
 }
 
 /* tab content  */

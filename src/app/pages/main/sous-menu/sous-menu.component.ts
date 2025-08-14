@@ -93,19 +93,6 @@ export class SousMenuComponent {
     },
   ];
 
-  // @HostListener('window:scroll', [])
-  // onScroll(): void {
-  //     const triggerHeight = window.innerHeight * 0.1;
-  //     this.sections.forEach((section, index) => {
-  //         const element = document.getElementById(`section-${index}`);
-  //         if (element) {
-  //             const position = element.getBoundingClientRect().bottom;
-  //             if (position < triggerHeight) {
-  //                 section.visible = true;
-  //             }
-  //         }
-  //     });
-  // }
 
   redirectByUrl(section: any): void {
     if (section?.url) {

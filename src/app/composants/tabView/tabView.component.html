@@ -5,8 +5,8 @@
       [ngClass]="{ 'select-item': isPresidentActive }"
       (click)="getActiveTabItem(tabItems.President)"
     >
-      <h3 class="d-none d-lg-block text-center mb-2">Le président</h3>
-      <h5 class="d-none d-md-block d-lg-none text-center mb-2">Le président</h5>
+      <h5 class="d-none d-lg-block text-center mb-2 tab-title">Le président</h5>
+      <h6 class="d-none d-md-block d-lg-none text-center mb-2 tab-title">Le président</h6>
       <h6 class="d-sm-block d-md-none text-center mb-2 tab-item-title">
         Le président
       </h6>
@@ -16,10 +16,10 @@
       [ngClass]="{ 'select-item': isQuiSommesNousActive }"
       (click)="getActiveTabItem(tabItems.QuiSommesNous)"
     >
-      <h3 class="d-none d-lg-block text-center mb-2">Qui somme-nous ?</h3>
-      <h5 class="d-none d-md-block d-lg-none text-center mb-2">
-        Qui somme-nous ?
-      </h5>
+      <h5 class="d-none d-lg-block text-center mb-2 tab-title">Qui sommes-nous ?</h5>
+      <h6 class="d-none d-md-block d-lg-none text-center mb-2 tab-title">
+        Qui sommes-nous ?
+      </h6>
       <h6 class="d-sm-block d-md-none text-center mb-2 tab-item-title">
         Qui somme-nous ?
       </h6>
@@ -29,10 +29,10 @@
       [ngClass]="{ 'select-item': isRapportActiviteActive }"
       (click)="getActiveTabItem(tabItems.RapportActivite)"
     >
-      <h3 class="d-none d-lg-block text-center mb-2">Rapport d'activité</h3>
-      <h5 class="d-none d-md-block d-lg-none text-center mb-2">
+      <h5 class="d-none d-lg-block text-center mb-2 tab-title">Rapport d'activité</h5>
+      <h6 class="d-none d-md-block d-lg-none text-center mb-2 tab-title">
         Rapport d'activité
-      </h5>
+      </h6>
       <h6 class="d-sm-block d-md-none text-center mb-2 tab-item-title">
         Rapport d'activité
       </h6>
@@ -42,14 +42,14 @@
       [ngClass]="{ 'select-item': isNotreEquipeActive }"
       (click)="getActiveTabItem(tabItems.NotreEquipe)"
     >
-      <h3 class="d-none d-lg-block text-center mb-2">Notre équipe</h3>
-      <h5 class="d-none d-md-block d-lg-none text-center mb-2">Notre équipe</h5>
+      <h5 class="d-none d-lg-block text-center mb-2 tab-title">Notre équipe</h5>
+      <h6 class="d-none d-md-block d-lg-none text-center mb-2 tab-title">Notre équipe</h6>
       <h6 class="d-sm-block d-md-none text-center mb-2 tab-item-title">
         Notre équipe
       </h6>
     </button>
   </div>
-  <div class="tab-content pt-2">
+  <div class="tab-content pt-3">
     <ng-container *ngIf="isPresidentActive">
       <div>
         <mot-du-president></mot-du-president>
