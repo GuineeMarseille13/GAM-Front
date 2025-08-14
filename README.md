@@ -60,6 +60,26 @@ J'ai créé avec succès tous les composants demandés avec un style moderne et 
 - `src/app/composants/fete-guinee/fete-guinee.component.ts`
 - `src/app/composants/fete-guinee/fete-guinee.component.css`
 
+## 📺 Composant Vidéos YouTube
+
+### Fonctionnalités
+- **Intégration YouTube** avec iframes sécurisées
+- **Vidéo à la une** avec lecteur intégré
+- **Grille de vidéos** responsive avec thumbnails
+- **Filtres par catégories** (Événements, Culture, Témoignages, Actualités)
+- **Modal vidéo** en plein écran
+- **Système de likes** et favoris
+- **Partage social** avec Web Share API
+- **Statistiques** de chaîne (vues, abonnés, likes)
+- **Chargement progressif** avec bouton "Voir plus"
+- **Effets visuels** avec formes flottantes
+- **Design YouTube** avec couleurs officielles
+
+### Fichiers créés
+- `src/app/composants/videos-youtube/videos-youtube.component.html`
+- `src/app/composants/videos-youtube/videos-youtube.component.ts`
+- `src/app/composants/videos-youtube/videos-youtube.component.css`
+
 ## 🎨 Caractéristiques Techniques
 
 ### Technologies utilisées
@@ -83,10 +103,14 @@ src/app/
 │   │   ├── annonces.component.html
 │   │   ├── annonces.component.ts
 │   │   └── annonces.component.css
-│   └── fete-guinee/
-│       ├── fete-guinee.component.html
-│       ├── fete-guinee.component.ts
-│       └── fete-guinee.component.css
+│   ├── fete-guinee/
+│   │   ├── fete-guinee.component.html
+│   │   ├── fete-guinee.component.ts
+│   │   └── fete-guinee.component.css
+│   └── videos-youtube/
+│       ├── videos-youtube.component.html
+│       ├── videos-youtube.component.ts
+│       └── videos-youtube.component.css
 └── pages/
     ├── boutique-detail/
     │   ├── boutique-detail.component.html
@@ -116,6 +140,7 @@ src/app/
 - **Boutique** : Gradients bleu-violet (#667eea → #764ba2)
 - **Annonces** : Gradients rose-rouge (#f093fb → #f5576c)
 - **Fête Guinée** : Couleurs nationales (rouge, jaune, vert)
+- **Vidéos YouTube** : Gradients multicolores (#667eea → #764ba2 → #f093fb) avec rouge YouTube (#ff0000)
 
 ## 🛣️ Routes ajoutées
 
@@ -166,6 +191,11 @@ Les composants sont intégrés dans la page principale (`main.component.html`) :
 <!-- Fête de la Guinée Section -->
 <section id="fete-guinee" class="my-5">
   <app-fete-guinee></app-fete-guinee>
+</section>
+
+<!-- Vidéos YouTube Section -->
+<section id="videos-youtube" class="my-5">
+  <app-videos-youtube></app-videos-youtube>
 </section>
 ```
 
