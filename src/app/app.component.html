@@ -1,17 +1,11 @@
-<div class="container-fluid">
-  <header id="header" class="pt-2 position-sticky top-0 bg-white z-3">
-    <img
-      src="../assets/layout/gam.png"
-      class="gam-logo d-none d-md-none d-lg-inline"
-      alt=""
-      srcset=""
-    />
+<div class="container-fluid p-0 m-0">
+  <!-- HEADER : drapeaux + titre -->
+  <header id="header" class="pt-2 bg-white z-3">
     <div class="d-flex justify-content-center align-content-center mt-2">
       <img
         src="../assets/layout/gam.png"
         class="gam-logo-sm d-lg-none d-md-none"
         alt=""
-        srcset=""
       />
       <img
         src="../assets/layout/guinee.png"
@@ -25,134 +19,142 @@
         alt=""
       />
     </div>
-    <nav class="navbar navbar-expand-lg mt-2 mb-2">
-      <span
-        class="position-absolute h-100 w-100 bg-light d-lg-none d-md-none z-n1"
-      ></span>
-      <div class="container-fluid">
-        <a
-          href="https://www.helloasso.com/associations/association-guinee-a-marseille/formulaires/1"
-          target="_blank"
-          class="btn btn-outline-secondary navbar-toggler"
-          type="button"
-        >
-          <span class="fs-6 me-1">Faire un don</span>
-          <fa-icon [icon]="faHandHoldingDollar" [fixedWidth]="true"></fa-icon>
-        </a>
-        <a
-          href="https://www.helloasso.com/associations/association-guinee-a-marseille/adhesions/adhesion-gam-2025-1"
-          target="_blank"
-          class="btn btn-outline-secondary navbar-toggler mx-1"
-          type="button"
-        >
-          <span class="fs-6 me-1">Adhésion</span>
-          <fa-icon [icon]="faUsers" [fixedWidth]="true"></fa-icon>
-        </a>
-        <button
-          class="navbar-toggler btn btn-outline-secondary"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <fa-icon [icon]="faBarsStaggered" [fixedWidth]="true"></fa-icon>
-        </button>
-        <div
-          class="navbar-collapse justify-content-center collapse"
-          id="navbarNav"
-        >
-          <ul
-            class="navbar-nav d-flex justify-content-center align-items-center"
-          >
-            <li class="nav-item" *ngIf="!isAccueilHidden">
-              <a
-                [routerLink]="['']"
-                [ngClass]="[IsAccueilClicked ? 'reset-shadow' : 'apply-shadow']"
-                class="btn bg-light box-shadow-lg rounded-5 mx-3 d-none d-lg-inline d-md-none"
-                (click)="IsAccueilClicked = true"
-              >
-                Accueil
-              </a>
-              <a
-                [routerLink]="['']"
-                class="btn btn-outline-secondary mt-2 nav-items-style d-lg-none"
-                (click)="selectTitle()"
-              >
-                Accueil
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="btn bg-light box-shadow-lg rounded-5 mx-3 d-none d-lg-inline d-md-none"
-                [ngClass]="[IsContactClicked ? 'reset-shadow' : 'apply-shadow']"
-                (click)="IsContactClicked = true; navigateToContact()"
-              >
-                Contacts
-              </a>
-              <a
-                class="btn btn-outline-secondary mt-2 nav-items-style d-lg-none"
-                (click)="navigateToContact(); selectTitle()"
-              >
-                Contacts
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                [routerLink]="['notre-association']"
-                [ngClass]="[
-                  IsAssociationClicked ? 'reset-shadow' : 'apply-shadow'
-                ]"
-                class="btn bg-light box-shadow-lg rounded-5 mx-3 d-none d-lg-inline d-md-none"
-                (click)="IsAssociationClicked = true"
-              >
-                Notre association
-              </a>
-              <a
-                [routerLink]="['notre-association', { tabItem: 'President' }]"
-                class="btn btn-outline-secondary mt-2 nav-items-style d-lg-none"
-                (click)="selectTitle()"
-              >
-                Notre association
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                href="https://www.helloasso.com/associations/association-guinee-a-marseille/adhesions/adhesion-gam-2025-1"
-                target="_blank"
-                class="btn bg-light box-shadow-lg rounded-5 mx-3 d-none d-lg-inline d-md-none"
-              >
-                Adhésion
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                href="https://www.helloasso.com/associations/association-guinee-a-marseille"
-                target="_blank"
-                class="btn bg-light box-shadow-lg rounded-5 mx-3 d-none d-lg-inline d-md-none"
-              >
-                Boutique
-              </a>
-              <a
-                href="https://www.helloasso.com/associations/association-guinee-a-marseille"
-                target="_blank"
-                class="btn btn-outline-secondary mt-2 nav-items-style d-lg-none"
-                (click)="selectTitle()"
-              >
-                Boutique
-              </a>
-            </li>
-            <li class="nav-item d-flex justify-content-center">
-              <a
-                href="https://www.helloasso.com/associations/association-guinee-a-marseille/formulaires/1"
-                target="_blank"
-                id="faireUnDon"
-                class="btn bg-light box-shadow-lg rounded-5 mx-3 d-none d-lg-inline d-md-none"
-              >
-                Faire un don
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
   </header>
+
+  <!-- NAV : logo + rendue sticky -->
+  <nav class="navbar navbar-expand-lg mt-0 mb-2 position-sticky top-0 bg-white z-3">
+    <img
+      src="../assets/layout/gam.png"
+      class="gam-logo d-none d-md-none d-lg-inline logo-nav"
+      alt=""
+    />
+    <span
+      class="position-absolute h-100 w-100 bg-light d-lg-none d-md-none z-n1"
+    ></span>
+    <div class="container-fluid">
+      <a
+        href="https://www.helloasso.com/associations/association-guinee-a-marseille/formulaires/1"
+        target="_blank"
+        class="btn btn-outline-secondary navbar-toggler"
+        type="button"
+      >
+        <span class="fs-6 me-1">Faire un don</span>
+        <fa-icon [icon]="faHandHoldingDollar" [fixedWidth]="true"></fa-icon>
+      </a>
+      <a
+        href="https://www.helloasso.com/associations/association-guinee-a-marseille/adhesions/adhesion-gam-2025-1"
+        target="_blank"
+        class="btn btn-outline-secondary navbar-toggler mx-1"
+        type="button"
+      >
+        <span class="fs-6 me-1">Adhésion</span>
+        <fa-icon [icon]="faUsers" [fixedWidth]="true"></fa-icon>
+      </a>
+      <button
+        class="navbar-toggler btn btn-outline-secondary"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <fa-icon [icon]="faBarsStaggered" [fixedWidth]="true"></fa-icon>
+      </button>
+      <div
+        class="navbar-collapse justify-content-center collapse"
+        id="navbarNav"
+      >
+        <ul
+          class="navbar-nav d-flex justify-content-center align-items-center"
+        >
+          <li class="nav-item" *ngIf="!isAccueilHidden">
+            <a
+              [routerLink]="['']"
+              [ngClass]="[IsAccueilClicked ? 'reset-shadow' : 'apply-shadow']"
+              class="btn bg-light box-shadow-lg rounded-5 mx-3 d-none d-lg-inline d-md-none"
+              (click)="IsAccueilClicked = true"
+            >
+              Accueil
+            </a>
+            <a
+              [routerLink]="['']"
+              class="btn btn-outline-secondary mt-2 nav-items-style d-lg-none"
+              (click)="selectTitle()"
+            >
+              Accueil
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="btn bg-light box-shadow-lg rounded-5 mx-3 d-none d-lg-inline d-md-none"
+              [ngClass]="[IsContactClicked ? 'reset-shadow' : 'apply-shadow']"
+              (click)="IsContactClicked = true; navigateToContact()"
+            >
+              Contacts
+            </a>
+            <a
+              class="btn btn-outline-secondary mt-2 nav-items-style d-lg-none"
+              (click)="navigateToContact(); selectTitle()"
+            >
+              Contacts
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              [routerLink]="['notre-association']"
+              [ngClass]="[
+                IsAssociationClicked ? 'reset-shadow' : 'apply-shadow'
+              ]"
+              class="btn bg-light box-shadow-lg rounded-5 mx-3 d-none d-lg-inline d-md-none"
+              (click)="IsAssociationClicked = true"
+            >
+              Notre association
+            </a>
+            <a
+              [routerLink]="['notre-association', { tabItem: 'President' }]"
+              class="btn btn-outline-secondary mt-2 nav-items-style d-lg-none"
+              (click)="selectTitle()"
+            >
+              Notre association
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="https://www.helloasso.com/associations/association-guinee-a-marseille/adhesions/adhesion-gam-2025-1"
+              target="_blank"
+              class="btn bg-light box-shadow-lg rounded-5 mx-3 d-none d-lg-inline d-md-none"
+            >
+              Adhésion
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="https://www.helloasso.com/associations/association-guinee-a-marseille"
+              target="_blank"
+              class="btn bg-light box-shadow-lg rounded-5 mx-3 d-none d-lg-inline d-md-none"
+            >
+              Boutique
+            </a>
+            <a
+              href="https://www.helloasso.com/associations/association-guinee-a-marseille"
+              target="_blank"
+              class="btn btn-outline-secondary mt-2 nav-items-style d-lg-none"
+              (click)="selectTitle()"
+            >
+              Boutique
+            </a>
+          </li>
+          <li class="nav-item d-flex justify-content-center">
+            <a
+              href="https://www.helloasso.com/associations/association-guinee-a-marseille/formulaires/1"
+              target="_blank"
+              id="faireUnDon"
+              class="btn bg-light box-shadow-lg rounded-5 mx-3 d-none d-lg-inline d-md-none"
+            >
+              Faire un don
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
   <router-outlet />
 </div>

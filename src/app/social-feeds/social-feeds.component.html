@@ -1,0 +1,220 @@
+<div class="social-feeds-container">
+  <div class="social-header">
+    <h2 class="social-title">
+      <i class="fas fa-share-alt"></i>
+      Suivez-nous sur les Réseaux
+    </h2>
+    <p class="social-subtitle">Restez connectés avec notre communauté</p>
+  </div>
+
+  <!-- Social Platform Tabs -->
+  <div class="social-tabs">
+    <button 
+      *ngFor="let platform of socialPlatforms"
+      [class.active]="selectedPlatform === platform.id"
+      (click)="selectPlatform(platform.id)"
+      class="social-tab"
+      [style.--platform-color]="platform.color"
+    >
+      <i [class]="platform.icon"></i>
+      <span>{{ platform.name }}</span>
+      <div class="tab-indicator"></div>
+    </button>
+  </div>
+
+  <!-- Social Content -->
+  <div class="social-content" [@slideContent]="selectedPlatform">
+    
+    <!-- Facebook Feed -->
+    <div class="platform-feed" *ngIf="selectedPlatform === 'facebook'">
+      <div class="feed-header">
+        <i class="fab fa-facebook platform-icon"></i>
+        <div class="feed-info">
+          <h3>Facebook</h3>
+          <p>{{ facebookStats.followers }} abonnés • {{ facebookStats.posts }} publications</p>
+        </div>
+        <a href="https://www.facebook.com/GUINEEAMARSEILLE/?locale=fr_FR" target="_blank" class="btn-follow facebook">
+          <i class="fab fa-facebook"></i>
+          Suivre
+        </a>
+      </div>
+      
+      <!-- Facebook Page Plugin -->
+      <div class="facebook-page-container">
+        <!-- Page principale Facebook -->
+        <div class="facebook-embed">
+          <iframe 
+            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FGUINEEAMARSEILLE&tabs=timeline&width=800&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+            width="100%" 
+            height="600" 
+            class="facebook-iframe">
+          </iframe>
+        </div>
+
+        <!-- Post spécifique Facebook -->
+        <!-- <div class="facebook-post-embed">
+          <h4 class="embed-title">
+            <i class="fab fa-facebook"></i>
+            Publication récente
+          </h4>
+          <iframe 
+            src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FGUINEEAMARSEILLE%2Fposts%2Fl%25C3%25A9mission-voix-de-guin%25C3%25A9e-et-dafrique-arrive-%25C3%25A0-marseille-%25EF%25B8%258F-pr%25C3%25A9sent%25C3%25A9e-par-bademba-%2F795649299461241%2F&show_text=true&width=500"
+            width="100%" 
+            height="400" 
+            style="border:none;overflow:hidden;border-radius:12px;" 
+            scrolling="no" 
+            frameborder="0" 
+            allowfullscreen="true" 
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            class="facebook-post-iframe">
+          </iframe>
+        </div>-->
+      </div>
+    </div> 
+
+    <!-- Instagram Feed -->
+    <div class="platform-feed" *ngIf="selectedPlatform === 'instagram'">
+      <div class="feed-header">
+        <i class="fab fa-instagram platform-icon"></i>
+        <div class="feed-info">
+          <h3>Instagram</h3>
+          <p>{{ instagramStats.followers }} abonnés • {{ instagramStats.posts }} publications</p>
+        </div>
+        <a href="https://www.instagram.com/guineeamarseille/" target="_blank" class="btn-follow instagram">
+          <i class="fab fa-instagram"></i>
+          Suivre
+        </a>
+      </div>
+      
+      <!-- Instagram Embed -->
+      <div class="instagram-container">
+        <div class="instagram-embed">
+          <div class="instagram-notice">
+            <div class="notice-card instagram-card">
+              <i class="fab fa-instagram notice-icon"></i>
+              <h4>&#64;guineeamarseille</h4>
+              <p>Suivez-nous sur Instagram pour voir nos photos et stories exclusives de la communauté guinéenne à Marseille.</p>
+              <a href="https://www.instagram.com/guineeamarseille/" target="_blank" class="btn-visit-instagram">
+                <i class="fab fa-instagram"></i>
+                Voir sur Instagram
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TikTok Feed -->
+    <div class="platform-feed" *ngIf="selectedPlatform === 'tiktok'">
+      <div class="feed-header">
+        <i class="fab fa-tiktok platform-icon"></i>
+        <div class="feed-info">
+          <h3>TikTok</h3>
+          <p>{{ tiktokStats.followers }} abonnés • {{ tiktokStats.posts }} vidéos</p>
+        </div>
+        <a href="https://www.tiktok.com/@guineeamarseille" target="_blank" class="btn-follow tiktok">
+          <i class="fab fa-tiktok"></i>
+          Suivre
+        </a>
+      </div>
+      
+      <!-- TikTok Embed -->
+      <div class="tiktok-container">
+        <div class="tiktok-embed">
+          <div class="tiktok-notice">
+            <div class="notice-card tiktok-card">
+              <i class="fab fa-tiktok notice-icon"></i>
+              <h4>&#64;guineeamarseille</h4>
+              <p>Découvrez nos vidéos TikTok avec des moments authentiques de la culture guinéenne à Marseille.</p>
+              <a href="https://www.tiktok.com/@guineeamarseille" target="_blank" class="btn-visit-tiktok">
+                <i class="fab fa-tiktok"></i>
+                Voir sur TikTok
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LinkedIn Feed -->
+    <div class="platform-feed" *ngIf="selectedPlatform === 'linkedin'">
+      <div class="feed-header">
+        <i class="fab fa-linkedin platform-icon"></i>
+        <div class="feed-info">
+          <h3>LinkedIn</h3>
+          <p>{{ linkedinStats.followers }} abonnés • {{ linkedinStats.posts }} publications</p>
+        </div>
+        <a href="https://linkedin.com/company/GAMGuineeMarseille" target="_blank" class="btn-follow linkedin">
+          <i class="fab fa-linkedin"></i>
+          Suivre
+        </a>
+      </div>
+      
+      <!-- LinkedIn Embed -->
+      <div class="linkedin-container">
+        <div class="linkedin-embed">
+          <h4 class="embed-title">
+            <i class="fab fa-linkedin"></i>
+            Profil LinkedIn
+          </h4>
+          <div class="linkedin-notice">
+            <div class="notice-card linkedin-card">
+              <i class="fab fa-linkedin notice-icon"></i>
+              <h4>Guinée à Marseille</h4>
+              <p>Connectez-vous avec nous sur LinkedIn pour suivre nos actualités professionnelles et nos partenariats.</p>
+              <a href="https://linkedin.com/company/GAMGuineeMarseille" target="_blank" class="btn-visit-linkedin">
+                <i class="fab fa-linkedin"></i>
+                Voir sur LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Stats -->
+  <div class="global-stats">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon facebook-color">
+          <i class="fab fa-facebook"></i>
+        </div>
+        <div class="stat-content">
+          <h4>{{ facebookStats.followers }}</h4>
+          <p>Facebook</p>
+        </div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-icon instagram-color">
+          <i class="fab fa-instagram"></i>
+        </div>
+        <div class="stat-content">
+          <h4>{{ instagramStats.followers }}</h4>
+          <p>Instagram</p>
+        </div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-icon tiktok-color">
+          <i class="fab fa-tiktok"></i>
+        </div>
+        <div class="stat-content">
+          <h4>{{ tiktokStats.followers }}</h4>
+          <p>TikTok</p>
+        </div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-icon linkedin-color">
+          <i class="fab fa-linkedin"></i>
+        </div>
+        <div class="stat-content">
+          <h4>{{ linkedinStats.followers }}</h4>
+          <p>LinkedIn</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

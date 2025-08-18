@@ -46,7 +46,7 @@ import {
 } from '@angular/animations';
 import { SousMenuComponent } from './sous-menu/sous-menu.component';
 import { BoutiqueComponent } from '../../composants/boutique/boutique.component';
-import { AnnoncesComponent } from '../../composants/annonces/annonces.component';
+import { SocialFeedsComponent } from '../../social-feeds/social-feeds.component';
 import { FeteGuineeComponent } from '../../composants/fete-guinee/fete-guinee.component';
 import { VideosYoutubeComponent } from '../../composants/videos-youtube/videos-youtube.component';
 import { Container, Engine, ISourceOptions } from '@tsparticles/engine';
@@ -68,7 +68,7 @@ import { loadFull } from 'tsparticles';
     ReseauxSociauxComponent,
     SousMenuComponent,
     BoutiqueComponent,
-    AnnoncesComponent,
+    SocialFeedsComponent,
     FeteGuineeComponent,
     VideosYoutubeComponent,
   ],
