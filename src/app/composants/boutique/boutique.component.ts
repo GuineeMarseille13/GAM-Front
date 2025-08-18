@@ -19,8 +19,9 @@ interface Product {
   oldPrice?: number;
   image: string;
   isNew: boolean;
-  isFavorite: boolean;
   hovered: boolean;
+  payementUrl: string;
+  viewUrl: string;
 }
 
 @Component({
@@ -48,65 +49,94 @@ export class BoutiqueComponent implements OnInit, OnDestroy {
   products: Product[] = [
     {
       id: 1,
-      name: 'Boubou Traditionnel',
-      description: 'Boubou authentique fait à la main par nos artisans guinéens',
-      price: 89,
-      oldPrice: 120,
-      image: 'assets/boutique/boubou.jpg',
+      name: 'Tee-shirt Guinée 67',
+      description: "À l'occasion la 67ᵉ fête de la Guinée, l’association Guinée à Marseille propose des T-shirts hommes et femmes aux couleurs rouge, jaune, vert et noir, disponibles en tailles S, M, L, XL et XXL.",
+      price: 20,
+      image: 'assets/boutiques/tee-shirt-guinee-66.png',
       isNew: true,
-      isFavorite: false,
-      hovered: false
+      hovered: false,
+      payementUrl: "https://www.helloasso.com/associations/association-guinee-a-marseille/boutiques/tee-shirt-guinee-66",
+      viewUrl: "https://www.helloasso.com/associations/association-guinee-a-marseille/boutiques/tee-shirt-guinee-66"
     },
     {
       id: 2,
-      name: 'Bijoux en Or',
-      description: 'Collection de bijoux traditionnels en or 18 carats',
-      price: 250,
-      image: 'assets/boutique/bijoux.jpg',
+      name: 'Tee-shirt Guinée 66',
+      description: "À l'occasion la 66ᵉ fête de la Guinée, l’association Guinée à Marseille propose des T-shirts hommes et femmes aux couleurs rouge, jaune, vert et noir, disponibles en tailles S, M, L, XL et XXL.",
+      price: 10,
+      oldPrice: 25,
+      image: 'assets/boutiques/tee-shirt-guinee-66.png',
       isNew: false,
-      isFavorite: false,
-      hovered: false
+      hovered: false,
+      payementUrl: "https://www.helloasso.com/associations/association-guinee-a-marseille/boutiques/tee-shirt-guinee-66",
+      viewUrl: "https://www.helloasso.com/associations/association-guinee-a-marseille/boutiques/tee-shirt-guinee-66"
     },
     {
       id: 3,
-      name: 'Masque Traditionnel',
-      description: 'Masque cérémoniel sculpté dans le bois d\'ébène',
-      price: 65,
-      image: 'assets/boutique/masque.jpg',
+      name: 'T-shirt Guinée 65, 64',
+      description: "À l'occasion de la fête de la Guinée — profitez d'une offre exceptionnelle bien en dessous du prix habituel ! Nous proposons des T-shirts hommes et femmes, disponibles en tailles S, M, L, XL et XXL.",
+      price: 5,
+      oldPrice: 25,
+      image: 'assets/boutiques/tee-shirt-guinee-65.webp',
       isNew: true,
-      isFavorite: false,
-      hovered: false
+      hovered: true,
+      payementUrl: "https://www.helloasso.com/associations/association-guinee-a-marseille/boutiques/tee-shirt-guinee-66",
+      viewUrl: "https://www.helloasso.com/associations/association-guinee-a-marseille/boutiques/tee-shirt-guinee-66"
     },
     {
       id: 4,
-      name: 'Tissu Wax Premium',
-      description: 'Tissu wax de haute qualité aux motifs authentiques',
-      price: 35,
-      oldPrice: 45,
-      image: 'assets/boutique/wax.jpg',
+      name: 'Un Tissu Lépi',
+      description: "Les tissus Lépi que nous proposons sont produits à la main en moyenne Guinée, dans le Fouta pour les Lépi et en Guinée forestière pour les Forêt sacrées. Chaque pagne en wax mesure 2m x 1,5m et 1,5m x 1m pour ceux en coton.",
+      price: 20,
+      oldPrice: 25,
+      image: 'assets/boutiques/tissu-lepi.png',
       isNew: false,
-      isFavorite: false,
-      hovered: false
+      hovered: false,
+      payementUrl: "https://www.helloasso.com/associations/association-guinee-a-marseille/boutiques/tissus-lepi",
+      viewUrl: "https://www.helloasso.com/associations/association-guinee-a-marseille/boutiques/tissus-lepi"
     },
     {
       id: 5,
-      name: 'Djembé Artisanal',
-      description: 'Djembé traditionnel fabriqué par nos maîtres artisans',
-      price: 150,
-      image: 'assets/boutique/djembe.jpg',
+      name: 'Un sac Tote bag doublé',
+      description: "Les tissus Lépi que nous proposons sont produits à la main en moyenne Guinée, dans le Fouta pour les Lépi et en Guinée forestière pour les Forêt sacrées. Chaque pagne en wax mesure 2m x 1,5m et 1,5m x 1m pour ceux en coton.",
+      price: 20,
+      image: 'assets/boutiques/sac-tote-bag-double.png',
       isNew: true,
-      isFavorite: false,
-      hovered: false
+      hovered: false,
+      payementUrl: "https://www.helloasso.com/associations/association-guinee-a-marseille/boutiques/tissus-lepi",
+      viewUrl: "https://www.helloasso.com/associations/association-guinee-a-marseille/boutiques/tissus-lepi"
     },
     {
       id: 6,
-      name: 'Épices de Guinée',
-      description: 'Mélange d\'épices traditionnelles importées directement',
-      price: 25,
-      image: 'assets/boutique/epices.jpg',
+      name: 'Lot 2 sacs tote bags',
+      description: "Les tissus Lépi que nous proposons sont produits à la main en moyenne Guinée, dans le Fouta pour les Lépi et en Guinée forestière pour les Forêt sacrées. Chaque pagne en wax mesure 2m x 1,5m et 1,5m x 1m pour ceux en coton.",
+      price: 20,
+      image: 'assets/boutiques/lot-2-sacs-tote-bags.png',
       isNew: false,
-      isFavorite: false,
-      hovered: false
+      hovered: false,
+      payementUrl: "https://www.helloasso.com/associations/association-guinee-a-marseille/boutiques/tissus-lepi",
+      viewUrl: "https://www.helloasso.com/associations/association-guinee-a-marseille/boutiques/tissus-lepi"
+    },
+    {
+      id: 6,
+      name: 'Un tissu Forêt sacrée',
+      description: "Les tissus Lépi que nous proposons sont produits à la main en moyenne Guinée, dans le Fouta pour les Lépi et en Guinée forestière pour les Forêt sacrées. Chaque pagne en wax mesure 2m x 1,5m et 1,5m x 1m pour ceux en coton.",
+      price: 20,
+      image: 'assets/boutiques/tissu-foret-sacree.png',
+      isNew: false,
+      hovered: false,
+      payementUrl: "https://www.helloasso.com/associations/association-guinee-a-marseille/boutiques/tissus-lepi",
+      viewUrl: "https://www.helloasso.com/associations/association-guinee-a-marseille/boutiques/tissus-lepi"
+    },
+    {
+      id: 7,
+      name: 'Un tissu Forêt sacrée',
+      description: "Les tissus Lépi que nous proposons sont produits à la main en moyenne Guinée, dans le Fouta pour les Lépi et en Guinée forestière pour les Forêt sacrées. Chaque pagne en wax mesure 2m x 1,5m et 1,5m x 1m pour ceux en coton.",
+      price: 20,
+      image: 'assets/boutiques/sac-tote-bag.png',
+      isNew: false,
+      hovered: false,
+      payementUrl: "https://www.helloasso.com/associations/association-guinee-a-marseille/boutiques/tissus-lepi",
+      viewUrl: "https://www.helloasso.com/associations/association-guinee-a-marseille/boutiques/tissus-lepi"
     }
   ];
 
@@ -121,19 +151,11 @@ export class BoutiqueComponent implements OnInit, OnDestroy {
   }
 
   quickView(product: Product) {
-    console.log('Aperçu rapide:', product);
-    // Implement quick view modal logic
+    window.open(product.viewUrl, '_blank');
   }
 
   addToCart(product: Product) {
-    console.log('Ajouté au panier:', product);
-    // Implement add to cart logic
-    // You could show a toast notification here
-  }
-
-  toggleFavorite(product: Product) {
-    product.isFavorite = !product.isFavorite;
-    console.log('Favori togglé:', product);
+    window.open(product.payementUrl, '_blank');
   }
 
   voirPlus() {
