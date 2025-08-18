@@ -116,34 +116,23 @@
           <div class="product-category">{{ product.category }}</div>
           <h3 class="product-name">{{ product.name }}</h3>
           <p class="product-description">{{ product.description }}</p>
-          
-          <div class="product-rating" *ngIf="product.rating">
-            <div class="stars">
-              <i 
-                *ngFor="let star of getStarsArray(product.rating)" 
-                [class]="star ? 'fas fa-star' : 'far fa-star'"
-              ></i>
+        
+          <div class="product-actions d-flex justify-content-between align-items-center">
+            <!-- Price à gauche -->
+            <div class="product-price text-start">
+              <span class="current-price fw-bold">{{ product.price }}€</span>
+              <span class="old-price text-muted text-decoration-line-through ms-2" *ngIf="product.oldPrice">
+                {{ product.oldPrice }}€
+              </span>
             </div>
-            <span class="rating-count">({{ product.reviewCount }})</span>
-          </div>
 
-          <div class="product-price">
-            <span class="current-price">{{ product.price }}€</span>
-            <span class="old-price" *ngIf="product.oldPrice">{{ product.oldPrice }}€</span>
-          </div>
-
-          <div class="product-actions">
-            <button class="btn-add-cart" (click)="addToCart(product)">
-              <i class="fas fa-shopping-cart"></i>
-              Ajouter au panier
-            </button>
-            <button 
-              class="btn-favorite" 
-              [class.active]="product.isFavorite"
-              (click)="toggleFavorite(product)"
-            >
-              <i [class]="product.isFavorite ? 'fas fa-heart' : 'far fa-heart'"></i>
-            </button>
+            <!-- Bouton à droite -->
+            <div>
+              <button class="btn btn-add-cart d-flex align-items-center justify-content-center gap-1" (click)="addToCart(product)">
+                <i class="fas fa-shopping-cart"></i>
+                Acheter
+              </button>
+            </div>
           </div>
         </div>
       </div>
