@@ -50,22 +50,22 @@
   </section>
 
   <!-- Boutique Section -->
-  <section id="boutique" class="my-5">
+  <section id="boutique" class="my-3">
     <app-boutique></app-boutique>
   </section>
 
-  <!-- Annonces Section -->
-  <section id="annonces" class="my-5">
-    <app-annonces></app-annonces>
+  <!-- Réseaux Sociaux Section -->
+  <section id="social-feeds" class="my-3">
+    <app-social-feeds></app-social-feeds>
   </section>
 
   <!-- Fête de la Guinée Section -->
-  <section id="fete-guinee" class="my-5">
+  <section id="fete-guinee" class="my-3">
     <app-fete-guinee></app-fete-guinee>
   </section>
 
   <!-- Vidéos YouTube Section -->
-  <section id="videos-youtube" class="my-5">
+  <section id="videos-youtube" class="my-3">
     <app-videos-youtube></app-videos-youtube>
   </section>
 
@@ -160,31 +160,38 @@
     </p-panel>
   </section>
 
-  <footer id="footer" class="mt-3 mb-5">
-    <div class="p-2 shadow-sm border">
-      <div class="row justify-content-around">
-        <div
-          class="col-lg-4 col-md-4 col-sm-12 px-0 d-flex justify-content-center align-items-center"
-        >
-          <span class="me-2">Téléphone: </span>
-          <a href="tel:+33767133928">+33767133928</a>
+  <footer id="footer" class="modern-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="contact-item">
+          <i class="fas fa-phone contact-icon"></i>
+          <div class="contact-info">
+            <span class="contact-label">Téléphone</span>
+            <a href="tel:+33767133928" class="contact-link">+33 7 67 13 39 28</a>
+          </div>
         </div>
-        <div
-          class="col-lg-4 col-md-4 col-sm-12 px-0 d-flex justify-content-center align-items-center"
-        >
-          <span class="me-2">Email: </span>
-          <a href="mailto:guineeamarseille13@gmail.com">{{ adresseMail }}</a>
+      </div>
+      
+      <div class="footer-section">
+        <div class="contact-item">
+          <i class="fas fa-envelope contact-icon"></i>
+          <div class="contact-info">
+            <span class="contact-label">Email</span>
+            <a href="mailto:guineeamarseille13@gmail.com" class="contact-link">{{ adresseMail }}</a>
+          </div>
         </div>
-        <div
-          class="col-lg-4 col-md-2 col-sm-12 px-0 py-2 d-flex justify-content-center"
-        >
+      </div>
+      
+      <div class="footer-section">
+        <div class="social-section">
+          <span class="social-label">Suivez-nous</span>
           <reseaux-sociaux></reseaux-sociaux>
         </div>
       </div>
     </div>
 
-    <div class="text-center p-1 mt-3">
-      <span> © 2025 Guinée à marseille.</span>
+    <div class="footer-bottom">
+      <span>© 2025 Guinée à Marseille • Tous droits réservés</span>
     </div>
   </footer>
 </div>

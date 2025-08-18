@@ -53,3 +53,13 @@ li a.box-shadow-lg{
     border: solid green 3px;
   }
 }
+
+/* logo spécifique à la nav */
+.logo-nav {
+  max-height: 40px;  /* plus petit qu'avant */
+  height: auto;
+  width: auto;
+}
+
+
+
