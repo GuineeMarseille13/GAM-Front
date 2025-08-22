@@ -132,6 +132,7 @@
   border-radius: 15px;
   font-size: 0.8rem;
   font-weight: 600;
+  border: #ffd700 2px solid;
   z-index: 3;
   animation: pulse 2s infinite;
 }

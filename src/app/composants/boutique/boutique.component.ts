@@ -52,11 +52,11 @@ export class BoutiqueComponent implements OnInit, OnDestroy {
       name: 'Tee-shirt Guinée 67',
       description: "À l'occasion la 67ᵉ fête de la Guinée, l’association Guinée à Marseille propose des T-shirts hommes et femmes aux couleurs rouge, jaune, vert et noir, disponibles en tailles S, M, L, XL et XXL.",
       price: 20,
-      image: 'assets/boutiques/tee-shirt-guinee-66.png',
+      image: 'assets/boutiques/tee-shirt-guinee-67.png',
       isNew: true,
       hovered: false,
-      payementUrl: "https://www.helloasso.com/associations/association-guinee-a-marseille/boutiques/tee-shirt-guinee-66",
-      viewUrl: "https://www.helloasso.com/associations/association-guinee-a-marseille/boutiques/tee-shirt-guinee-66"
+      payementUrl: "https://www.helloasso.com/associations/association-guinee-a-marseille/boutiques/tee-shirt-guinee-67",
+      viewUrl: "https://www.helloasso.com/associations/association-guinee-a-marseille/boutiques/tee-shirt-guinee-67"
     },
     {
       id: 2,
@@ -77,8 +77,8 @@ export class BoutiqueComponent implements OnInit, OnDestroy {
       price: 5,
       oldPrice: 25,
       image: 'assets/boutiques/tee-shirt-guinee-65.webp',
-      isNew: true,
-      hovered: true,
+      isNew: false,
+      hovered: false,
       payementUrl: "https://www.helloasso.com/associations/association-guinee-a-marseille/boutiques/tee-shirt-guinee-66",
       viewUrl: "https://www.helloasso.com/associations/association-guinee-a-marseille/boutiques/tee-shirt-guinee-66"
     },

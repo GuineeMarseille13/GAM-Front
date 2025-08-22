@@ -2,7 +2,7 @@
 .fete-guinee-container {
   position: relative;
   padding: 3rem 2rem;
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
+  background: linear-gradient(135deg, #245936 0%, #538b67 50%, #9fc8aa 100%);
   border-radius: 20px;
   overflow: hidden;
   margin: 2rem 0;
@@ -17,11 +17,11 @@
   width: 100%;
   height: 100%;
   background-image: 
-    radial-gradient(2px 2px at 20px 30px, #fff, transparent),
-    radial-gradient(2px 2px at 40px 70px, #fff, transparent),
-    radial-gradient(1px 1px at 90px 40px, #fff, transparent),
-    radial-gradient(1px 1px at 130px 80px, #fff, transparent),
-    radial-gradient(2px 2px at 160px 30px, #fff, transparent);
+    radial-gradient(3px 3px at 20px 30px, #ffde59, transparent),
+    radial-gradient(2px 2px at 40px 70px, #b62309, transparent),
+    radial-gradient(2px 2px at 90px 40px, #ffde59, transparent),
+    radial-gradient(3px 3px at 130px 80px, #b62309, transparent),
+    radial-gradient(2px 2px at 160px 30px, #b62309, transparent);
   background-repeat: repeat;
   background-size: 200px 100px;
   animation: twinkle 4s ease-in-out infinite alternate;
@@ -52,21 +52,6 @@
   width: 100%;
   height: 33.33%;
   animation: shimmer 3s ease-in-out infinite;
-}
-
-.flag-stripe.red {
-  background: linear-gradient(90deg, #e74c3c, #c0392b);
-  animation-delay: 0s;
-}
-
-.flag-stripe.yellow {
-  background: linear-gradient(90deg, #f1c40f, #f39c12);
-  animation-delay: 0.5s;
-}
-
-.flag-stripe.green {
-  background: linear-gradient(90deg, #27ae60, #229954);
-  animation-delay: 1s;
 }
 
 /* Title */

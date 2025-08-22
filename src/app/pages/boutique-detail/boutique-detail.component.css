@@ -17,7 +17,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #245936 0%, #538b67 50%, #9fc8aa 100%);
   z-index: 1;
 }
 
@@ -28,9 +28,9 @@
   width: 100%;
   height: 100%;
   background-image: 
-    radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.3), transparent),
-    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.3), transparent),
-    radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.3), transparent);
+    radial-gradient(2px 2px at 20px 30px, #b62309, transparent),
+    radial-gradient(3px 3px at 40px 70px, #b62309, transparent),
+    radial-gradient(2px 2px at 90px 40px, #ffde59, transparent);
   background-repeat: repeat;
   background-size: 200px 100px;
   animation: float-particles 10s ease-in-out infinite;
