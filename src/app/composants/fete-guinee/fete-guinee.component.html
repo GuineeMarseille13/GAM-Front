@@ -1,12 +1,11 @@
 <div class="fete-guinee-container">
   <div class="stars-bg"></div>
-  
-  <div class="fete-header">    
+
+  <div class="fete-header">
     <h2 class="fete-title">
       <span class="title-line-1">Célébrons ensemble</span>
       <span class="title-line-2">La fête de la Guinée</span>
     </h2>
-  
   </div>
 
   <div class="countdown-section">
@@ -44,7 +43,9 @@
 
       <div class="countdown-item" [@countAnimation]="timeLeft.minutes">
         <div class="countdown-number">
-          <span class="number-display">{{ formatNumber(timeLeft.minutes) }}</span>
+          <span class="number-display">{{
+            formatNumber(timeLeft.minutes)
+          }}</span>
           <div class="number-glow"></div>
         </div>
         <div class="countdown-label">Minutes</div>
@@ -57,7 +58,9 @@
 
       <div class="countdown-item" [@countAnimation]="timeLeft.seconds">
         <div class="countdown-number">
-          <span class="number-display">{{ formatNumber(timeLeft.seconds) }}</span>
+          <span class="number-display">{{
+            formatNumber(timeLeft.seconds)
+          }}</span>
           <div class="number-glow"></div>
         </div>
         <div class="countdown-label">Secondes</div>
@@ -70,18 +73,29 @@
 
   <div class="celebration-info" *ngIf="!isEventDay; else eventDayMessage">
     <div class="info-card">
-      <div class="info-icon">
-        <i class="fas fa-calendar-alt"></i>
-      </div>
-      <div class="info-content">
-        <h4>Préparez-vous pour la célébration !</h4>
-        <p>Rejoignez-nous pour une journée mémorable remplie de musique, de danse, de cuisine traditionnelle et de joie partagée.</p>
-        <ul class="event-highlights">
-          <li><i class="fas fa-music"></i> Concerts de musique traditionnelle</li>
-          <li><i class="fas fa-utensils"></i> Dégustation de plats guinéens</li>
-          <li><i class="fas fa-users"></i> Rencontres communautaires</li>
-          <li><i class="fas fa-gift"></i> Activités pour toute la famille</li>
-        </ul>
+      <div class="info-content d-flex flex-column align-items-center">
+        <div>
+          <h4 class="text-center">Préparez-vous pour la célébration !</h4>
+          <p class="text-center">
+            Rejoignez-nous pour une journée mémorable remplie de musique, de
+            danse, de cuisine traditionnelle et de joie partagée.
+          </p>
+        </div>
+        <p class="d-flex justify-content-center align-items-center">
+          <img
+            src="assets/main/fete-guinee/affiche-fete-2025.jpeg"
+            alt="Fete de la Guinée"
+            style="width: 100%; height: 100%; object-fit: contain"
+          />
+        </p>
+
+        <p class="d-flex justify-content-center align-items-center">
+          <img
+            src="assets/main/fete-guinee/programmation-fete-2025.jpeg"
+            alt="Fete de la Guinée"
+            style="width: 100%; height: 100%; object-fit: contain"
+          />
+        </p>
       </div>
     </div>
   </div>
@@ -101,7 +115,7 @@
       </button>
     </div>
   </ng-template>
-  
+
   <!-- Fireworks container -->
   <div class="fireworks-container" id="fireworks-container"></div>
 </div>
