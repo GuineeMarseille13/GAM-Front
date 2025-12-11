@@ -65,6 +65,7 @@ import { loadFull } from 'tsparticles';
     TagModule,
     PanelModule,
     FormsModule,
+    RouterLink,
     ReseauxSociauxComponent,
     SousMenuComponent,
     BoutiqueComponent,
