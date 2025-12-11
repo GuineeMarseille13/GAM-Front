@@ -76,8 +76,8 @@ export class SousMenuComponent {
       url: '/nos-valeurs',
     },
     {
-      title: 'Nos événements 2024',
-      description: 'Les événements marquants de cette année.',
+      title: 'Nos événements passés',
+      description: 'Les événements marquants passés.',
       icon: this.faCalendarAlt,
       visible: true,
       animation: 'fadeInRight',

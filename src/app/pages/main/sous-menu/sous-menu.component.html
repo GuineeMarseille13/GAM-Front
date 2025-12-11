@@ -1,20 +1,22 @@
-<div class="container">
+<div class="menu-grid">
   <div
     *ngFor="let section of sections; let i = index"
-    class="card p-2"
-    [id]="'section-' + i"
+    class="menu-card"
+    [style.animation-delay]="i * 0.1 + 's'"
     [@fadeIn]="section.visible ? 'visible' : 'hidden'"
     (click)="redirectByUrl(section)"
   >
-    <div class="icon">
+    <div class="card-icon">
       <fa-icon
         [icon]="section.icon"
-        size="2x"
-        class="ms-3 style-icone"
+        size="lg"
         [fixedWidth]="true"
       ></fa-icon>
     </div>
-    <h5>{{ section.title }}</h5>
-    <p>{{ section.description }}</p>
+    <div class="card-content">
+      <h4 class="card-title">{{ section.title }}</h4>
+      <p class="card-description">{{ section.description }}</p>
+    </div>
+    <div class="card-arrow">→</div>
   </div>
 </div>

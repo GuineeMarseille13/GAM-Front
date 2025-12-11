@@ -1,49 +1,219 @@
-.container {
+/* Menu Container */
+:host {
+  display: block;
+  width: 100%;
+}
+
+.menu-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-  max-width: 1000px;
-  padding: 20px;
+  align-items: stretch;
+  gap: 1.25rem;
+  padding: 2rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.card {
-  background: white;
-  padding: 20px;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  width: 300px;
-  height: 250px; /* Taille uniforme */
+/* Menu Card */
+.menu-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  opacity: 0;
-  color: #245936;
-}
-
-.card h3 {
-  margin: 10px 0;
-}
-
-.icon {
-  font-size: 40px;
-  color: #ff0055;
-  margin-bottom: 5px;
-}
-
-.card:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 15px #fff3c1;
-  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  gap: 0.75rem;
+  padding: 1.5rem 1.25rem;
+  background: #fff;
+  border-radius: 16px;
+  border: none;
   cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation: cardEntrance 0.6s ease-out both;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  width: calc(33.333% - 1rem);
+  min-width: 160px;
+  position: relative;
+  overflow: hidden;
 }
 
-.style-icone {
-  color: #b62309;
+.menu-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ce1126, #fcd116, #009460);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
 }
 
-.style-icone:hover {
-  color: #b62309;
+.menu-card:hover::before {
+  transform: scaleX(1);
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.menu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 148, 96, 0.15);
+}
+
+/* Card Icon */
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #f0f9f4 0%, #e0f2e5 100%);
+  border-radius: 14px;
+  color: #009460;
+  font-size: 1.25rem;
+  transition: all 0.4s ease;
+}
+
+.menu-card:hover .card-icon {
+  background: linear-gradient(135deg, #009460 0%, #007a50 100%);
+  color: #fff;
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 8px 20px rgba(0, 148, 96, 0.3);
+}
+
+/* Card Content */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.card-description {
+  font-size: 0.8rem;
+  color: #777;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Card Arrow */
+.card-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #f5f5f5;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  color: #999;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.menu-card:hover .card-arrow {
+  background: #009460;
+  color: #fff;
+  transform: translateX(0) scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .menu-grid {
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .menu-card {
+    width: calc(50% - 0.75rem);
+    min-width: 140px;
+    padding: 1.25rem 1rem;
+  }
+
+  .card-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .card-title {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 0.75rem;
+  }
+
+  .menu-card {
+    width: 100%;
+    max-width: 320px;
+    flex-direction: row;
+    text-align: left;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .menu-card::before {
+    width: 3px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: auto;
+    transform: scaleY(0);
+  }
+
+  .menu-card:hover::before {
+    transform: scaleY(1);
+  }
+
+  .card-icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+  }
+
+  .card-content {
+    flex: 1;
+    align-items: flex-start;
+  }
+
+  .card-title {
+    font-size: 0.95rem;
+  }
+
+  .card-description {
+    font-size: 0.75rem;
+  }
+
+  .card-arrow {
+    width: 28px;
+    height: 28px;
+    margin-top: 0;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .menu-card {
+    max-width: 100%;
+  }
 }
