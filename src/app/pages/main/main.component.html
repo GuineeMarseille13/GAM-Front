@@ -1,46 +1,41 @@
 <div class="container overflow-hidden p-0">
-  <section id="gam-photo-famille" class="row mt-0">
-    <div class="entete-accueil">
+  <!-- Hero Section -->
+  <section id="hero-section" class="hero-section">
+    <div class="carousel-wrapper">
       <p-carousel
         [value]="imagesAccueilItem"
         [numVisible]="1"
         [numScroll]="1"
         [autoplay]="true"
-        [autoplayInterval]="5000"
+        [autoplayInterval]="6000"
         [circular]="true"
         [responsiveOptions]="carouselResponsiveOptions"
         [showIndicators]="false"
       >
         <ng-template let-item pTemplate="item">
-          <figure class="carousel-figure position-relative m-0">
+          <figure class="carousel-figure">
             <img
               [src]="item.itemImageSrc"
-              [alt]="item.alt || 'Image famille'"
-              class="carousel-image w-100 d-block"
+              [alt]="item.alt || 'Guinée à Marseille'"
+              class="carousel-image"
             />
-            <figcaption class="carousel-caption-modern top-right">
-              <span>{{ item.description }}</span>
+            <figcaption class="carousel-caption-modern pb-3" *ngIf="item.description">
+              {{ item.description }}
             </figcaption>
           </figure>
         </ng-template>
       </p-carousel>
+    </div>
 
-
-      <div class="panel-poles">
-        <div
-          class="pole"
-          *ngFor="let pole of imagesPolesItem"
-          (click)="handlePole(pole.title)"
-        >
-          <img
-            [src]="pole.image"
-            [alt]="pole.title"
-            [@zoomAnimation]="pole.state"
-            (mouseenter)="toggleZoom(pole)"
-            (mouseleave)="toggleZoom(pole)"
-          />
-          <div class="barre">{{ pole.title }}</div>
-        </div>
+    <!-- Poles Banner -->
+    <div class="panel-poles">
+      <div
+        class="pole"
+        *ngFor="let pole of imagesPolesItem"
+        (click)="handlePole(pole.title)"
+      >
+        <img [src]="pole.image" [alt]="pole.title" />
+        <span class="barre">{{ pole.title }}</span>
       </div>
     </div>
   </section>
