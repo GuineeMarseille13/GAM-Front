@@ -4,16 +4,20 @@
   padding: 0;
 }
 
-@media (min-width: 1000px) {
-  .entete-accueil {
-    width: 100%;
-    height: 450px; /* Réduit de 550px à 450px */
-  }
+/* ===== HERO SECTION WRAPPER ===== */
+.hero-section {
+  position: relative;
+  margin-bottom: 1.5rem;
 }
 
-/* Section Spacing - Reduced */
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Section Spacing */
 section {
-  margin: 1rem 0 !important; /* Réduit l'espacement entre sections */
+  margin: 1rem 0 !important;
 }
 /* Nos events - Modern Style */
 #evenements {
@@ -418,159 +422,237 @@ section {
 
 
  
- /**************** DEBUT Style CAROUSELLE***********************
-
-
-/* Taille et adaptation des images - Reduced */
-.carousel-image {
-  width: 100%;
-  height: 350px; /* Réduit de 450px à 350px */
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-/* Pour les petits écrans, ajuster les images */
-@media (max-width: 767px) {
-  .carousel-image {
-    height: 180px; /* Réduit de 200px à 180px */
-    object-fit: cover;
-  }
-}
-
-
-
-
- /**************** FIN Style CAROUSELLE***********************/
-
-
- 
- /**************** DEBUT Style poles-section***********************/
-
- .panel-poles {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  
-}
-
-.pole {
-  width: 30%;
-  text-align: center;
-}
-
-.pole img {
-  width: 120px; /* Réduit de 150px à 120px */
-  height: 120px; /* Réduit de 150px à 120px */
-  border-radius: 50%;
-  object-fit: cover;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
-img:hover {
-  cursor: pointer;
-}
-
-.barre {
-  background: linear-gradient(135deg, #2e5b2d, #ffde59);
-  /* background-color: #2e5b2d; */
-  padding: 8px 0; /* Réduit de 10px à 8px */
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-weight: 600;
-  font-size: 0.85rem;
-  margin-top: 15px; /* Réduit de 20px à 15px */
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 768px) {
-  .panel-poles {
-    flex-direction: column;
-  }
-  .pole {
-    width: 80%;
-    margin: 15px;
-  }
-  .pole img {
-    width: 80px; /* Réduit de 100px à 80px */
-    height: 80px; /* Réduit de 100px à 80px */
-  }
-  .barre {
-    flex-direction: column;
-    padding: 5px 0;
-    font-size: small;
-  }
-}
-
-
-@media (min-width: 1000px) {
-  .panel-poles {
-    position: relative; 
-    top: -80px; /* Réduit de -100px à -80px */
-  }
-
-  .barre {
-    top: -50px; /* Réduit de -60px à -50px */
-  }
-}
-
-
-
-  /**************** FIN Style poles-section***********************/
-  
+/* ===== HERO CAROUSEL - MODERN STYLE ===== */
 .carousel-figure {
   position: relative;
   overflow: hidden;
   margin: 0;
+  border-radius: 0 0 20px 20px;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  animation: subtleZoom 12s ease-in-out infinite alternate;
+}
+
+@keyframes subtleZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.03); }
+}
+
+.carousel-figure::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+  pointer-events: none;
 }
 
 .carousel-caption-modern {
   position: absolute;
-  color: #fff;
-  font-weight: 200;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  max-width: 380px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
+  padding: 0.85rem 1.25rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
   font-style: italic;
-  text-align: right;
-  font-size: 1.2rem;
-  padding: 0.5rem 1rem;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 0.75rem;
-  backdrop-filter: blur(4px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-  max-width: 80%;
-  z-index: 2;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  border-left: 3px solid #009460;
+  z-index: 10;
+  animation: captionSlide 0.6s ease-out;
 }
 
-/* Spécifique à la position top-right */
-.carousel-caption-modern.top-right {
-  top: 1rem;
-  right: 1rem;
-}
-
-/* Responsive pour mobile */
-@media (max-width: 576px) {
-  .carousel-caption-modern {
-    font-size: 0.5rem;
-    padding: 0.3rem 0.3rem;
-    border-radius: 0.5rem;
-    max-width: 70%;
+@keyframes captionSlide {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
   }
-
-  .carousel-caption-modern.top-right {
-    top: 0.5rem;
-    right: 0.5rem;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (max-width: 768px) and (min-width: 577px) {
+/* ===== POLES BANNER - MODERN STYLE ===== */
+.panel-poles {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.5rem 2rem;
+  background: #fff;
+  margin: -50px 1rem 0;
+  position: relative;
+  z-index: 20;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.pole {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  animation: poleAppear 0.5s ease-out both;
+  transition: transform 0.3s ease;
+}
+
+.pole:nth-child(1) { animation-delay: 0s; }
+.pole:nth-child(2) { animation-delay: 0.1s; }
+.pole:nth-child(3) { animation-delay: 0.2s; }
+
+@keyframes poleAppear {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.pole:hover {
+  transform: translateY(-5px);
+}
+
+.pole img {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #009460;
+  box-shadow: 0 4px 15px rgba(0, 148, 96, 0.2);
+  transition: all 0.35s ease;
+}
+
+.pole:hover img {
+  border-color: #fcd116;
+  box-shadow: 0 8px 25px rgba(0, 148, 96, 0.3);
+  transform: scale(1.1);
+}
+
+.barre {
+  background: transparent;
+  padding: 0;
+  color: #374151;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-align: center;
+  max-width: 110px;
+  line-height: 1.3;
+  margin-top: 0;
+  border-radius: 0;
+  box-shadow: none;
+  transition: color 0.3s ease;
+}
+
+.pole:hover .barre {
+  color: #009460;
+}
+
+/* ===== RESPONSIVE HERO ===== */
+@media (max-width: 900px) {
+  .carousel-image {
+    height: 320px;
+  }
+
+  .panel-poles {
+    gap: 1.5rem;
+    margin: -40px 0.75rem 0;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .pole img {
+    width: 72px;
+    height: 72px;
+  }
+
+  .barre {
+    font-size: 0.7rem;
+    max-width: 90px;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel-figure {
+    border-radius: 0 0 12px 12px;
+  }
+
+  .carousel-image {
+    height: 220px;
+  }
+
   .carousel-caption-modern {
-    font-size: 0.95rem;
-    padding: 0.4rem 0.8rem;
+    bottom: 0.75rem;
+    right: 0.75rem;
+    left: 0.75rem;
+    max-width: none;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.75rem;
+    border-radius: 10px;
+  }
+
+  .panel-poles {
+    gap: 0.75rem;
+    margin: -30px 0.5rem 0;
+    padding: 1rem;
+    border-radius: 12px;
+    flex-wrap: wrap;
+  }
+
+  .pole {
+    flex: 0 0 calc(33.33% - 0.5rem);
+  }
+
+  .pole img {
+    width: 58px;
+    height: 58px;
+    border-width: 2px;
+  }
+
+  .barre {
+    font-size: 0.6rem;
+    max-width: 70px;
+  }
+}
+
+@media (max-width: 400px) {
+  .carousel-image {
+    height: 180px;
+  }
+
+  .carousel-caption-modern {
+    font-size: 0.65rem;
+    padding: 0.5rem 0.7rem;
+  }
+
+  .panel-poles {
+    margin: -25px 0.5rem 0;
+    padding: 0.85rem;
+  }
+
+  .pole img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .barre {
+    font-size: 0.55rem;
+    max-width: 60px;
   }
 }
 
