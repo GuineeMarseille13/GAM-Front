@@ -70,53 +70,46 @@
   </section> -->
 
   <section id="evenements" class="my-5">
-    <div class="row m-0">
-      <h2 class="d-none d-lg-block text-center mb-3">Nos événements</h2>
-      <h3 class="d-none d-md-block d-lg-none text-center mb-3">
-        Nos événements
-      </h3>
-      <h4 class="d-sm-block d-md-none text-center mb-3">Nos événements</h4>
-      <div class="card p-3">
-        <div class="row m-0">
-          <div class="col-lg-3 col-md-12 p-0">
-            <img
-              src="../../../assets/main/gam-event.webp"
-              alt=""
-              class="rounded-1 w-100"
-            />
+    <div class="evenements-container">
+      <div class="evenements-header">
+        <span class="evenements-badge">🎭 Vie associative</span>
+        <h2 class="evenements-title">Nos événements</h2>
+        <div class="evenements-line"></div>
+      </div>
+
+      <div class="evenements-content">
+        <div class="evenements-image-wrapper">
+          <img
+            src="../../../assets/main/gam-event.webp"
+            alt="Événements GAM"
+            class="evenements-image"
+          />
+          <div class="image-overlay">
+            <span class="overlay-icon">🎉</span>
           </div>
-          <div class="col m-2">
-            <div class="row h-100 flex-column">
-              <p class="col d-flex align-items-center fst-italic">
-                Le projet de l'association est d'organiser des activités
-                solidaires, sportives et culturelles, de créer un réseau entre
-                Guinéen.ne.s et Marseillais.e.s et d'aider des personnes dans le
-                besoin afin de lutter activement contre le racisme et la
-                discrimination.
-              </p>
-              <div class="col py-0">
-                <div
-                  class="row bg-white d-flex flex-column align-items-center justify-content-center"
-                >
-                  <div
-                    class="col-10 bg-light d-flex flex-column align-items-center justify-content-center p-2 gap-2 rounded-2 shadow-sm"
-                  >
-                    <h4 class="text-center d-none d-sm-block">
-                      Pour nos evenements à venir
-                    </h4>
-                    <h5 class="text-center d-sm-block d-md-block d-md-none">
-                      Pour nos evenements à venir
-                    </h5>
-                    <h5 class="text-center fst-italic">
-                      suivez-nous sur nos reseaux
-                    </h5>
-                    <div class="text-center">
-                      <reseaux-sociaux></reseaux-sociaux>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        </div>
+
+        <div class="evenements-info">
+          <p class="evenements-description">
+            Le projet de l'association est d'organiser des activités
+            solidaires, sportives et culturelles, de créer un réseau entre
+            Guinéen.ne.s et Marseillais.e.s et d'aider des personnes dans le
+            besoin afin de lutter activement contre le racisme et la
+            discrimination.
+          </p>
+
+          <div class="evenements-cta">
+            <div class="social-box">
+              <h4 class="social-title">📢 Pour nos événements à venir</h4>
+              <p class="social-subtitle">Suivez-nous sur nos réseaux</p>
+              <reseaux-sociaux></reseaux-sociaux>
             </div>
+
+            <a routerLink="/evenements-passes" class="btn-evenements-passes">
+              <span class="btn-icon">📸</span>
+              <span class="btn-text">Voir nos événements passés</span>
+              <span class="btn-arrow">→</span>
+            </a>
           </div>
         </div>
       </div>
