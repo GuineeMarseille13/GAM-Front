@@ -43,56 +43,117 @@ section {
 }
 
 
-/* Nos partenaires - Modern Style */
+/* Nos partenaires - Modern Logo Grid */
 #partenaires {
-  background: white;
+  background: #fff;
   border-radius: 16px;
-  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   margin: 1rem;
-  padding: 1.5rem;
+  padding: 2.5rem 2rem;
 }
 
-#partenaires h2, #partenaires h3, #partenaires h4 {
-  color: #1e293b;
+.partenaires-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.partenaires-title {
+  font-size: 1.5rem;
   font-weight: 600;
+  color: #374151;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
 }
 
-.partner-img {
-  position: relative;
+.partenaires-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #ce1126, #fcd116, #009460);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* Partners Grid */
+.partners-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.partner-logo {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
+  background: #fafafa;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
 }
 
-.partner-img img {
-  height: 200px; /* Réduit de 268px à 200px */
-  width: 300px; /* Réduit de 402px à 300px */
-  object-fit: cover;
-  border-radius: 8px;
+.partner-logo:hover {
+  background: #fff;
+  border-color: #e5e7eb;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
 }
 
-.partner-comment {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  bottom: 0;
-  height: 0;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 5px;
-  transition: .5s ease;
+.partner-logo img {
+  max-width: 160px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(30%);
+  opacity: 0.85;
+  transition: all 0.3s ease;
 }
 
-.comment {
-  width: 90%;
-  padding: 10px;
-  color: white;
-  overflow-y: auto;
-  scrollbar-color: rgba(0, 0, 0, .5) rgba(58, 90, 64, .5);
+.partner-logo:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
 }
 
-.partners:hover .partner-comment {
-  height: 100%;
+/* Responsive partenaires */
+@media (max-width: 768px) {
+  #partenaires {
+    padding: 1.5rem 1rem;
+  }
+
+  .partenaires-title {
+    font-size: 1.25rem;
+  }
+
+  .partners-grid {
+    gap: 1rem;
+  }
+
+  .partner-logo {
+    padding: 0.75rem;
+  }
+
+  .partner-logo img {
+    max-width: 120px;
+    max-height: 75px;
+  }
+}
+
+@media (max-width: 480px) {
+  .partners-grid {
+    gap: 0.75rem;
+  }
+
+  .partner-logo {
+    padding: 0.5rem;
+  }
+
+  .partner-logo img {
+    max-width: 90px;
+    max-height: 60px;
+  }
 }
 
 ::ng-deep .p-panel-header{
@@ -238,6 +299,28 @@ img:hover {
 .carousel-caption-modern.top-right {
   top: 1rem;
   right: 1rem;
+}
+
+/* Responsive pour mobile */
+@media (max-width: 576px) {
+  .carousel-caption-modern {
+    font-size: 0.5rem;
+    padding: 0.3rem 0.3rem;
+    border-radius: 0.5rem;
+    max-width: 70%;
+  }
+
+  .carousel-caption-modern.top-right {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 577px) {
+  .carousel-caption-modern {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.8rem;
+  }
 }
 
 /* Modern Footer */

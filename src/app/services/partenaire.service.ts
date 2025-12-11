@@ -7,6 +7,11 @@ export class PartenaireService {
   getProductsData() {
     return [
       {
+        name: 'Ville de Marseille',
+        commentaire: '',
+        image: '../../../assets/main/partenaires/ville_de_marseille.png',
+      },
+      {
         name: 'SOS Méditerranée',
         commentaire: `J’ai le plaisir de rédiger cette lettre de recommandation pour l’association Guinée à Marseille, sous la présidence actuelle de Moussa Camara, jeune rescapé d’un navire de sauvetage de SOS MEDITERRANEE, secouru en mer en 2016. 
                       A l’occasion d’un évènement que tenait SOS MEDITERRANEE à La Criée à Marseille en juin 2017 ce jeune homme s’est présenté sur le stand des bénévoles de SOS MEDITERRANEE, et y a reconnu la photo de l’Aquarius, navire qui lui a porté secours.
@@ -55,14 +60,14 @@ export class PartenaireService {
         image: '../../../assets/main/partenaires/ecole_danse_mam.jpeg',
       },
       {
-        name: 'Euro Circle',
+        name: 'Team Rando Evasion',
         commentaire: '',
-        image: '../../../assets/main/partenaires/euro_circle.jpeg',
+        image: '../../../assets/main/partenaires/team_rando_evasion.jpg',
       },
       {
-        name: "l'après M",
+        name: "Réfugi'aide",
         commentaire: '',
-        image: '../../../assets/main/partenaires/apres_m.png',
+        image: '',
       },
     ];
   }
