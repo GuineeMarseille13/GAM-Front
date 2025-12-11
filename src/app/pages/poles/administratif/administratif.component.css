@@ -39,3 +39,241 @@
 h6 {
   margin-bottom: 0;
 }
+
+/* Bannière animée des permanences */
+.permanence-banner {
+  background: linear-gradient(135deg, #538b67 0%, #3d6b4d 50%, #2d5039 100%);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(83, 139, 103, 0.3);
+  animation: slideInBanner 0.8s ease-out, glowPulse 3s ease-in-out infinite;
+}
+
+.permanence-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  animation: shimmer 3s infinite;
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
+  flex-wrap: wrap;
+}
+
+.banner-icon {
+  animation: bounceCalendar 2s ease-in-out infinite;
+}
+
+.calendar-icon {
+  font-size: 3rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.banner-text {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+}
+
+.banner-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.banner-schedule {
+  font-size: 1.4rem;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.banner-schedule strong {
+  color: #ffe993;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.banner-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 0.8rem;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.info-item:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.info-icon {
+  font-size: 1.1rem;
+}
+
+.info-link {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.info-link:hover {
+  color: #ffe993;
+  text-decoration: underline;
+}
+
+.banner-decoration {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.pulse-dot {
+  width: 12px;
+  height: 12px;
+  background: #ffe993;
+  border-radius: 50%;
+  animation: pulseDot 1.5s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(255, 233, 147, 0.5);
+}
+
+.pulse-dot.delay-1 {
+  animation-delay: 0.3s;
+}
+
+.pulse-dot.delay-2 {
+  animation-delay: 0.6s;
+}
+
+/* Animations */
+@keyframes slideInBanner {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 10px 40px rgba(83, 139, 103, 0.3);
+  }
+  50% {
+    box-shadow: 0 15px 50px rgba(83, 139, 103, 0.5), 0 0 30px rgba(255, 233, 147, 0.2);
+  }
+}
+
+@keyframes bounceCalendar {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-5px) rotate(-5deg);
+  }
+  75% {
+    transform: translateY(-3px) rotate(5deg);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.7;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .permanence-banner {
+    padding: 1.2rem 1rem;
+  }
+
+  .banner-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .calendar-icon {
+    font-size: 2.5rem;
+  }
+
+  .banner-title {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+
+  .banner-schedule {
+    font-size: 1.1rem;
+  }
+
+  .banner-info {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .info-item {
+    font-size: 0.9rem;
+  }
+
+  .banner-decoration {
+    margin-top: 0.5rem;
+  }
+
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+  }
+}
