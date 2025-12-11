@@ -1,121 +1,17 @@
-<div class="fete-guinee-container">
-  <div class="stars-bg"></div>
-
-  <div class="fete-header">
-    <h2 class="fete-title">
-      <span class="title-line-1">Célébrons ensemble</span>
-      <span class="title-line-2">La fête de la Guinée</span>
-    </h2>
-  </div>
-
-  <div class="countdown-section">
-    <div class="countdown-title">
-      <h3>Compte à rebours</h3>
-      <p>Jusqu'au 4 octobre {{ targetDate.getFullYear() }}</p>
+<div class="fete-wrapper">
+  <div class="fete-banner">
+    <div class="fete-icon-wrapper">
+      <span class="fete-star star-1">✦</span>
+      <div class="fete-flag">
+        <span class="flag-red"></span>
+        <span class="flag-yellow"></span>
+        <span class="flag-green"></span>
+      </div>
+      <span class="fete-star star-2">✦</span>
     </div>
-
-    <div class="countdown-display">
-      <div class="countdown-item" [@countAnimation]="timeLeft.days">
-        <div class="countdown-number">
-          <span class="number-display">{{ timeLeft.days }}</span>
-          <div class="number-glow"></div>
-        </div>
-        <div class="countdown-label">Jours</div>
-        <div class="countdown-bar">
-          <div class="bar-fill" [style.width]="getDayProgress() + '%'"></div>
-        </div>
-      </div>
-
-      <div class="countdown-separator">:</div>
-
-      <div class="countdown-item" [@countAnimation]="timeLeft.hours">
-        <div class="countdown-number">
-          <span class="number-display">{{ formatNumber(timeLeft.hours) }}</span>
-          <div class="number-glow"></div>
-        </div>
-        <div class="countdown-label">Heures</div>
-        <div class="countdown-bar">
-          <div class="bar-fill" [style.width]="getHourProgress() + '%'"></div>
-        </div>
-      </div>
-
-      <div class="countdown-separator">:</div>
-
-      <div class="countdown-item" [@countAnimation]="timeLeft.minutes">
-        <div class="countdown-number">
-          <span class="number-display">{{
-            formatNumber(timeLeft.minutes)
-          }}</span>
-          <div class="number-glow"></div>
-        </div>
-        <div class="countdown-label">Minutes</div>
-        <div class="countdown-bar">
-          <div class="bar-fill" [style.width]="getMinuteProgress() + '%'"></div>
-        </div>
-      </div>
-
-      <div class="countdown-separator">:</div>
-
-      <div class="countdown-item" [@countAnimation]="timeLeft.seconds">
-        <div class="countdown-number">
-          <span class="number-display">{{
-            formatNumber(timeLeft.seconds)
-          }}</span>
-          <div class="number-glow"></div>
-        </div>
-        <div class="countdown-label">Secondes</div>
-        <div class="countdown-bar">
-          <div class="bar-fill" [style.width]="getSecondProgress() + '%'"></div>
-        </div>
-      </div>
+    <div class="fete-text">
+      <span class="fete-label">🎉 Fête de la Guinée</span>
+      <span class="fete-date">📅 RDV le <strong>03 octobre 2026</strong></span>
     </div>
   </div>
-
-  <div class="celebration-info" *ngIf="!isEventDay; else eventDayMessage">
-    <div class="info-card">
-      <div class="info-content d-flex flex-column align-items-center">
-        <div>
-          <h4 class="text-center">Préparez-vous pour la célébration !</h4>
-          <p class="text-center">
-            Rejoignez-nous pour une journée mémorable remplie de musique, de
-            danse, de cuisine traditionnelle et de joie partagée.
-          </p>
-        </div>
-        <p class="d-flex justify-content-center align-items-center">
-          <img
-            src="assets/main/fete-guinee/affiche-fete-2025.jpeg"
-            alt="Fete de la Guinée"
-            style="width: 100%; height: 100%; object-fit: contain"
-          />
-        </p>
-
-        <p class="d-flex justify-content-center align-items-center">
-          <img
-            src="assets/main/fete-guinee/programmation-fete-2025.jpeg"
-            alt="Fete de la Guinée"
-            style="width: 100%; height: 100%; object-fit: contain"
-          />
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <ng-template #eventDayMessage>
-    <div class="event-day-celebration">
-      <div class="celebration-animation">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-      </div>
-      <h3>🎉 C'est aujourd'hui ! 🎉</h3>
-      <p>Bonne fête de l'indépendance de la Guinée !</p>
-      <button class="btn-celebrate" (click)="celebrate()">
-        <i class="fas fa-rocket"></i>
-        Célébrer !
-      </button>
-    </div>
-  </ng-template>
-
-  <!-- Fireworks container -->
-  <div class="fireworks-container" id="fireworks-container"></div>
 </div>

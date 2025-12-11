@@ -1,508 +1,248 @@
-/* Fête Guinée Container */
-.fete-guinee-container {
-  position: relative;
-  padding: 3rem 2rem;
-  background: linear-gradient(135deg, #245936 0%, #538b67 50%, #9fc8aa 100%);
-  border-radius: 20px;
-  overflow: hidden;
-  margin: 2rem 0;
-  color: white;
-}
-
-/* Stars Background */
-.stars-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(3px 3px at 20px 30px, #ffde59, transparent),
-    radial-gradient(2px 2px at 40px 70px, #b62309, transparent),
-    radial-gradient(2px 2px at 90px 40px, #ffde59, transparent),
-    radial-gradient(3px 3px at 130px 80px, #b62309, transparent),
-    radial-gradient(2px 2px at 160px 30px, #b62309, transparent);
-  background-repeat: repeat;
-  background-size: 200px 100px;
-  animation: twinkle 4s ease-in-out infinite alternate;
-  opacity: 0.6;
-}
-
-/* Header */
-.fete-header {
-  text-align: center;
-  margin-bottom: 3rem;
-  position: relative;
-  z-index: 2;
-}
-
-/* Flag Animation */
-.flag-animation {
-  display: inline-block;
-  width: 80px;
-  height: 60px;
-  margin-bottom: 1rem;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  animation: wave 2s ease-in-out infinite;
-}
-
-.flag-stripe {
-  width: 100%;
-  height: 33.33%;
-  animation: shimmer 3s ease-in-out infinite;
-}
-
-/* Title */
-.fete-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  animation: glow-title 3s ease-in-out infinite alternate;
-}
-
-.title-line-1,
-.title-line-2 {
-  display: block;
-  background: linear-gradient(45deg, #f1c40f, #e74c3c, #27ae60);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradient-shift 4s ease infinite;
-}
-
-.title-line-2 {
-  animation-delay: 2s;
-}
-
-.fete-subtitle {
-  font-size: 1.2rem;
-  opacity: 0.9;
-  font-weight: 300;
-  color: #bdc3c7;
-}
-
-/* Countdown Section */
-.countdown-section {
-  margin-bottom: 3rem;
-  position: relative;
-  z-index: 2;
-}
-
-.countdown-title {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.countdown-title h3 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-  color: #f1c40f;
-  text-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
-}
-
-.countdown-title p {
-  color: #bdc3c7;
-  font-size: 1rem;
-}
-
-/* Countdown Display */
-.countdown-display {
+/* Wrapper for centering */
+.fete-wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  padding: 2rem 1rem;
 }
 
-.countdown-item {
-  text-align: center;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  padding: 1.5rem 1rem;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  min-width: 100px;
-  transition: all 0.3s ease;
-}
-
-.countdown-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
-.countdown-number {
-  position: relative;
-  margin-bottom: 0.5rem;
-}
-
-.number-display {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #fff;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-  display: block;
-  position: relative;
-  z-index: 2;
-}
-
-.number-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80px;
-  height: 80px;
-  background: radial-gradient(
-    circle,
-    rgba(241, 196, 15, 0.3) 0%,
-    transparent 70%
-  );
-  border-radius: 50%;
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-
-.countdown-label {
-  font-size: 0.9rem;
-  color: #bdc3c7;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 0.5rem;
-}
-
-.countdown-bar {
-  width: 100%;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.bar-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #f1c40f, #e74c3c);
-  border-radius: 2px;
-  transition: width 1s ease;
-  animation: shine 2s ease-in-out infinite;
-}
-
-.countdown-separator {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #f1c40f;
-  animation: blink 1s ease-in-out infinite;
-}
-
-/* Celebration Info */
-.celebration-info {
-  margin-bottom: 2rem;
-  position: relative;
-  z-index: 2;
-}
-
-.info-card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 2rem;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+/* Modern Fête Banner */
+.fete-banner {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 1.5rem;
-  align-items: flex-start;
-  width: 60%;
-  margin: 0 auto;
-}
-
-.info-icon {
-  font-size: 2.5rem;
-  color: #f1c40f;
-  flex-shrink: 0;
-}
-
-.info-content h4 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  color: #f1c40f;
-}
-
-.info-content p {
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-  color: #bdc3c7;
-}
-
-.event-highlights {
-  list-style: none;
-  padding: 0;
-}
-
-.event-highlights li {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-  color: #ecf0f1;
-}
-
-.event-highlights i {
-  color: #e74c3c;
-  width: 16px;
-}
-
-/* Event Day Celebration */
-.event-day-celebration {
-  text-align: center;
-  background: linear-gradient(45deg, #e74c3c, #f1c40f);
-  border-radius: 20px;
-  padding: 2rem;
-  margin-bottom: 2rem;
+  padding: 2rem 3rem;
+  background: linear-gradient(145deg, #ffffff 0%, #f0f4f0 50%, #e8f5e9 100%);
+  border: 2px solid transparent;
+  border-radius: 24px;
+  box-shadow: 
+    0 10px 40px rgba(0, 148, 96, 0.15),
+    0 4px 15px rgba(0, 0, 0, 0.08);
+  animation: bannerEntrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
   overflow: hidden;
 }
 
-.celebration-animation {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  animation: celebrate 1s ease-in-out infinite;
-}
-
-.celebration-animation i {
-  color: #fff;
-  margin: 0 0.5rem;
-  animation: rotate 2s linear infinite;
-}
-
-.celebration-animation i:nth-child(2) {
-  animation-delay: 0.5s;
-}
-
-.celebration-animation i:nth-child(3) {
-  animation-delay: 1s;
-}
-
-.event-day-celebration h3 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.event-day-celebration p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-  color: #fff;
-}
-
-.btn-celebrate {
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
-  border: 2px solid #fff;
-  padding: 1rem 2rem;
-  border-radius: 30px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-}
-
-.btn-celebrate:hover {
-  background: #fff;
-  color: #e74c3c;
-  transform: scale(1.05);
-}
-
-/* Historical Info */
-.historical-info {
-  position: relative;
-  z-index: 2;
-}
-
-.history-card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  padding: 1.5rem;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
-.history-icon {
-  font-size: 2rem;
-  color: #f1c40f;
-  flex-shrink: 0;
-}
-
-.history-content h4 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #f1c40f;
-}
-
-.history-content p {
-  color: #bdc3c7;
-  line-height: 1.5;
-  margin: 0;
-}
-
-/* Fireworks Container */
-.fireworks-container {
+.fete-banner::before {
+  content: '';
   position: absolute;
   top: 0;
-  left: 0;
+  left: -100%;
   width: 100%;
   height: 100%;
-  pointer-events: none;
-  z-index: 3;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: shimmer 3s infinite;
+}
+
+.fete-banner:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 
+    0 15px 50px rgba(0, 148, 96, 0.25),
+    0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Icon wrapper with stars */
+.fete-icon-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.fete-star {
+  font-size: 1.5rem;
+  color: #fcd116;
+  animation: twinkle 1.5s ease-in-out infinite;
+  text-shadow: 0 0 10px rgba(252, 209, 22, 0.5);
+}
+
+.star-1 {
+  animation-delay: 0s;
+}
+
+.star-2 {
+  animation-delay: 0.75s;
+}
+
+/* Flag with animation */
+.fete-flag {
+  display: flex;
+  width: 70px;
+  height: 45px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.2),
+    0 2px 5px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  animation: flagWave 3s ease-in-out infinite;
+  transform-origin: left center;
+}
+
+.flag-red {
+  flex: 1;
+  background: linear-gradient(180deg, #e01b24 0%, #ce1126 50%, #b8101f 100%);
+  animation: colorPulse 2s ease-in-out infinite;
+}
+
+.flag-yellow {
+  flex: 1;
+  background: linear-gradient(180deg, #ffe033 0%, #fcd116 50%, #e6bc00 100%);
+  animation: colorPulse 2s ease-in-out infinite 0.3s;
+}
+
+.flag-green {
+  flex: 1;
+  background: linear-gradient(180deg, #00a86b 0%, #009460 50%, #007a50 100%);
+  animation: colorPulse 2s ease-in-out infinite 0.6s;
+}
+
+/* Text Content */
+.fete-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.fete-label {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  animation: textSlideUp 0.6s ease-out 0.3s both;
+  letter-spacing: 0.5px;
+}
+
+.fete-date {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #444;
+  animation: textSlideUp 0.6s ease-out 0.5s both;
+}
+
+.fete-date strong {
+  color: #009460;
+  font-weight: 700;
+  position: relative;
+}
+
+.fete-date strong::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #ce1126, #fcd116, #009460);
+  border-radius: 2px;
+  animation: underlineGrow 1s ease-out 1s both;
 }
 
 /* Animations */
-@keyframes twinkle {
-  from {
-    opacity: 0.6;
+@keyframes bannerEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
   }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes wave {
-  0%,
   100% {
-    transform: rotateY(0deg);
-  }
-  50% {
-    transform: rotateY(15deg);
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
 @keyframes shimmer {
-  0%,
-  100% {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.3) rotate(15deg);
+  }
+}
+
+@keyframes flagWave {
+  0%, 100% {
+    transform: perspective(400px) rotateY(0deg);
+  }
+  25% {
+    transform: perspective(400px) rotateY(5deg);
+  }
+  75% {
+    transform: perspective(400px) rotateY(-5deg);
+  }
+}
+
+@keyframes colorPulse {
+  0%, 100% {
     filter: brightness(1);
   }
   50% {
-    filter: brightness(1.2);
+    filter: brightness(1.15);
   }
 }
 
-@keyframes glow-title {
+@keyframes textSlideUp {
   from {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
-      0 0 10px rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
-      0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
-  }
-}
-
-@keyframes gradient-shift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes pulse-glow {
-  0%,
-  100% {
-    opacity: 0.5;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  50% {
-    opacity: 0.8;
-    transform: translate(-50%, -50%) scale(1.1);
-  }
-}
-
-@keyframes shine {
-  0% {
-    background-position: -100% 0;
-  }
-  100% {
-    background-position: 100% 0;
-  }
-}
-
-@keyframes blink {
-  0%,
-  50% {
     opacity: 1;
-  }
-  51%,
-  100% {
-    opacity: 0.3;
+    transform: translateY(0);
   }
 }
 
-@keyframes celebrate {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-}
-
-@keyframes rotate {
+@keyframes underlineGrow {
   from {
-    transform: rotate(0deg);
+    transform: scaleX(0);
   }
   to {
-    transform: rotate(360deg);
+    transform: scaleX(1);
   }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .fete-guinee-container {
-    padding: 2rem 1rem;
+/* Responsive */
+@media (max-width: 600px) {
+  .fete-wrapper {
+    padding: 1.5rem 0.5rem;
   }
 
-  .fete-title {
-    font-size: 2rem;
+  .fete-banner {
+    padding: 1.5rem 2rem;
+    gap: 1rem;
+    border-radius: 18px;
   }
 
-  .countdown-display {
-    gap: 0.5rem;
+  .fete-flag {
+    width: 55px;
+    height: 36px;
   }
 
-  .countdown-item {
-    min-width: 80px;
-    padding: 1rem 0.5rem;
+  .fete-star {
+    font-size: 1.2rem;
   }
 
-  .number-display {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .fete-title {
-    font-size: 1.5rem;
+  .fete-label {
+    font-size: 1.3rem;
   }
 
-  .countdown-display {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .countdown-separator {
-    display: none;
-  }
-
-  .number-display {
-    font-size: 1.8rem;
+  .fete-date {
+    font-size: 1.1rem;
   }
 }
