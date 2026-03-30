@@ -1,0 +1,43 @@
+<section class="orga-wrapper card-semi-arrondi p-3 p-md-4">
+  <header class="orga-header">
+    <h3 class="orga-title m-0">Organigramme Guinee a Marseille 2026</h3>
+  </header>
+
+  <div class="orga-section">
+    <h4 class="section-title">Membres du bureau</h4>
+    <div class="members-grid">
+      <article class="member-card" *ngFor="let membre of membresOrdonnes">
+        <img [src]="membre.photo_profil" [alt]="membre.prenon + ' ' + membre.nom" />
+        <div class="member-name">{{ membre.nom }}</div>
+        <div class="member-firstname">{{ membre.prenon }}</div>
+        <div class="member-role">{{ membre.poste }}</div>
+      </article>
+    </div>
+  </div>
+
+  <div class="orga-section tasks-layout">
+    <div class="tasks-label">Taches du bureau</div>
+    <div class="tasks-grid">
+      <div class="task-pill" *ngFor="let tache of tachesBureau" [ngClass]="'task-' + tache.variant">
+        <span [innerText]="tache.contenu"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="orga-section">
+    <h4 class="section-title">Differents poles de l association</h4>
+    <div class="poles-grid">
+      <article class="pole-card" *ngFor="let pole of poles">
+        <h5 class="pole-title">{{ pole.titre }}</h5>
+        <ul class="pole-list">
+          <li *ngFor="let ligne of pole.lignes">
+            <span>{{ ligne.texte }}</span>
+            <ul class="pole-sublist" *ngIf="ligne.sousLignes?.length">
+              <li *ngFor="let sousLigne of ligne.sousLignes">{{ sousLigne }}</li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>

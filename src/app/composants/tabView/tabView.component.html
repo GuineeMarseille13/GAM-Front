@@ -119,33 +119,7 @@
       </div>
     </ng-container>
     <div *ngIf="isNotreEquipeActive">
-      <div class="d-flex justify-content-center flex-wrap my-3">
-        <profil-membre-bureau
-          [membreBureauInfo]="membreBureauInfos[0]"
-        ></profil-membre-bureau>
-      </div>
-      <div class="d-flex justify-content-evenly flex-wrap mb-3">
-        <profil-membre-bureau
-          [membreBureauInfo]="membreBureauInfos[1]"
-        ></profil-membre-bureau>
-        <profil-membre-bureau
-          [membreBureauInfo]="membreBureauInfos[2]"
-        ></profil-membre-bureau>
-      </div>
-      <div class="d-flex justify-content-evenly flex-wrap">
-        <profil-membre-bureau
-          [membreBureauInfo]="membreBureauInfos[3]"
-        ></profil-membre-bureau>
-        <profil-membre-bureau
-          [membreBureauInfo]="membreBureauInfos[4]"
-        ></profil-membre-bureau>
-        <profil-membre-bureau
-          [membreBureauInfo]="membreBureauInfos[5]"
-        ></profil-membre-bureau>
-        <profil-membre-bureau
-          [membreBureauInfo]="membreBureauInfos[6]"
-        ></profil-membre-bureau>
-      </div>
+      <organisation-bureau [membresBureau]="membreBureauInfos"></organisation-bureau>
     </div>
   </div>
 </div>

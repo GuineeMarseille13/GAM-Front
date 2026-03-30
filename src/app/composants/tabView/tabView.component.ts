@@ -1,26 +1,23 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faFile } from '@fortawesome/free-regular-svg-icons';
 import { TabItems } from 'src/app/types/enums/TabItems.enum';
-import { ProfilMembreBureauComponent } from '../profil-membre-bureau/profil-membre-bureau.component';
 import { RapportActiviteService } from 'src/app/services/rapport-activite.service';
 import { InfoRapportActivite } from 'src/app/types/interfaces/info-rapport-activite';
 import { RapportActiviteComponent } from '../rapport-activite/rapport-activite.component';
 import { MembreBureauInfo } from 'src/app/types/interfaces/membre-bureau-info';
 import { MembreBureauInfoService } from 'src/app/services/membre-bureau-info.service';
 import { MotDuPresidentComponent } from './mot-du-president/mot-du-president.component';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { OrganisationBureauComponent } from '../organisation-bureau/organisation-bureau.component';
 
 @Component({
   selector: 'tabView',
   standalone: true,
   imports: [
     CommonModule,
-    FontAwesomeModule,
-    ProfilMembreBureauComponent,
     RapportActiviteComponent,
     MotDuPresidentComponent,
+    OrganisationBureauComponent,
   ],
   templateUrl: './tabView.component.html',
   styleUrl: './tabView.component.css',
@@ -35,8 +32,6 @@ export class TabViewComponent implements OnInit {
   protected isQuiSommesNousActive = false;
   protected isRapportActiviteActive = false;
   protected isNotreEquipeActive = false;
-
-  protected faFile = faFile;
 
   constructor(
     private rapportActiviteService: RapportActiviteService,

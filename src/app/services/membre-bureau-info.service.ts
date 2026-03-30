@@ -9,23 +9,11 @@ export class MembreBureauInfoService {
   private getInfos(): Observable<MembreBureauInfo[]> {
     return of([
       {
-        prenon: 'Moussa',
-        nom: 'CAMARA',
-        poste: 'Président',
-        photo_profil: 'assets/notre-association/photo-profil/president.jpg',
-      },
-      {
-        prenon: 'Guillaume',
-        nom: 'MADEC',
-        poste: '1er vice-président',
-        photo_profil: 'assets/notre-association/photo-profil/vicepresident.jpg',
-      },
-      {
-        prenon: 'Ibrahim',
-        nom: 'BAH',
-        poste: '2e vice-président',
+        prenon: 'Aicha',
+        nom: 'KOUROUMA',
+        poste: 'Sécretaire adjointe',
         photo_profil:
-          'assets/notre-association/photo-profil/vicepresident2.jpg',
+          'assets/notre-association/photo-profil/secretaireadjointe.jpg',
       },
       {
         prenon: 'Michelle',
@@ -36,9 +24,21 @@ export class MembreBureauInfoService {
       {
         prenon: 'Mamadou Alpha',
         nom: 'DIALLO',
-        poste: 'Sécretaire adjoint',
+        poste: 'vice-président',
+        photo_profil: 'assets/notre-association/photo-profil/vicepresident.jpg',
+      },
+      {
+        prenon: 'Moussa',
+        nom: 'CAMARA',
+        poste: 'Président',
+        photo_profil: 'assets/notre-association/photo-profil/president.jpg',
+      },
+      {
+        prenon: 'Aboubacar Siddig',
+        nom: 'DIALLO',
+        poste: 'vice-président',
         photo_profil:
-          'assets/notre-association/photo-profil/secretaireadjointe.jpg',
+          'assets/notre-association/photo-profil/vicepresident2.jpg',
       },
       {
         prenon: 'Julie',
