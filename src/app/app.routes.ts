@@ -35,6 +35,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'accompagnement-futurs-etudiants',
+    loadComponent: () =>
+      import('../app/pages/poles/accompagnement-futurs-etudiants/accompagnement-futurs-etudiants.component').then(
+        (p) => p.AccompagnementFutursEtudiantsComponent
+      ),
+  },
+  {
     path: 'nos-valeurs',
     loadComponent: () =>
       import('../app/pages/nos-valeurs/nos-valeurs.component').then(

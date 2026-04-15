@@ -14,6 +14,7 @@ import {
 import { HebergementStatComponent } from '../../../shared/composants/hebergement-stat/hebergement-stat.component';
 import { fromEvent, map, Observable, startWith, Subscription } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'hebergement',
@@ -33,6 +34,8 @@ export class HebergementComponent implements OnInit, OnDestroy {
   isMobile$!: Observable<boolean>;
   private resizeSubscription!: Subscription;
 
+  constructor(private router: Router) {}
+
   ngOnInit(): void {
     // Création de l'observable pour détecter les changements de taille
     this.isMobile$ = fromEvent(window, 'resize').pipe(
@@ -46,5 +49,9 @@ export class HebergementComponent implements OnInit, OnDestroy {
     if (this.resizeSubscription) {
       this.resizeSubscription.unsubscribe();
     }
+  }
+
+  navigateToAccompagnement(): void {
+    this.router.navigate(['/accompagnement-futurs-etudiants']);
   }
 }
